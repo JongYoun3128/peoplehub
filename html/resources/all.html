@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/blog_tab.css">
+    <link rel="stylesheet" href="../../css/blog_card.css">
+    <link rel="stylesheet" href="../../css/blog.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="../../js/header.js" defer></script>
+    <title>Blog-all</title>
+</head>
+<body>
+    <div class="top_banner">
+            <div class="top_banner_box">
+                <p>
+                    30인 미만 사업장이라면, 정부 지원금 받고 시프티를
+                    시작하세요!
+
+                    <span>30인 미만 100% 무료지원 →</span>
+                </p>
+            </div>
+        </div>
+        <div class="header_wrap">
+            <div class="header">
+                <div class="header_left_box">
+                    <div class="header_logo">
+                        <a href="#">
+                            <img
+                                src="../../images/logo.png"
+                                alt=""
+                                width="80px"
+                                height="80px"
+                            />
+                        </a>
+                    </div>
+                    <ul class="header_menu">
+                        <li class="header_menu_service">
+                            <a href="#">
+                                <div class="line_box"></div>
+                                서비스 소개</a
+                            >
+                            <div class="sub_menu_box">
+                                <ul class="sub_menu">
+                                    <li>
+                                        <a href="#">
+                                            <img
+                                                src="../../images/header_menu_hover_icon_01.png"
+                                                alt=""
+                                            />
+                                            <div class="header_menu_text">
+                                                <h4>근무일정</h4>
+                                                <p>
+                                                    근로/휴게시간을 계획하고
+                                                    각종 근로제도 및 근무유형에
+                                                    대응합니다
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img
+                                                src="../../images/header_menu_hover_icon_02.png"
+                                                alt=""
+                                            />
+                                            <div class="header_menu_text">
+                                                <h4>전자결제</h4>
+                                                <p>
+                                                    고도화된 근태 결재와 맞춤형
+                                                    결재를 지원합니다.
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img
+                                                src="../../images/header_menu_hover_icon_03.png"
+                                                alt=""
+                                            />
+                                            <div class="header_menu_text">
+                                                <h4>근태정산</h4>
+                                                <p>
+                                                    연장, 야간, 휴일근로 등 근태
+                                                    및 급여에 대한 실시간 정산
+                                                    데이터를 제공합니다
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img
+                                                src="../../images/header_menu_hover_icon_04.png"
+                                                alt=""
+                                            />
+                                            <div class="header_menu_text">
+                                                <h4>출퇴근 기록</h4>
+                                                <p>
+                                                    신뢰가는 출퇴근기록과
+                                                    자동화된 근태관리를
+                                                    제공합니다
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img
+                                                src="../../images/header_menu_hover_icon_05.png"
+                                                alt=""
+                                            />
+                                            <div class="header_menu_text">
+                                                <h4>메시지</h4>
+                                                <p>
+                                                    사내 공지와 맞춤화된 사내
+                                                    알림을 데이터와 연계하여
+                                                    발송합니다
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img
+                                                src="../../images/header_menu_hover_icon_06.png"
+                                                alt=""
+                                            />
+                                            <div class="header_menu_text">
+                                                <h4>연동</h4>
+                                                <p>
+                                                    출입 기록 연동부터 인사정보,
+                                                    채용관리까지 뛰어난 확장성을
+                                                    제공합니다
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img
+                                                src="../../images/header_menu_hover_icon_07.png"
+                                                alt=""
+                                            />
+                                            <div class="header_menu_text">
+                                                <h4>휴가관리</h4>
+                                                <p>
+                                                    휴가 발생부터 잔여일수,
+                                                    연차촉진까지 간편하게
+                                                    관리합니다
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img
+                                                src="../../images/header_menu_hover_icon_08.png"
+                                                alt=""
+                                            />
+                                            <div class="header_menu_text">
+                                                <h4>전자계약</h4>
+                                                <p>
+                                                    사내 모든 계약서를
+                                                    템플릿으로 관리하고 복잡한
+                                                    계약과정을 간소화합니다
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img
+                                                src="../../images/header_menu_hover_icon_09.png"
+                                                alt=""
+                                            />
+                                            <div class="header_menu_text">
+                                                <h4>데스크탑</h4>
+                                                <p>
+                                                    PC-OFF 및 이석관리 기능이
+                                                    탑재된 사무직 근태관리에
+                                                    탁월한 제품입니다
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="header_menu_solution">
+                            <div class="line_box"></div>
+                            <a href="#">솔루션</a>
+                            <ul class="solution_menu">
+                                <li class="solution_menu_sub_title">규모</li>
+                                <li class="solution_menu_sub_title_color">
+                                    엔터프라이즈
+                                </li>
+                                <li class="solution_menu_sub_title_color">
+                                    스타트업
+                                </li>
+                                <li class="solution_menu_sub_title">제도</li>
+                                <li class="solution_menu_sub_title_color">
+                                    주 52시간제
+                                </li>
+                                <li class="solution_menu_sub_title_color">
+                                    유연근무제
+                                </li>
+                                <li class="solution_menu_sub_title_color">
+                                    원격근무/재택근무
+                                </li>
+                                <li class="solution_menu_sub_title_color">
+                                    PC오프제(PC-OFF)
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="line_box"></div>
+                            <a href="#">요금제</a>
+                        </li>
+                        <li>
+                            <div class="line_box"></div>
+                            <a href="#">고객센터</a>
+                        </li>
+                        <li class="header_menu_resources">
+                            <div class="line_box"></div>
+                            <a href="#">리소스</a>
+                            <ul class="resources_menu">
+                                <li>블로그</li>
+                                <li>비디오 가이드</li>
+                                <li>보완</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="login_box">
+                    <li class="login_inquiry">
+                        <img
+                            src="../../images/headr_icon_letter.png"
+                            alt=""
+                            width="14px"
+                            height="14px"
+                        />
+                        <a href="#">도입문의</a>
+                    </li>
+                    <li class="login_button">
+                        <a href="#">로그인</a>
+                    </li>
+                    <li class="experience_button">
+                        <a href="#">무료체험</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="blog_tab">
+        <ul class="blog_tab_list">
+            <li><a href="#">전체보기</a></li>
+            <li><a href="#">제품</a></li>
+            <li><a href="#">HR 인사이트</a></li>
+            <li><a href="#">피플 허브 팀</a></li>
+            <li><a href="#">뉴스</a></li>
+            <li><a href="#">공지사항</a></li>
+        </ul>
+
+
+        </div>
+        
+
+        <div class="container">
+        <div class="banner">
+            <img src="../../images/blog_all_img1.png" alt="">
+            <div class="banner_text">
+            <a href="#">HR 인사이트</a>
+            <h2>구축형 PC-OFF 솔루션과 SaaS 솔루션 비교, 솔루션 전환 시 반드시 고려해야 하는 사항은?</h2>
+            <p>최근 구축형 PC-OFF 솔루션에서 SaaS 클라우드 솔루션으로의 전환에 대한 관심이 높아지고 있습니다. 하지만 전환 과정에서...</p>
+            </div>
+        </div>
+
+        </div>
+
+        <div class="featured_container">
+        <div class="featured_header">
+            <h2>Featured</h2>
+        </div>
+
+        <div class="content-grid">
+            <div class="insight-item">
+                <div class="category">HR 인사이트</div>
+                <div class="title">2025년 변화하는 근로 정책과 HR 준비 사항은? 최저임금, 육아휴직, 근로시간 단축 등 총정리</div>
+                <span></span>
+            </div>
+
+            <div class="insight-item">
+                <div class="category">HR 인사이트</div>
+                <div class="title">5인 이상 30인 미만 사업장 주 52시간제 시행 제도간 종료. 주 52시간 준수를 위한 인사담당자, 실무자 체크리스트</div>
+                <span></span>
+            </div>
+
+            <div class="insight-item">
+                <div class="category">HR 인사이트</div>
+                <div class="title">정확한 근태관리가 중요한 이유와 근로시간 관리에서 자주 헷갈리는 사례들</div>
+                <span></span>
+            </div>
+
+            <div class="insight-item">
+                <div class="category">HR 인사이트</div>
+                <div class="title">인사팀에 적용할 수 있는 2025 HR 트렌드 알아보기 : 주4일제, 부업 AI, 직 이코노미, DEI까지</div>
+                <span></span>
+            </div>
+        </div>
+
+        </div>
+
+        <div class="container">
+        <h1>전체보기</h1>
+        <div class="content_banner">
+            <div class="content_banner_card">
+            <img src="../../images/blog_all_hr_img2.png" alt="">
+
+            <div class="content_text_card">
+            <div class="content_category">HR 인사이트</div>
+            <p class="content_title">ERP, 그룹웨어, HR 솔루션 비교로 알아보는 기업<br>근태관리 시스템 선택 가이드</p>
+            <p class="content_text">유연근무제의 정착과 거듭되는 노동법 개정으로 인해, 기업의 근태관리 시스템에<br>대한 관심이 그 어느 때보다 높아지고 있습니다. ...</p>
+            <p class="content_time">2025-06-13</p>
+            </div>
+            
+            </div>
+            <div class="content_banner_card">
+            <img src="../../images/blog_all_hr_img3.png" alt="">
+
+            <div class="content_text_card">
+            <div class="content_category">HR 인사이트</div>
+            <p class="content_title">출퇴근은 앱으로, 스케줄은 엑셀로? 분산된 근태&dot;<br>업무일정 관리를 통합하는 방법</p>
+            <p class="content_text">많은 기업들이 디지털 전환을 진행하고 있지만, HR 실무에서는 여전히 '이중 관리'가<br> 일상입니다. 예를 들어 출퇴근은 모바일...</p>
+            <p class="content_time">2025-06-13</p>
+            </div>
+
+            </div>
+        </div>
+
+        <div class="content">
+        <div class="content_card">
+            <img src="../../images/blog_all_img4.png" alt="">
+            
+            <div class="content_text_card">
+            <div class="content_category">HR 인사이트</div>
+            <p class="content_title">2025년 중소기업 청년 활용 가능한 정부 지원 정책 총정리</p>
+            <p class="content_text">중소기업이 안정적이고 우수한 인재 채용과 유지를 하기 위해서는 다양한 정부 정책을 활용하는 것이 필수입니다. 오늘은 청년 일자...</p>
+            <p class="content_time">2025-06-10</p>
+            </div>
+        </div>
+
+        <div class="content_card">
+            <img src="../../images/blog_all_news_img5.png" alt="">
+            
+            <div class="content_text_card">
+            <div class="content_category">뉴스</div>
+            <p class="content_title">[CEO 칼럼] 경력직 이탈 시대,<br>기업의 인재 확보 전략은?</p>
+            <p class="content_text">"인재관리의 패러다임이 바뀌고 있는 시기, HR의<br>핵심은 내부의 목소리에 집중해 더욱 신뢰할 수 있는<br>업무 환경을 만드는데  있...</p>
+            <p class="content_time">2025-06-10</p>
+            </div>
+        </div>
+        <div class="content_card">
+            <img src="../../images/blog_all_img6.png" alt="">
+            
+            <div class="content_text_card">
+            <div class="content_category">HR 인사이트</div>
+            <p class="content_title">HR 자동화 도입 사례로 살펴보는 인사관리 업무 변화와 개선 효과</p>
+            <p class="content_text">기업 인사담당자가 매일 반복적으로 수행하는 업무는 결코 단순하지 않습니다. 출퇴근 기록 관리, 연차발생 및 소멸일 계산, 휴...</p>
+            <p class="content_time">2025-06-09</p>
+            </div>
+        </div>
+
+        <div class="content_card">
+            <img src="../../images/blog_all_hr_img4.png" alt="">
+            
+            <div class="content_text_card">
+            <div class="content_category">HR 인사이트</div>
+            <p class="content_title">예비군 훈련은 유급휴가일까?<br>직장인의 민방위 유급 여부과<br>법적 처리 기준 알아보기</p>
+            <p class="content_text">예비군 훈련 시즌이 되면, 회사 입장에서 근무일인지<br>휴가일인지, 급여를 지급해야 하는지 판단이 애매한<br>경우가 많습니다. 특히 ...</p>
+            <p class="content_time">2025-06-05</p>
+            </div>
+        </div>
+
+        <div class="content_card">
+            <img src="../../images/blog_all_hr_img5.png" alt="">
+            
+            <div class="content_text_card">
+            <div class="content_category">HR 인사이트</div>
+            <p class="content_title">육아휴직 후 퇴사 시 퇴직금은<br>어떻게 계산할까? 법적 기준과<br>예시 정리</p>
+            <p class="content_text">육아휴직 이후 퇴직금 정산에 대한 궁금증이 인사 실무<br>현장에서 자주 발생하고 있습니다. 퇴직금 지급<br>시점부터 산출 방식까지 근...</p>
+            <p class="content_time">2025-06-04</p>
+            </div>
+        </div>
+
+        <div class="content_card">
+            <img src="../../images/blog_all_hr_img6.png" alt="">
+            
+            <div class="content_text_card">
+            <div class="content_category">HR 인사이트</div>
+            <p class="content_title">육아기 근로시간 단축 제도 운영<br>사업주를 위한 정부 지원금<br>총정리</p>
+            <p class="content_text">육아와 일을 병행할 수 있는 환경을 조성하는 것은 더<br>이상 개인의 문제를 넘어, 기업의 인재 유지 및<br>지속가능성과 직결되는 중...</p>
+            <p class="content_time">2025-06-03</p>
+            </div>
+        </div>
+
+        <div class="content_card">
+            <img src="../../images/blog_all_hr_img7.png" alt="">
+            
+            <div class="content_text_card">
+            <div class="content_category">HR 인사이트</div>
+            <p class="content_title">유연근무 시대의 스타트업, HR<br>자동화를 위한 근태관리는 어떻게<br>시작할까?</p>
+            <p class="content_text">빠르게 성장하는 스타트업은 유연성과 민첩함을<br>강점으로 삼아 자율 근무제, 재택근무 등 유연근무<br>제도를 적극 도입하고 있습니다....</p>
+            <p class="content_time">2025-06-01</p>
+            </div>
+        </div>
+
+        <div class="content_card">
+            <img src="../../images/blog_all_hr_img8.png" alt="">
+            
+            <div class="content_text_card">
+            <div class="content_category">HR 인사이트</div>
+            <p class="content_title">근로자 주말 근무, 대체 휴무로<br>처리해도 될까? 가산수당 및<br>대체휴무 규정 정리</p>
+            <p class="content_text">정확한 근태 관리는 기업의 기본적인 의무이자 중요한<br>과제입니다. 그중에서도 근로자의 주말 및 휴일 근무<br>처리는 인사 담당자들이...</p>
+            <p class="content_time">2025-05-31</p>
+            </div>
+        </div>
+
+        <div class="content_card">
+            <img src="../../images/blog_all_hr_img9.png" alt="">
+            
+            <div class="content_text_card">
+            <div class="content_category">HR 인사이트</div>
+            <p class="content_title">출퇴근기록 어플 도입<br>체크리스트: 모바일 근태관리,<br>무엇부터 점검해야 할까?</p>
+            <p class="content_text">효율적인 인사관리는 기업 운영의 핵심 성공 요인 중<br>하나입니다. 특히 다양한 근무 형태와 근무지가<br>공존하는 오늘날의 업무 환경...</p>
+            <p class="content_time">2025-05-28</p>
+            </div>
+        </div>
+
+        <div class="content_card">
+            <img src="../../images/blog_all_hr_img10.png" alt="">
+            
+            <div class="content_text_card">
+            <div class="content_category">HR 인사이트</div>
+            <p class="content_title">지각, 조퇴, 외출 시 연차 차감<br>가능할까? 실무자를 위한 대응<br>가이드</p>
+            <p class="content_text">안정적인 조직 운영을 위해 근태 관리는 필수<br>업무입니다. 단순한 출퇴근 기록 관리에서  나아가, 법적<br>정의가 명확하지 않은 지각...</p>
+            <p class="content_time">2025-05-26</p>
+            </div>
+        </div>
+
+        <div class="content_card">
+            <img src="../../images/blog_all_hr_img11.png" alt="">
+            
+            <div class="content_text_card">
+            <div class="content_category">HR 인사이트</div>
+            <p class="content_title">교대근무제도 각종 형태와 종류,<br>주 52시간 적용 기준 알아보기</p>
+            <p class="content_text">교대근무는 다양한 교대형태로 인해 일정이 유동적이다<br>보니 근로시간 계산이 어려워지는 경우가 많습니다.<br>이번 글에서는 대표적인...</p>
+            <p class="content_time">2025-05-24</p>
+            </div>
+        </div>
+
+        <div class="content_card">
+            <img src="../../images/blog_all_hr_img12.png" alt="">
+            
+            <div class="content_text_card">
+            <div class="content_category">HR 인사이트</div>
+            <p class="content_title">연차수당 계산법 완벽 정리!<br>2025년 기준 지급 조건과<br>산정공식</p>
+            <p class="content_text">근로기준법에서는 일정 요건을 갖춘 근로자에게<br>유급휴가를 부여하도록 정하고 있으며, 사용하지 못한<br> 유급휴가에 대해서는 수당을 지...</p>
+            <p class="content_time">2025-05-22</p>
+            </div>
+        </div>
+
+
+        <div class="content_card">
+            <img src="../../images/blog_all_hr_img13.png" alt="">
+            
+            <div class="content_text_card">
+            <div class="content_category">HR 인사이트</div>
+            <p class="content_title">대규모 도급&dot;파견 인력을<br>운영하는 아웃소싱 업계,<br>근태관리를 효율화하는 방법은?</p>
+            <p class="content_text">도급·파견·아웃소싱 산업은 ‘인력을 공급하고 관리하는 것’ 자체가 사업의 핵심입니다. 유통, 제조, 물류, 서비스 등 다양한 ...</p>
+            <p class="content_time">2025-05-21</p>
+            </div>
+        </div>
+
+        <div class="content_card">
+            <img src="../../images/blog_all_hr_img14.png" alt="">
+            
+            <div class="content_text_card">
+            <div class="content_category">HR 인사이트</div>
+            <p class="content_title">은퇴를 앞둔 직원, HR 부서에서<br>준비해야 하는 은퇴자 관리 전략</p>
+            <p class="content_text">직원이 한 조직에서 근속하고 은퇴를 준비하는 시점은<br>기업과 개인 모두에게 의미 있는 전환점입니다. 이번<br>글에서는 은퇴 예정 직...</p>
+            <p class="content_time">2025-05-20</p>
+            </div>
+        </div>
+
+        <div class="content_card">
+            <img src="../../images/blog_all_hr_img15.png" alt="">
+            
+            <div class="content_text_card">
+            <div class="content_category">HR 인사이트</div>
+            <p class="content_title">근태관리란? 정의부터 방식 비교,<br>솔루션 도입 고려사항까지 총<br>정리</p>
+            <p class="content_text">유연근무제, 재택근무, 교대근무 등 다양한 근무 형태가<br>일상화되면서, 직원의 근무 현황을 정확하게 파악하고<br>효율적으로 관리할 ...</p>
+            <p class="content_time">2025-05-19</p>
+            </div>
+        </div>
+
+
+        <div class="content_btn">
+            <button>
+            더 보기
+            </button>
+        </div>
+
+        </div>
+
+        </div>
+
+        <div class="content_bottom_banner">
+        <h1>인력관리 전문가, 피플 허브를 시작하세요.</h1>
+        <p class="content_bottom_banner_text">인사 업무 부담을 낮추고<br>생산성을 향상시키는 인력관리 방법, 피플 허브입니다.</p>
+        <div class="content_bottom_banner_btn">
+            <button>
+            도입문의
+            </button>
+        </div>
+        </div>
+
+        <section>
+            <div class="footer_wrap">
+                <div class="footer">
+                    <div class="footer_text">
+                        <div class="footer_logo">
+                            <img
+                                src="../../images/logo.png"
+                                alt=""
+                                width="80px"
+                                height="80px"
+                            />
+                            <div class="footer_text_one">
+                                <p>주식회사 PeoPle Hub</p>
+                                <p>대표 : 현종윤</p>
+                                <p>사업자등록번호: 537-88-00567</p>
+                                <p>통신판매업신고번호: 2021-서울강남-05577</p>
+                            </div>
+                            <div class="footer_text_two">
+                                <p>고객지원: <span>실시간 채팅</span></p>
+                                <p>도입문의: <span>문의하기</span></p>
+                                <p>
+                                    제휴 및 비즈니스 제안: <span>문의하기</span>
+                                </p>
+                                <p>
+                                    고객지원번호: <span>(+82)02-6261-5319</span>
+                                </p>
+                            </div>
+                            <div class="footer_text_three">
+                                <p>
+                                    서울특별시 망우로 285-1 UM타워 4~7층
+                                    (주)피플허브
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer_introduction">
+                        <ul class="introduction_list footer_list">
+                            <li class="footer_bold">
+                                <a href="javascript:retrun false;">제품소개</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">근무일정</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >출퇴근기록</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">휴가관리</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">전자결재</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">메시지</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">전자계약</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">근태정산</a>
+                            </li>
+                            <li><a href="javascript:retrun false;">연동</a></li>
+                            <li>
+                                <a href="javascript:retrun false;">모바일웹</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >시프티 데스크탑</a
+                                >
+                            </li>
+                            <li class="footer_last">
+                                <a href="javascript:retrun false;">요금제</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer_solution">
+                        <ul class="footer_solution_list footer_list">
+                            <li class="footer_bold">
+                                <a href="javascript:retrun false;">솔루션</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >엔터프라이즈</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">스타트업</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >주 52시간제</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >유연근무제</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >원격근무/재택근무</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">PC오프제</a>
+                            </li>
+                            <li class="footer_last">
+                                <a href="javascript:retrun false;"
+                                    >주 52시간제 백서</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">휴가 백서</a>
+                            </li>
+                            <li class="footer_last">
+                                <a href="javascript:retrun false;"
+                                    >산업별 솔루션</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer_resources">
+                        <ul class="footer_resources_list footer_list">
+                            <li class="footer_bold">
+                                <a href="javascript:retrun false;">리소스</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">고객센터</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >비디오 가이드</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">용어사전</a>
+                            </li>
+                            <li><a href="javascript:retrun false;">보안</a></li>
+                            <li class="footer_bold footer_last">
+                                <a href="javascript:retrun false;"
+                                    >자동계산기</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >주휴수당 계산기</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >연차 계산기</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >연차수당 계산기</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >퇴직금 계산기</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >4대보험료 계산하기</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer_peopelhub">
+                        <ul class="footer_peoplehub_list footer_list">
+                            <li class="footer_bold">
+                                <a href="javascript:retrun false;"
+                                    >PeoPle Hub</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">회사소개</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">블로그</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">도입문의</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >제휴 및 비지니스 제안</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">이용약관</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >개인정보처리방침</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <ul class="footer_bottom_list">
+                    <li>
+                        <ul class="footer_bottom_contact">
+                            <li>
+                                <a href="javascript:return false;">한국어</a>
+                            </li>
+                            <li>
+                                <a href="javascript:return false;"
+                                    >TERMS&PRIVACY</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:return false;"
+                                    >CONTACT SALES</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:return false;"
+                                    >CONTACT BIZ</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="footer_icon_list">
+                            <li>
+                                <a href="javascript:return false;"
+                                    ><img
+                                        src="../../images/footer_icon_01.png"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li>
+                                <a href="javascript:return false;"
+                                    ><img
+                                        src="../../images/footer_icon_02.png"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li>
+                                <a href="javascript:return false;"
+                                    ><img
+                                        src="../../images/footer_icon_03.png"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li>
+                                <a href="javascript:return false;"
+                                    ><img
+                                        src="../../images/footer_icon_04.png"
+                                        alt=""
+                                /></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="footer_link_list">
+                            <li>
+                                <a href="javascript:return false;"
+                                    ><img
+                                        src="../../images/footer_link_01.png"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li>
+                                <a href="javascript:return false;"
+                                    ><img
+                                        src="../../images/footer_link_02.png"
+                                        alt=""
+                                /></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+</body>
+</html>

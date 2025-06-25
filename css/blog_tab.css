@@ -1,0 +1,27 @@
+.blog_tab{
+    width: 65%;
+    display: flex;
+    margin: 0 auto;
+}
+
+.blog_tab_list{
+    display: flex;
+    margin-top: 64px;
+    border-bottom: 1px solid #f0f1f3;
+}
+
+.blog_tab_list li{
+    padding-left: 20px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.blog_tab_list li:first-child{
+    padding-left: 0;
+    color: #004dc1;
+}
+
+.blog_tab_list li:first-child:hover{
+    border-bottom: 1px solid;
+}

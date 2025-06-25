@@ -1,0 +1,40 @@
+        .content{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .content_text_card{
+            margin-top: 16px;
+        }
+
+        .content_category{
+            margin-right: 8px;
+            font-size: 13px;
+            color: #1e1f21;
+            margin-bottom: 10px;
+        }
+
+        .content_title{
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+
+        .content_time{
+            color: #969faa;
+            font-size: 13px;
+        }
+
+          .content_card{
+            width: 30%;
+
+        }
+
+        .content_card>img{
+            width: 100%;
+        }
