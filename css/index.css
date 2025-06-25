@@ -1,0 +1,697 @@
+.main {
+    width: 100%;
+}
+
+.main_banner {
+    width: 100%;
+    background-color: #0a2864;
+    height: 750px;
+    display: flex;
+    position: relative;
+    z-index: 1;
+}
+.main_banner .main_banner_text_box {
+    width: 50%;
+    color: #fff;
+    margin-top: 170px;
+    margin-left: 400px;
+}
+.main_banner .main_banner_img {
+    position: absolute;
+    z-index: -1;
+    width: 52%;
+    right: 200px;
+}
+.main_banner .main_banner_text_box h2 {
+    font-size: 58px;
+    font-weight: 700;
+    line-height: 80px;
+    margin-bottom: 32px;
+}
+.main_banner .main_banner_text_box p {
+    line-height: 1.75;
+    font-size: 20px;
+    margin-bottom: 50px;
+    opacity: 68%;
+}
+.main_banner .main_banner_text_box .text_sub_box {
+    display: flex;
+}
+.main_banner .main_banner_text_box .text_sub_box a {
+    display: block;
+    width: 100px;
+    text-align: center;
+    padding: 1em 0;
+}
+.main_banner .main_banner_text_box .text_sub_box .text_sub_btn_01 {
+    display: block;
+    width: 100px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 1em 0;
+    background-color: #fff;
+    color: #004dc1;
+    margin-right: 30px;
+}
+
+.main_banner .main_banner_text_box .text_sub_box span img {
+    width: 14px;
+    height: 14px;
+    padding: 17px 0;
+    transition: 0.4s;
+}
+.main_banner .main_banner_text_box .text_sub_box:hover span img {
+    transform: translateX(5px);
+}
+
+/* //이용 브랜드로고 */
+.brand_logo_box {
+    width: 65%;
+    margin: 50px auto;
+}
+.brand_logo_box h3 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.brand_logo_box img {
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* //피플허브 소개 */
+.environment {
+    width: 65%;
+    margin: 0 auto;
+    padding: 64px 80px 70px;
+    box-sizing: border-box;
+    background-color: #13192d;
+    border-radius: 1rem;
+    position: relative;
+    background-image: linear-gradient(170deg, #21316b 10%, #13192d 80%);
+    box-shadow: 0px 12px 36px 0px #27346050, 0px 4px 12px #27346060;
+    color: #fff;
+}
+.environment h5 {
+    margin-bottom: 40px;
+}
+.environment h2 {
+    font-size: 2.5rem;
+}
+.environment .environment_list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.environment .environment_list li {
+    width: 260px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.environment .environment_list li img {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-image: linear-gradient(white 45%, rgba(255, 255, 255, 0.6));
+}
+.environment .environment_list li h3 {
+    font-size: 20px;
+    line-height: 1.75;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 1rem;
+}
+.environment .environment_list li p {
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+/* //피플허브 기능 소개 */
+.feature_background_color {
+    width: 100%;
+    position: absolute;
+    z-index: -3;
+    background-color: #f0f1f3;
+    top: 1850px;
+    height: 1500px;
+}
+
+.feature_wrap {
+    width: 65%;
+    height: 1250px;
+    margin: 100px auto;
+}
+
+.feature_wrap h5 {
+    margin-bottom: 40px;
+    text-align: center;
+}
+.feature_wrap h2 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+.feature_wrap_list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+.feature_wrap_list li {
+    width: 280px;
+    padding: 50px 0;
+    text-align: center;
+    margin-bottom: 50px;
+    transition: 0.3s;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.feature_wrap_list li:hover {
+    background-color: #fff;
+}
+.feature_wrap_list li img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 30px;
+}
+.feature_wrap_list li h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.feature_wrap_list li p {
+    font-size: 15px;
+    line-height: 1.75;
+}
+.feature_wrap_sub_list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    border-top: 1px solid #000;
+    position: relative;
+}
+.plus_btn {
+    position: absolute;
+    text-align: center;
+    top: -25px;
+    background-color: #f0f1f3;
+    font-size: 20px;
+    z-index: 6;
+    padding: 15px;
+    left: 50%;
+    transform: -50px;
+    border-radius: 50%;
+}
+.feature_wrap_sub_list li {
+    padding: 50px;
+    transition: 0.3s;
+    cursor: pointer;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+.feature_wrap_sub_list li:hover {
+    background-color: #fff;
+}
+.feature_wrap_sub_list li a {
+    display: flex;
+}
+.feature_wrap_sub_list li a h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.feature_wrap_sub_list li a p {
+    line-height: 1.75;
+}
+
+.feature_wrap_sub_list li img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+/* //근무일정 */
+.schedule {
+    width: 100%;
+    margin-bottom: 250px;
+}
+.wrapper {
+    width: 65%;
+    margin: 0 auto;
+}
+
+.schedule_text_box {
+    width: 40%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+.schedule_text_box .scedule_sub_title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1e1f21;
+    line-height: 1.5;
+}
+.schedule_text_box .schedule_title {
+    margin-top: 12px;
+    margin-bottom: 30px;
+    word-break: keep-all;
+    font-size: 2.5rem;
+    line-height: 1.3;
+}
+.schedule_text_box p {
+    line-height: 1.75;
+    margin-bottom: 30px;
+}
+.schedule_list {
+    display: flex;
+}
+
+.schdule_img_box {
+    width: 60%;
+    margin-left: 50px;
+    position: relative;
+}
+.schdule_img_box::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -25px;
+    right: 120px;
+    display: block;
+    width: 500px;
+    height: 400px;
+    background-color: #f4f7fb;
+}
+
+.schdule_img_box img {
+    width: 80%;
+}
+
+.text_box_btn {
+    color: #004dc1;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.text_box_btn:hover {
+    color: #0a2864;
+}
+
+/* //출퇴근관리 */
+.Attendance {
+    width: 100%;
+    margin-bottom: 300px;
+}
+.wrapper {
+    width: 65%;
+    margin: 0 auto;
+}
+
+.Attendance_text_box {
+    width: 50%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+.Attendance_text_box .Attendance_sub_title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1e1f21;
+    line-height: 1.5;
+}
+.Attendance_text_box .Attendance_title {
+    margin-top: 12px;
+    margin-bottom: 30px;
+    word-break: keep-all;
+    font-size: 2.5rem;
+    line-height: 1.3;
+}
+.Attendance_text_box p {
+    line-height: 1.75;
+    margin-bottom: 30px;
+}
+.Attendance_list {
+    display: flex;
+}
+
+.Attendance_img_box {
+    width: 50%;
+    margin-left: 50px;
+    position: relative;
+}
+.Attendance_img_box::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -25px;
+    right: 100px;
+    display: block;
+    width: 500px;
+    height: 400px;
+    background-color: #f4f7fb;
+}
+
+.Attendance_img_box img {
+    width: 50%;
+    position: absolute;
+    left: 100px;
+    top: -100px;
+}
+
+.text_box_btn {
+    color: #004dc1;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.text_box_btn:hover {
+    color: #0a2864;
+}
+
+/* //휴가일정 */
+.Vacation {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.Vacation_text_box h5 {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.Vacation_text_box h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.Vacation_text_box p {
+    width: 700px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.Vacation_img_box {
+    width: 100%;
+}
+
+.Vacation_img_box img {
+    width: 80%;
+}
+
+/* //전자결제 */
+
+.electronic_payment {
+    width: 100%;
+    background-color: #f4f7fb;
+}
+
+.electronic_payment_list {
+    width: 100%;
+    padding: 30px 0;
+    box-sizing: border-box;
+}
+.electronic_payment_text_box {
+    width: 40%;
+    margin-top: 100px;
+}
+.electronic_payment_text_box .electronic_payment_sub_title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1e1f21;
+    line-height: 1.5;
+}
+.electronic_payment_text_box .electronic_payment_title {
+    margin-top: 12px;
+    margin-bottom: 30px;
+    word-break: keep-all;
+    font-size: 2.5rem;
+    line-height: 1.3;
+}
+.electronic_payment_text_box p {
+    line-height: 1.75;
+    margin-bottom: 30px;
+}
+.electronic_payment_list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.electronic_payment_img_box {
+    width: 60%;
+    margin-left: 100px;
+    position: relative;
+}
+
+.electronic_payment_img_box img {
+    width: 85%;
+}
+
+.electronic_sub_payment {
+    width: 100%;
+    margin-bottom: 100px;
+    background-color: #f4f7fb;
+}
+
+.electronic_sub_payment .electronic_sub_payment_box {
+    display: flex;
+    justify-content: space-between;
+}
+.electronic_sub_payment_box .electronic_sub_payment_img_box {
+    width: 60%;
+}
+.electronic_sub_payment_box .electronic_sub_payment_img_box img {
+    width: 120%;
+}
+
+.electronic_sub_payment_text_box {
+    width: 40%;
+    margin-top: 100px;
+    margin-left: 200px;
+}
+
+.electronic_sub_payment_text_box h5 {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+.electronic_sub_payment_text_box p {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.75;
+}
+
+.personnel_information {
+    width: 100%;
+}
+
+.personnel_information_list {
+    padding: 20px;
+    background-color: #f4f7fb;
+    border: 1px solid #f4f7fb;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.personnel_information_list_text_box {
+    width: 40%;
+    margin-left: 40px;
+}
+.personnel_information_list_text_box h5 {
+    color: #1e1f21;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.personnel_information_list_text_box h2 {
+    font-size: 20px;
+    box-sizing: border-box;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.personnel_information_list_text_box p {
+    line-height: 1.75;
+}
+.personnel_information_list_img_box {
+    width: 50%;
+}
+
+.personnel_information_list_img_box img {
+    width: 100%;
+}
+.message_and_contract {
+    width: 100%;
+}
+.message_and_contract_list {
+    display: flex;
+    justify-content: space-between;
+}
+.message_and_contract_list li {
+    width: 49%;
+}
+.message_and_contract_list li p {
+    font-size: 15px;
+    line-height: 1.75;
+    padding: 0 10px;
+    position: relative;
+}
+.message_and_contract_list li p span {
+    position: absolute;
+    left: -4px;
+    top: 5px;
+    width: 2px;
+    height: 15px;
+    background-color: #004dc1;
+}
+.message_and_contract_list .contents_box {
+    width: 100%;
+    border-radius: 12px;
+    margin: 20px 0;
+    padding: 30px;
+    background-color: #f4f7fb;
+    box-sizing: border-box;
+}
+.message_and_contract_list .contents_box h5 {
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-size: 13px;
+}
+.message_and_contract_list .contents_box h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+.message_and_contract_list li img {
+    width: 100%;
+}
+
+/* //근태정산 */
+.attendance_settlement {
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.attendance_settlement_list {
+    display: flex;
+    align-items: center;
+}
+
+.attendance_settlement_img_box {
+    width: 50%;
+    position: relative;
+}
+
+.attendance_settlement_img_box img {
+    width: 90%;
+}
+.attendance_settlement_img_box::after {
+    content: '';
+    position: absolute;
+    display: block;
+    z-index: -1;
+    top: -25px;
+    left: -25px;
+    width: 500px;
+    height: 430px;
+    background-color: #f4f7fb;
+}
+
+.attendance_settlement_text_box {
+    width: 50%;
+    padding-left: 70px;
+}
+
+.attendance_settlement_text_box h5 {
+    margin-bottom: 20px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.attendance_settlement_text_box h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.attendance_settlement_text_box p {
+    line-height: 1.75;
+    margin-bottom: 50px;
+}
+
+/* //연동 */
+
+.peristalsis {
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.peristalsis_title_box {
+    width: 100%;
+    text-align: center;
+}
+
+.peristalsis_title_box h5 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.peristalsis_title_box h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.peristalsis_title_box p {
+    line-height: 1.75;
+}
+
+.peristalsis_contents_box {
+    display: flex;
+    margin-top: 50px;
+}
+
+.peristalsis_contents_text_box {
+    width: 40%;
+}
+.peristalsis_contents_text_box .peristalsis_contents_text_list > li {
+    list-style: disc;
+    font-size: 16px;
+    font-weight: 600;
+}
+.peristalsis_contents_text_box .peristalsis_contents_text_list > li > p {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    line-height: 1.75;
+    font-weight: 400;
+}
+.peristalsis_contents_img_box {
+    margin-top: 30px;
+    width: 60%;
+}
+.peristalsis_contents_img_box img {
+    width: 100%;
+}
+
+/* /모바일/웹앱/데스크탑 */
+.mobile_web_desk {
+    width: 100%;
+}
+
+.mobile_web_desk_box {
+    display: flex;
+}
+.mobile_web_list {
+    display: flex;
+}
+.mobile_web_list .mobile_web_img_box {
+    width: 50%;
+}
+.mobile_web_list .mobile_web_img_box img {
+    width: 100%;
+}
