@@ -5,6 +5,8 @@
 
 .container_title{
   margin: 30px 0;
+  font-size: 32px;
+  font-weight: 600;
 }
 
 .banner{
@@ -91,63 +93,16 @@
             padding-bottom: 30px;
         }
 
-        .content_banner{
-            display: flex;
-        }
-
-        .content_banner_card{
-            width: 50%;
-        }
-
-        .content_banner_card>img{
-            width: 100%;
-        }
-
-
-        h1{
-            font-size: 24px;
-            font-weight: bold;
-        }
 
         p{
             color: #1e1f21;
             line-height: 1.5;
             margin-bottom: 1rem;
-        }
-
-        .content{
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-
-        .content_btn{
-            width: 65%;
-            margin: 0 auto;
-            text-align: center;
-            margin-bottom: 30px;
-            
-        }
-        
-        .content_btn>button{
             cursor: pointer;
-            border: 1px solid #004dc1;
-            background-color: white;
-            color: #004dc1;
-            font-weight: bold;
-            padding: 5px 3em;
-            font-size: 15px;
-            line-height: 1.5;
-            border-radius: .3rem;
         }
+
         
-        .content_btn>button:hover{
-        background-color: #004dc1;
-        color: white;
-        }
+
 
         .content_bottom_banner{
             width: 100%;
@@ -174,3 +129,5 @@
             font-weight: 600;
             
         }
+
+        
