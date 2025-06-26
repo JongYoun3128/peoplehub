@@ -19,6 +19,10 @@
     font-size: 15px;
 }
 
+.blog_tab_list li:hover{
+    text-decoration: underline;
+}
+
 .blog_tab_list li:first-child{
     padding-left: 0;
     color: #004dc1;
@@ -47,6 +51,7 @@
 
         .search_input {
             width: 250px;
+            height: 25px;
             padding: 15px 18px 15px 48px;
             border: 1px solid #ddd;
             font-size: 14px;
