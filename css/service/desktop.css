@@ -1,0 +1,68 @@
+.electrinic_payment_main {
+    width: 100%;
+}
+
+#wrap {
+    width: 65%;
+    margin: 0 auto;
+}
+
+/* //service_category 영역 */
+.service_category {
+    width: 100%;
+    margin-top: 100px;
+    padding: 100px 0;
+    background-color: #f0f1f3;
+}
+.service_category_list {
+    display: flex;
+    flex-direction: column;
+}
+
+.service_category_list h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.service_category_list_box {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.service_category_list_box > li {
+    width: 30%;
+    padding: 25px 30px;
+    margin: 15px 0;
+    box-sizing: border-box;
+    background-color: #fff;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.service_category_list_box > li:hover {
+    transform: translateY(-5px);
+}
+.service_category_list_box > li > a > ul {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.service_category_list_box > li > a > ul > li img {
+    width: 25px;
+    margin-right: 15px;
+}
+
+.service_category_list_box > li > a > ul > li h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+.service_category_list_box > li > a > p {
+    box-sizing: border-box;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.5;
+}

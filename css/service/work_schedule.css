@@ -358,23 +358,24 @@
 .service_category_list_box > li:hover {
     transform: translateY(-5px);
 }
-.service_category_list_box > li > ul {
+.service_category_list_box > li > a > ul {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.service_category_list_box > li > ul > li img {
+.service_category_list_box > li > a > ul > li img {
     width: 25px;
     margin-right: 15px;
 }
 
-.service_category_list_box > li > ul > li h2 {
+.service_category_list_box > li > a > ul > li h2 {
     font-size: 18px;
     font-weight: bold;
 }
-.service_category_list_box > li > p {
+.service_category_list_box > li > a > p {
     box-sizing: border-box;
     font-size: 15px;
     font-weight: normal;
+    line-height: 1.5;
 }
