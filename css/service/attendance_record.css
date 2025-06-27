@@ -78,6 +78,27 @@ h4 {
     font-weight: 400;
     line-height: 1.75;
 }
+.record_hardware_detail {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.record_hardware_detail li {
+    width: 47%;
+    background-color: #fff;
+    border: 1px solid #c2cad5;
+    padding: 50px 35px;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+.record_hardware_detail li img {
+    width: 12%;
+    margin-bottom: 20px;
+}
+.record_hardware_detail li p {
+    line-height: 1.75;
+    font-size: 15px;
+}
 /* //service_category 영역 */
 .service_category {
     width: 100%;
