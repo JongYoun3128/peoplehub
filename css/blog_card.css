@@ -41,6 +41,7 @@
 
         .content_card{
             margin-bottom: 20px;
+            overflow: hidden;
         
         }
 
@@ -64,16 +65,18 @@
         }
 
         .news_banner_card>img{
-             width: 100%;
+            width: 100%;
             height: 294px;
             object-position: top;
             object-fit: cover;
         }
 
-        .content_card>img{
+        .content_card img{
             width: 100%;
             height: 294px;
+            overflow: hidden;
         }
+
 
 
         .content_btn{

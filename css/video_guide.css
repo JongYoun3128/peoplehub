@@ -1,7 +1,13 @@
+p{
+    cursor: pointer;
+    color: #1e1f21;
+    line-height: 1.5;
+}
+
+
 .banner{
     width: 100%;
     height: 411px;
-    margin-top: 107px;
     padding-top: 160px;
     padding-bottom: 40px;
     background-color: #f4f7fb;
@@ -57,10 +63,21 @@
     font-weight: 600;
 }
 .content_category{
-    margin-right: 8px;
+    margin-bottom: 8px;
+    color: #a4adb8;
     font-size: 13px;
-    color: #1e1f21;
-    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.content_title{
+    font-size: 20px;
+    line-height: 1.75;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.content_text{
+    margin-bottom: 20px;
 }
 
 .time_text{
@@ -70,29 +87,91 @@
 
 .content{
         width: 100%;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3열 고정 */
-        gap: 20px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
         margin-top: 20px;
 }
 
-.content_card>img{
-    width: 100%;
-    height: 294px;
+.content_card{
+    width: 30%;
+    overflow: hidden;
+}
+
+.content_card_img{
+    cursor: pointer;
+    position: relative;
+    height: 198px;
+    border-radius: 4px;
+    border: 1px solid #C4C4C4;
+    transition: all .3s;
+    margin-bottom: 20px;
+    
 }
 
 
+
+.content_card_img>img{
+    width: 100%;
+    height: 198px;
+}
+
+.content_card:hover .content_card_img>img {
+      filter: brightness(90%);
+}
+
+.time_box{
+    position: absolute;
+    width: 50px;
+    height: 24px;
+    background-color: #1E1E1E;
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+    right: 16px;
+    bottom: 16px;
+    padding: 2px;
+}
+
+.time_text{
+    color: white;
+    text-align: center;
+    line-height: 24px;
+    font-size: 16px;
+}
+
+
+.content_view{
+    font-weight: bold;
+    font-size: 14px;
+    color: #004dc1;
+    margin-bottom: 100px;
+}
+
+.video_arrow{
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+
+.content_card:hover .video_arrow{
+    transform: translateX(5px);
+}
 
 
 
 
 .content_bottom_banner{
-            width: 100%;
-            background-color: #004dc1;
-            color: white;
-            text-align: center;
-            padding: 80px 0 60px;
-        }
+    width: 100%;
+    padding: 100px 0;
+    background-color: #074499;
+    color: #fff;
+    text-align: center;
+}
+
+.content_bottom_banner>h1{
+    font-size: 32px;
+}
 
         .content_bottom_banner>p{
             padding-top: 10px;
