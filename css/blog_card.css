@@ -26,7 +26,7 @@
         }
 
         .content_title:hover{
-             color: #004dc1;
+            color: #004dc1;
             text-decoration: underline;
             text-decoration-color: #004dc1; /* 텍스트와 같은 색상 */
             text-decoration-thickness: 2px; /* 선 두께 */
@@ -41,7 +41,6 @@
 
         .content_card{
             margin-bottom: 20px;
-            overflow: hidden;
         
         }
 

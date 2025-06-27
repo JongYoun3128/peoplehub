@@ -5,6 +5,7 @@ h1{
 
 .container>h1{
     font-size: 40px;
+    margin-top: 50px;
     margin-bottom: 20px;
 }
 
@@ -32,6 +33,10 @@ h1{
 
 .credibility_title{
     margin-bottom: 50px;
+}
+
+.credibility_title>h1{
+    margin-bottom: 20px;
 }
 
 .Credibility{
@@ -300,7 +305,7 @@ hr{
 
         .accordion-content-inner {
             padding: 20px 24px;
-            color: #666;
+            color: #212529;
             line-height: 1.6;
             text-align: left;
         }
@@ -335,7 +340,12 @@ hr{
             padding: 15px 45px;
             font-size: 15px;
             font-weight: 600;
+            transition: 0.35s ease-in-out;
             
+        }
+
+        .content_bottom_banner_btn>button:hover{
+             transform: translateY(-2px);
         }
 
 
