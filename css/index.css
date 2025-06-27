@@ -50,7 +50,8 @@
     border-radius: 5px;
     font-size: 14px;
     font-weight: 700;
-    padding: 1em 0;
+    padding: 0.2rem 0;
+    line-height: 50px;
     background-color: #fff;
     color: #004dc1;
     margin-right: 30px;

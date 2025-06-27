@@ -1,0 +1,546 @@
+.electrinic_payment_main {
+    width: 100%;
+}
+
+#wrap {
+    width: 65%;
+    margin: 0 auto;
+}
+
+/* //main_title 영역 */
+
+.main_title {
+    width: 100%;
+    background-image: linear-gradient(30deg, white -30%, #f4f7fb);
+    padding: 50px 0;
+}
+.main_title_list {
+    width: 65%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main_title_list h5 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.main_title_list h2 {
+    font-size: 3.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 30px;
+}
+
+.main_title_list .main_title_detail {
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1.75;
+}
+
+.main_title_list .main_title_btn {
+    margin: 50px auto;
+    background-color: #004dc1;
+    width: 150px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 50px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.main_title_list .main_title_btn:hover {
+    background-color: #0a2864;
+    transform: translateY(-5px);
+}
+
+/* 첫번째 배너 영역 */
+.electrinic_payment_banner_01 {
+    padding: 50px 0;
+    width: 100%;
+    background-color: #004dc1;
+}
+
+.electrinic_payment_banner_01 .electrinic_payment_banner_list {
+    display: flex;
+    align-items: center;
+}
+.electrinic_payment_banner_list > li {
+    width: 45%;
+    margin: 0 50px;
+}
+.electrinic_payment_banner_list_01 img {
+    width: 100%;
+}
+
+.electrinic_payment_banner_list_02 {
+    color: #fff;
+}
+
+.electrinic_payment_banner_list_02 h2 {
+    line-height: 1.3;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+
+.electrinic_payment_banner_list_02 ul li {
+    width: 70%;
+    margin-bottom: 2rem;
+}
+.electrinic_payment_banner_list_02 ul li p {
+    line-height: 1.75;
+    font-weight: normal;
+}
+
+/* 전자결재_근무일정 */
+.payment_work {
+    width: 100%;
+    padding: 100px 0;
+}
+.payment_work_title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 50px;
+}
+.sub_title_box h5 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #004dc1;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+.sub_title_box h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e1f21;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.payment_work_list {
+    margin-top: 50px;
+    display: flex;
+}
+.payment_work_list li {
+    width: 50%;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+.payment_work_list .text_list ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.payment_work_list .text_list ul li {
+    list-style: inside;
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.payment_work_list .text_list ul li p {
+    font-size: 17px;
+    font-weight: normal;
+    line-height: 1.75;
+    margin-top: 15px;
+    padding-left: 22px;
+}
+.payment_work_list li img {
+    width: 100%;
+}
+
+/* 전자결재_휴가관리 영역 */
+
+.payment_vacation {
+    width: 100%;
+    padding: 50px 0;
+}
+.payment_vacation_title {
+    text-align: center;
+    margin-bottom: 100px;
+}
+.payment_vacation_title h5 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #004dc1;
+    margin-bottom: 1rem;
+}
+.payment_vacation_title h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+.payment_vacation_img_box {
+    width: 100%;
+    position: relative;
+}
+.payment_vacation_img_box::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-image: url(../../images/payment_back_img_01.png);
+    background-repeat: no-repeat;
+    z-index: -5;
+    top: -50px;
+    right: 0;
+}
+.payment_vacation_img_box img {
+    margin: 0 auto;
+    display: block;
+    width: 80%;
+    box-shadow: 0 0 10px rgb(202, 202, 202);
+}
+
+.payment_vacation_detail_list {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.payment_vacation_detail_list li {
+    width: 30%;
+}
+.payment_vacation_detail_list h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.payment_vacation_detail_list p {
+    line-height: 1.4;
+}
+
+/* 전자결재_출퇴근기록 영역 */
+.payment_record {
+    width: 100%;
+    padding: 100px 0;
+    margin-top: 50px;
+    background-color: #f4f7fb;
+}
+.payment_record_list {
+    width: 65%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.payment_record_list li {
+    width: 40%;
+    padding: 0 30px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 15px;
+    background-color: #fff;
+    border: 1px solid #999;
+    border-radius: 8px;
+    box-shadow: 0 5px 5px #dfdfdf;
+}
+.payment_record_list li:first-child {
+    background-color: #f4f7fb;
+    border: none;
+    box-shadow: none;
+    padding: 20px 0;
+}
+.payment_record_list li h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.payment_record_list li h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+.payment_record_list li h5 {
+    font-size: 14px;
+    color: #004dc1;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.payment_record_list li p {
+    line-height: 1.3;
+}
+/* 전자결재_커스텀 영역 */
+.payment_custom {
+    padding: 100px 0;
+    width: 100%;
+    background-color: #f0f1f3;
+}
+.payment_custom_list {
+    display: flex;
+    align-items: center;
+}
+.payment_custom_list li {
+    width: 50%;
+}
+.payment_custom_list li h5 {
+    font-size: 14px;
+    color: #004dc1;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.payment_custom_list li p {
+    line-height: 1.75;
+}
+.payment_custom_list h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+.payment_custom_img_box img {
+    width: 90%;
+}
+
+/* 전자결재_one_click 영역 */
+.payment_one_click {
+    padding: 100px 0;
+    width: 100%;
+}
+.one_click_title {
+    width: 100%;
+    text-align: center;
+}
+.one_click_title h5 {
+    font-size: 18px;
+    color: #004dc1;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.one_click_title h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+.one_click_title p {
+    line-height: 1.75;
+}
+.one_click_img_box {
+    margin-top: 50px;
+    width: 100%;
+}
+.one_click_img_box img {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+}
+
+/* 전자결재_선택적 자동승인 영역 */
+.payment_automatic_approval {
+    padding: 100px 0;
+    width: 100%;
+    background-color: #f4f7fb;
+}
+
+.automatic_approval_list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.automatic_approval_list .automatic_approval_title {
+    margin-bottom: 50px;
+}
+.automatic_approval_list .automatic_approval_title h5 {
+    font-size: 14px;
+    color: #004dc1;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.automatic_approval_list .automatic_approval_title h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+.automatic_approval_img_box {
+    margin-bottom: 50px;
+}
+.automatic_approval_detail {
+    width: 60%;
+    margin: 0 auto;
+    font-size: 20px;
+}
+.automatic_approval_detail p {
+    line-height: 1.75;
+}
+.automatic_approval_detail p span {
+    font-weight: 600;
+}
+
+/* 전자결재_rule 영역 */
+.payment_rule {
+    padding: 100px 0;
+    width: 100%;
+    background-image: linear-gradient(white, #f4f7fb);
+}
+.payment_rule_list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.payment_rule_title {
+    width: 100%;
+    margin-bottom: 50px;
+}
+.payment_rule_title h5 {
+    font-size: 14px;
+    color: #004dc1;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.payment_rule_title h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+.payment_rule_title p {
+    line-height: 1.75;
+    font-size: 18px;
+}
+.payment_rule_img_box {
+    margin-bottom: 50px;
+}
+.payment_rule_img_box img {
+    width: 70%;
+}
+.payment_rule_detail {
+    width: 100%;
+}
+.payment_rule_detail > ul {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.payment_rule_detail > ul > li {
+    width: 47%;
+    padding: 50px;
+    box-sizing: border-box;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 9px #e1e1e1;
+}
+
+.payment_rule_detail > ul > li img {
+    width: 100%;
+}
+.rule_text_box {
+    margin-top: 70px;
+}
+.payment_rule_detail > ul > li h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.payment_rule_detail > ul > li p {
+    line-height: 1.75;
+}
+
+/* //service_category 영역 */
+.service_category {
+    width: 100%;
+    margin-top: 100px;
+    padding: 100px 0;
+    background-color: #f0f1f3;
+}
+.service_category_list {
+    display: flex;
+    flex-direction: column;
+}
+
+.service_category_list h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.service_category_list_box {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.service_category_list_box > li {
+    width: 30%;
+    padding: 25px 30px;
+    margin: 15px 0;
+    box-sizing: border-box;
+    background-color: #fff;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.service_category_list_box > li:hover {
+    transform: translateY(-5px);
+}
+.service_category_list_box > li > a > ul {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.service_category_list_box > li > a > ul > li img {
+    width: 25px;
+    margin-right: 15px;
+}
+
+.service_category_list_box > li > a > ul > li h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+.service_category_list_box > li > a > p {
+    box-sizing: border-box;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+/* bottom_banner 영역 */
+.bottom_banner {
+    margin-top: 50px;
+    padding: 100px 0;
+    width: 100%;
+    background-color: #0a2864;
+    text-align: center;
+    color: #fff;
+}
+.bottom_banner h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 3rem;
+}
+
+.bottom_banner p {
+    width: 100px;
+    margin: 0 auto;
+    padding: 18px;
+    border: 1px solid #004dc1;
+    background-color: #004dc1;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.bottom_banner p:hover {
+    transform: translateY(-7px);
+    background-color: #fff;
+    color: #004dc1;
+}
