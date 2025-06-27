@@ -22,6 +22,11 @@
 
 .banner_text{
     width: 35%;
+    cursor: pointer;
+}
+
+.banner_text>h2:hover{
+    text-decoration: underline;
 }
 
 .banner_text>h2{
@@ -143,4 +148,6 @@
             
         }
 
-        
+        .content_bottom_banner_btn>button:hover{
+            transform: translateY(-2px);
+        }
