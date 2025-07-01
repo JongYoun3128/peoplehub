@@ -51,6 +51,7 @@
 
         .content_banner_card{
             width: 48%;
+            cursor: pointer;
         }
 
         .content_banner_card>img{
@@ -114,6 +115,7 @@
 
         .team_banner_card{
             width: 45%;
+            cursor: pointer;
         }
 
         .team_banner_card>img{

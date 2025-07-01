@@ -60,6 +60,12 @@
             margin-bottom: 8px;
         }
 
+        .content_container{
+            width: 65%;
+            margin: 0 auto;
+            
+        }
+
         .content-grid {
             width: 65%;
             display: grid;
@@ -73,30 +79,53 @@
             flex-direction: column;
             gap: 12px;
             position: relative;
+            cursor: pointer;
             
         }
 
-        .insight-item>span{
-        position: absolute;
-        background-color: #1e1f21;
-        width: 90%;
-        height: 1px;
-        bottom: -1rem;
+        .insight-item > span {
+            position: absolute;
+            background-color: #1e1f21;
+            width: 80%;
+            height: 1px;
+            bottom: -1rem;
+            left: 35%;
+            transition: all 0.3s ease;
+            transform: translateX(-50%) scaleX(1);
+            transform-origin: center;
         }
 
-        .insight-item::after{
-            content: "\f178";
+          .insight-item:hover > span {
+            transform: translateX(-50%) scaleX(1.1);
+        }
+
+        .insight-item::after {
+            content: "→";
             position: absolute;
-            right: .75rem;
+            right: 60px;
             bottom: 0;
             opacity: 0;
-            transition: all .3s;
+            transition: all 0.3s;
+            color: #1e1f21;
+            font-size: 16px;
+            transform: translateX(-10px);
+        }
+
+        .insight-item:hover::after {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .category {
             font-size: 14px;
             font-weight: 500;
             color: #969faa;
+        }
+
+        .all_title{
+            font-size: 32px;
+            font-weight: bold;
+            padding: 45px 0 120px 0;
         }
 
         .title {
@@ -131,12 +160,13 @@
         }
 
         .content_bottom_banner>p{
-            padding-top: 10px;
+            padding-top: 30px;
             color: white;
+            opacity: 0.62;
         }
 
         .content_bottom_banner_btn>button{
-            margin-top: 20px;
+            margin-top: 30px;
             cursor: pointer;
             border: none;
             border-radius: 3px;
@@ -145,7 +175,7 @@
             padding: 15px 45px;
             font-size: 15px;
             font-weight: 600;
-            
+            transition: all 0.3s ease;
         }
 
         .content_bottom_banner_btn>button:hover{

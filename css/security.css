@@ -263,6 +263,7 @@ hr{
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: all 0.3s ease-in-out;
         }
 
 
@@ -279,7 +280,7 @@ hr{
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .accordion-arrow::after {
@@ -295,7 +296,7 @@ hr{
         .accordion-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
+            transition: all 0.3s ease;
             background: #f8f9fa;
         }
 
@@ -340,7 +341,7 @@ hr{
             padding: 15px 45px;
             font-size: 15px;
             font-weight: 600;
-            transition: 0.35s ease-in-out;
+            transition: all 0.3s ease;
             
         }
 
