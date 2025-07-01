@@ -151,6 +151,7 @@ p{
 .video_arrow{
     transition: transform 0.3s ease;
     display: inline-block;
+    padding-left: 5px;
 }
 
 
@@ -174,12 +175,13 @@ p{
 }
 
         .content_bottom_banner>p{
-            padding-top: 10px;
+            padding-top: 30px;
             color: white;
+            opacity: 0.62;
         }
 
         .content_bottom_banner_btn>button{
-            margin-top: 20px;
+            margin-top: 30px;
             cursor: pointer;
             border: none;
             border-radius: 3px;
@@ -188,5 +190,10 @@ p{
             padding: 15px 45px;
             font-size: 15px;
             font-weight: 600;
+            transition: all 0.3s ease;
             
+        }
+
+        .content_bottom_banner_btn>button:hover{
+            transform: translateY(-2px);
         }
