@@ -11,6 +11,7 @@
         <script src="../../js/header.js" defer></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="../../js/remote_work.js"></script>
         <title>PeoPle Hub</title>
     </head>
     <body>
@@ -256,8 +257,755 @@
         </div>
         <div class="wrap">
             <div class="remote">
-                
+                <div class="remote_title">
+                    <h2>시프티와 함께 성공적으로<br />원격근무 시작하세요!</h2>
+                    <div class="remote_title_flex">
+                        <h5>도입문의</h5>
+                        <p>무료체험</p>
+                    </div>
+                </div>
+                <div class="remote_banner">
+                    <div class="remote_banner_text">
+                        <h2>원격근무,<br />투명한 일정관리가 필요합니다.</h2>
+                        <p>
+                            코로나19의 영향으로 비대면 근무가 새로운 근무형태로
+                            떠오르고 있습니다.<br />재택근무, 스마트 워크 등
+                            다양한 원격근무를 운영할 수 있도록<br />시프티가
+                            근무/휴가일정 계획과 공유를 돕습니다.
+                        </p>
+                    </div>
+                    <div class="remote_banner_bg">
+                        <img src="../../images/remote_banner_bg.png" alt="" />
+                    </div>
+                </div>
+                <div class="remote_setting">
+                    <div class="remote_setting_title">
+                        <h2>원격근무지 설정과<br />재택근무로 자유롭게</h2>
+                        <p>
+                            원격근무 시 근태기록을 준비하기 위해<br />간주근로와
+                            원격근무지 설정 방법을 고려해보세요.
+                        </p>
+                    </div>
+                    <ul class="remote_setting_list">
+                        <li>
+                            <img src="../../images/remote_img2.png" alt="" />
+                            <h2>재택근무 설정</h2>
+                            <p>
+                                간주근로시간 기능을 이용하여 '재택근무',
+                                '원격근무'로 근무일정을 만들 수 있도록
+                                설정합니다. 직원이 모바일앱을 통해 자유롭게
+                                신청할 수 있으며, 해당 근무일정은 출퇴근 시각을
+                                기록하지 않는 대신 계획된 근무일정을 실제
+                                근로시간 간주합니다.
+                            </p>
+                        </li>
+                        <li>
+                            <img src="../../images/remote_img3.png" alt="" />
+                            <h2>원격근무지 설정</h2>
+                            <p>
+                                지문인식, 비콘 등 대면 출퇴근 방식의 경우
+                                원격근무지를 세팅할 수 없습니다. 시프티에서는
+                                추가비용 없이 원격근무지, 혹은 자택을 새로운
+                                근무지로 설정하여 해당 근무지의 위치 영역 안에서
+                                출퇴근 시각을 기록할 수 있습니다.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="remote_brand">
+                    <div class="remote_brand_logo">
+                        <ul class="remote_brand_list">
+                            <li>
+                                <img
+                                    src="../../images/remote_logo1.png"
+                                    alt=""
+                                />
+                                <p>
+                                    대다수 임직원이 출퇴근 관리 솔루션을 접해본
+                                    적이 없기에 쉽고 편리하게 출퇴근을 기록할<br />수
+                                    있는 점이 가장 큰 장점이었으며, 사무실이
+                                    아닌 곳에서의 원격 출-퇴근도 유연하게<br />어뷰징
+                                    없이 관리할 수 있었습니다.
+                                </p>
+                            </li>
+                            <li>
+                                <img
+                                    src="../../images/remote_logo2.png"
+                                    alt=""
+                                />
+                                <p>
+                                    모바일 앱으로 출퇴근 체크를 쉽게 하고 관리가
+                                    편해졌습니다. 코로나로 인한 재택근무시,<br />시프티의
+                                    직출직퇴 요청 - 관리자 승인 등을 활용하여
+                                    출퇴근 체크 걱정 없이 쉽게 관리할 수<br />있었습니다.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="remote_rest">
+                    <div class="remote_rest_title">
+                        근무/휴가 일정 공유로<br />협업을 더욱 효율적으로
+                    </div>
+                    <ul class="remote_rest_list">
+                        <li>
+                            <img src="../../images/remote_img4.png" alt="" />
+                            <h2>근무일정(휴게시간) 공유</h2>
+                            <p>
+                                다른 직원의 근무시간과 휴게시간을 확인할 수 있어
+                                미팅 등 협업 일정을 조율하는 데에 용이합니다.
+                            </p>
+                        </li>
+                        <li>
+                            <img src="../../images/remote_img5.png" alt="" />
+                            <h2>휴가일정 공유</h2>
+                            <p>
+                                휴가일정을 투명하게 공유함으로써 해당 직원의
+                                부재시에 업무 공백이 없도록 대비할 수 있습니다.
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="remote_rest_service">
+                        <h2>타 서비스와의 연동으로 편리하게</h2>
+                        <p>
+                            많은 기업들이 기존에 사용하던 각종 ERP와 연동, 혹은
+                            Open API를 활용하여 시프티를 도입했습니다.
+                            <br />또한 구글캘린더, 슬랙과 연동하여 일정 공유에
+                            편리함을 더합니다.
+                        </p>
+                        <img src="../../images/remote_img6.png" alt="" />
+                    </div>
+                </div>
+                <!-- //service_category 영역 -->
+                <section class="service_category">
+                    <div id="wrap">
+                        <div class="service_category_list">
+                            <h2>필요한 모든 기능을 피플허브 하나로</h2>
+                            <ul class="service_category_list_box">
+                                <li>
+                                    <a href="#">
+                                        <ul>
+                                            <li>
+                                                <img
+                                                    src="../../images/service_category_icon_01.png"
+                                                    alt=""
+                                                />
+                                            </li>
+                                            <li>
+                                                <h2>근무일정</h2>
+                                            </li>
+                                        </ul>
+
+                                        <p>
+                                            근로/휴게시간을 계획하고 각종
+                                            근로제도 및 근무유형에 대응합니다.
+                                        </p>
+                                    </a>
+                                    <div class="service_arrow">
+                                        <img
+                                            src="../../images/arrow_right.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <ul>
+                                            <li>
+                                                <img
+                                                    src="../../images/service_category_icon_02.png"
+                                                    alt=""
+                                                />
+                                            </li>
+                                            <li>
+                                                <h2>출퇴근기록</h2>
+                                            </li>
+                                        </ul>
+
+                                        <p>
+                                            위치와 WIFI 인증 방식으로 정확한
+                                            출퇴근을 기록하며 근태관리를
+                                            자동화합니다.
+                                        </p>
+                                    </a>
+                                    <div class="service_arrow">
+                                        <img
+                                            src="../../images/arrow_right.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <ul>
+                                            <li>
+                                                <img
+                                                    src="../../images/service_category_icon_03.png"
+                                                    alt=""
+                                                />
+                                            </li>
+                                            <li>
+                                                <h2>휴가관리</h2>
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            휴가 발생부터 잔여일수, 연차촉진까지
+                                            간편하게 관리합니다.
+                                        </p>
+                                    </a>
+                                    <div class="service_arrow">
+                                        <img
+                                            src="../../images/arrow_right.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <ul>
+                                            <li>
+                                                <img
+                                                    src="../../images/service_category_icon_04.png"
+                                                    alt=""
+                                                />
+                                            </li>
+                                            <li>
+                                                <h2>전자결재</h2>
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            고도화된 근태 결재와 맞춤형 결재를
+                                            지원합니다.
+                                        </p>
+                                    </a>
+                                    <div class="service_arrow">
+                                        <img
+                                            src="../../images/arrow_right.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <ul>
+                                            <li>
+                                                <img
+                                                    src="../../images/service_category_icon_05.png"
+                                                    alt=""
+                                                />
+                                            </li>
+                                            <li>
+                                                <h2>메시지</h2>
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            사내 공지와 맞춤화된 사내 알림을
+                                            피플허브 데이터와 연계하여
+                                            발송합니다.
+                                        </p>
+                                    </a>
+                                    <div class="service_arrow">
+                                        <img
+                                            src="../../images/arrow_right.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <ul>
+                                            <li>
+                                                <img
+                                                    src="../../images/service_category_icon_06.png"
+                                                    alt=""
+                                                />
+                                            </li>
+                                            <li>
+                                                <h2>전자계약</h2>
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            사내 모든 계약서를 템플릿으로
+                                            관리하고 복잡한 계약과정을
+                                            간소화합니다.
+                                        </p>
+                                    </a>
+                                    <div class="service_arrow">
+                                        <img
+                                            src="../../images/arrow_right.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <ul>
+                                            <li>
+                                                <img
+                                                    src="../../images/service_category_icon_07.png"
+                                                    alt=""
+                                                />
+                                            </li>
+                                            <li>
+                                                <h2>근태정산</h2>
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            연장, 야간, 휴일근로 등 근태/급여에
+                                            대한 실시간 정산을 제공합니다.
+                                        </p>
+                                    </a>
+                                    <div class="service_arrow">
+                                        <img
+                                            src="../../images/arrow_right.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <ul>
+                                            <li>
+                                                <img
+                                                    src="../../images/service_category_icon_08.png"
+                                                    alt=""
+                                                />
+                                            </li>
+                                            <li>
+                                                <h2>연동</h2>
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            출입 기록 연동부터 인사정보, 채용
+                                            관리까지 뛰어난 확장성을 제공합니다.
+                                        </p>
+                                    </a>
+                                    <div class="service_arrow">
+                                        <img
+                                            src="../../images/arrow_right.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <ul>
+                                            <li>
+                                                <img
+                                                    src="../../images/service_category_icon_09.png"
+                                                    alt=""
+                                                />
+                                            </li>
+                                            <li>
+                                                <h2>피플허브 데스크탑</h2>
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            PC-OFF 및 이석관리 기능이 탑재된
+                                            사무직 근태관리에 탁월합니다.
+                                        </p>
+                                    </a>
+                                    <div class="service_arrow">
+                                        <img
+                                            src="../../images/arrow_right.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <div class="remote_qna">
+                    <div class="remote_qna_title"><h2>QnA</h2></div>
+                    <ul class="remote_qna_list">
+                        <li>
+                            <h2>
+                                비대면 서비스 바우처 수요 기업에서 떨어지거나
+                                이미 소진한 경우에는 지원받을 수 없나요?
+                            </h2>
+                            <p>
+                                시프티는 클라우드 지원사업 바우처에도
+                                선정되었습니다. 비대면 서비스 바우처가 불가능한
+                                경우, 클라우드 지원사업을 신청해보세요.
+                            </p>
+                        </li>
+                        <li>
+                            <h2>
+                                원격근무, 재택근무가 불가능한 경우 다른 대안이
+                                있나요?
+                            </h2>
+                            <p>
+                                시차출퇴근제, 선택근무제 등 근로장소가 아닌
+                                근로시간을 유연하게 하는 유연근무제의 도입을
+                                고려해보세요. 이 모든 근무제를 시프티로 대응할
+                                수 있습니다. 시프티 전문가들이 근무제도 도입을
+                                도와드리겠습니다.
+                            </p>
+                        </li>
+                        <li>
+                            <h2>
+                                간주근로를 활용할 때에 출퇴근 시각을 기록할 수도
+                                있나요?
+                            </h2>
+                            <p>
+                                가능합니다. 간주근로시간을 활용해 재택근무,
+                                원격근무를 관리할 때 출・퇴근 허용 시간 범위를
+                                줄이고, 좌표 반경을 없애 재택근무 시에도 정확한
+                                시간으로 관리할 수 있습니다.
+                            </p>
+                        </li>
+                        <li>
+                            <h2>
+                                시프티 시스템 상에서 일반근로와 간주근로가
+                                어떻게 구분되나요?
+                            </h2>
+                            <p>
+                                시프티에서는 근무일정 우측에 뱃지를 붙여
+                                간주근로임을 표시하고 있습니다. 일반근로는
+                                출퇴근을 기록한 시간으로, 간주근로는 계획된
+                                근무일정 시간으로 실제 근로시간이 기록됩니다.
+                            </p>
+                        </li>
+                        <li>
+                            <h2>휴게시간을 직접 기록할 수도 있나요?</h2>
+                            <p>
+                                네. 시프티는 자동・수동 휴게시간 차감 기능 뿐만
+                                아니라, 근무일정 상에서도 휴게시간을 조정할 수
+                                있습니다. 해당 기능은 근로자들의 협업 일정
+                                조율에 용이합니다.
+                            </p>
+                        </li>
+                        <li>
+                            <h2>코어타임을 설정할 수 있나요?</h2>
+                            <p>
+                                가능합니다. 시프티에서는 회사설정을 통해
+                                코어타임을 설정할 수 있습니다. 코어타임을
+                                설정해놓으면 직원은 코어타임을 미준수하는
+                                근무일정을 계획할 수 없습니다.
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="remote_qna_more">
+                        <a href="../../html/customer/customer.html"
+                            >더 보기 <span>→</span></a
+                        >
+                    </div>
+                </div>
+                <div class="remote_application">
+                    <div class="remote_application_text">
+                        <h2>각종 근무 제도 도입<br />컨설팅 및 지원 신청</h2>
+                        <p>
+                            시프티의 숙련된 근태관리 전문가들이 기업에 적합한<br />각종
+                            근무제도 도입 컨설팅, 시프티 사용 방법 교육 등을
+                            지원해드립니다.
+                        </p>
+                        <h5>도입문의</h5>
+                    </div>
+                </div>
+                <div class="remote_manage">
+                    <div class="remote_manage_title">
+                        <h2>
+                            주 52시간 근무제,<br />유연근무제도<br />시프티로
+                            간편하게 관리합니다.
+                        </h2>
+                    </div>
+                    <div class="remote_manage_text">
+                        <h3>
+                            <a href="./52hours.html"
+                                >주 52시간제 알아보기 <span>→</span></a
+                            >
+                        </h3>
+                        <h4>
+                            <a href="./flexible_work.html"
+                                >유연근무제 알아보기 <span>→</span></a
+                            >
+                        </h4>
+                    </div>
+                </div>
             </div>
         </div>
+        <section>
+            <div class="footer_wrap">
+                <div class="footer">
+                    <div class="footer_text">
+                        <div class="footer_logo">
+                            <img
+                                src="../../images/logo.png"
+                                alt=""
+                                width="80px"
+                                height="80px"
+                            />
+                            <div class="footer_text_one">
+                                <p>주식회사 PeoPle Hub</p>
+                                <p>대표 : 현종윤</p>
+                                <p>사업자등록번호: 537-88-00567</p>
+                                <p>통신판매업신고번호: 2021-서울강남-05577</p>
+                            </div>
+                            <div class="footer_text_two">
+                                <p>고객지원: <span>실시간 채팅</span></p>
+                                <p>도입문의: <span>문의하기</span></p>
+                                <p>
+                                    제휴 및 비즈니스 제안: <span>문의하기</span>
+                                </p>
+                                <p>
+                                    고객지원번호: <span>(+82)02-6261-5319</span>
+                                </p>
+                            </div>
+                            <div class="footer_text_three">
+                                <p>
+                                    서울특별시 망우로 285-1 UM타워 4~7층
+                                    (주)피플허브
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer_introduction">
+                        <ul class="introduction_list footer_list">
+                            <li class="footer_bold">
+                                <a href="javascript:retrun false;">제품소개</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">근무일정</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >출퇴근기록</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">휴가관리</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">전자결재</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">메시지</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">전자계약</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">근태정산</a>
+                            </li>
+                            <li><a href="javascript:retrun false;">연동</a></li>
+                            <li>
+                                <a href="javascript:retrun false;">모바일웹</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >피플허브 데스크탑</a
+                                >
+                            </li>
+                            <li class="footer_last">
+                                <a href="javascript:retrun false;">요금제</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer_solution">
+                        <ul class="footer_solution_list footer_list">
+                            <li class="footer_bold">
+                                <a href="javascript:retrun false;">솔루션</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >엔터프라이즈</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">스타트업</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >주 52시간제</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >유연근무제</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >원격근무/재택근무</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">PC오프제</a>
+                            </li>
+                            <li class="footer_last">
+                                <a href="javascript:retrun false;"
+                                    >주 52시간제 백서</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">휴가 백서</a>
+                            </li>
+                            <li class="footer_last">
+                                <a href="javascript:retrun false;"
+                                    >산업별 솔루션</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer_resources">
+                        <ul class="footer_resources_list footer_list">
+                            <li class="footer_bold">
+                                <a href="javascript:retrun false;">리소스</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">고객센터</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >비디오 가이드</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">용어사전</a>
+                            </li>
+                            <li><a href="javascript:retrun false;">보안</a></li>
+                            <li class="footer_bold footer_last">
+                                <a href="javascript:retrun false;"
+                                    >자동계산기</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >주휴수당 계산기</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >연차 계산기</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >연차수당 계산기</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >퇴직금 계산기</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >4대보험료 계산하기</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer_peopelhub">
+                        <ul class="footer_peoplehub_list footer_list">
+                            <li class="footer_bold">
+                                <a href="javascript:retrun false;"
+                                    >PeoPle Hub</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">회사소개</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">블로그</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">도입문의</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >제휴 및 비지니스 제안</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;">이용약관</a>
+                            </li>
+                            <li>
+                                <a href="javascript:retrun false;"
+                                    >개인정보처리방침</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <ul class="footer_bottom_list">
+                    <li>
+                        <ul class="footer_bottom_contact">
+                            <li>
+                                <a href="javascript:return false;">한국어</a>
+                            </li>
+                            <li>
+                                <a href="javascript:return false;"
+                                    >TERMS&PRIVACY</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:return false;"
+                                    >CONTACT SALES</a
+                                >
+                            </li>
+                            <li>
+                                <a href="javascript:return false;"
+                                    >CONTACT BIZ</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="footer_icon_list">
+                            <li>
+                                <a href="javascript:return false;"
+                                    ><img
+                                        src="../../images/footer_icon_01.png"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li>
+                                <a href="javascript:return false;"
+                                    ><img
+                                        src="../../images/footer_icon_02.png"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li>
+                                <a href="javascript:return false;"
+                                    ><img
+                                        src="../../images/footer_icon_03.png"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li>
+                                <a href="javascript:return false;"
+                                    ><img
+                                        src="../../images/footer_icon_04.png"
+                                        alt=""
+                                /></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="footer_link_list">
+                            <li>
+                                <a href="javascript:return false;"
+                                    ><img
+                                        src="../../images/footer_link_01.png"
+                                        alt=""
+                                /></a>
+                            </li>
+                            <li>
+                                <a href="javascript:return false;"
+                                    ><img
+                                        src="../../images/footer_link_02.png"
+                                        alt=""
+                                /></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
     </body>
 </html>
