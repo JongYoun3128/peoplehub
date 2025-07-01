@@ -1,11 +1,10 @@
-p{
+p {
     cursor: pointer;
     color: #1e1f21;
     line-height: 1.5;
 }
 
-
-.banner{
+.banner {
     width: 100%;
     height: 411px;
     padding-top: 160px;
@@ -14,117 +13,109 @@ p{
     overflow: hidden;
 }
 
-
-.video_banner{
+.video_banner {
     width: 65%;
     display: flex;
     justify-content: center;
     margin: 0 auto;
-
 }
 
-.video_banner_text{
+.video_banner_text {
     width: 50%;
-    
 }
 
-.video_banner_text>h1{
+.video_banner_text > h1 {
     font-size: 3.25rem;
     line-height: 1.36;
     font-weight: 500;
     margin-bottom: 20px;
 }
 
-.video_banner_text>p{
-
+.video_banner_text > p {
     line-height: 1.5;
-    
 }
 
-.video_banner_img{
+.video_banner_img {
     width: 50%;
     margin-top: -200px;
     margin-left: 10%;
 }
 
-.video_banner_img>img{
+.video_banner_img > img {
     width: 100%;
     height: 555px;
 }
 
-.container{
+.container {
     width: 65%;
     margin: 0 auto;
 }
 
-.container_title{
+.container_title {
     margin: 30px 0;
     font-size: 32px;
     font-weight: 600;
 }
-.content_category{
+.content_category {
     margin-bottom: 8px;
     color: #a4adb8;
     font-size: 13px;
     font-weight: bold;
 }
 
-.content_title{
+.content_title {
     font-size: 20px;
     line-height: 1.75;
     font-weight: 500;
     margin-bottom: 20px;
 }
 
-.content_text{
+.content_text {
     margin-bottom: 20px;
 }
 
-.time_text{
+.time_text {
     color: #969faa;
     font-size: 13px;
 }
 
-.content{
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        margin-top: 20px;
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
-.content_card{
+.content_card {
     width: 30%;
     overflow: hidden;
 }
 
-.content_card_img{
+.content_card_img {
     cursor: pointer;
     position: relative;
     height: 198px;
     border-radius: 4px;
-    border: 1px solid #C4C4C4;
-    transition: all .3s;
+    border: 1px solid #c4c4c4;
+    transition: all 0.3s;
     margin-bottom: 20px;
-    
 }
 
-
-
-.content_card_img>img{
+.content_card_img > img {
     width: 100%;
     height: 198px;
 }
 
-.content_card:hover .content_card_img>img {
-      filter: brightness(90%);
+.content_card:hover .content_card_img > img {
+    filter: brightness(90%);
 }
 
-.time_box{
+.time_box {
     position: absolute;
     width: 50px;
     height: 24px;
-    background-color: #1E1E1E;
+    background-color: #1e1e1e;
     color: white;
     border-radius: 4px;
     font-weight: bold;
@@ -133,36 +124,31 @@ p{
     padding: 2px;
 }
 
-.time_text{
+.time_text {
     color: white;
     text-align: center;
     line-height: 24px;
     font-size: 16px;
 }
 
-
-.content_view{
+.content_view {
     font-weight: bold;
     font-size: 14px;
     color: #004dc1;
     margin-bottom: 100px;
 }
 
-.video_arrow{
+.video_arrow {
     transition: transform 0.3s ease;
     display: inline-block;
     padding-left: 5px;
 }
 
-
-.content_card:hover .video_arrow{
+.content_card:hover .video_arrow {
     transform: translateX(5px);
 }
 
-
-
-
-.content_bottom_banner{
+.content_bottom_banner {
     width: 100%;
     padding: 100px 0;
     background-color: #074499;
@@ -170,30 +156,29 @@ p{
     text-align: center;
 }
 
-.content_bottom_banner>h1{
+.content_bottom_banner > h1 {
     font-size: 32px;
 }
 
-        .content_bottom_banner>p{
-            padding-top: 30px;
-            color: white;
-            opacity: 0.62;
-        }
+.content_bottom_banner > p {
+    padding-top: 30px;
+    color: white;
+    opacity: 0.62;
+}
 
-        .content_bottom_banner_btn>button{
-            margin-top: 30px;
-            cursor: pointer;
-            border: none;
-            border-radius: 3px;
-            color: #004dc1;
-            background-color: white;
-            padding: 15px 45px;
-            font-size: 15px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            
-        }
+.content_bottom_banner_btn > button {
+    margin-top: 30px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    color: #004dc1;
+    background-color: white;
+    padding: 15px 45px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
 
-        .content_bottom_banner_btn>button:hover{
-            transform: translateY(-2px);
-        }
+.content_bottom_banner_btn > button:hover {
+    transform: translateY(-2px);
+}
