@@ -39,6 +39,7 @@
 }
 
 .content_card {
+    cursor: pointer;
     margin-bottom: 20px;
 }
 
@@ -59,6 +60,7 @@
 
 .news_banner_card {
     width: 48%;
+    cursor: pointer;
 }
 
 .news_banner_card > img {
