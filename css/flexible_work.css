@@ -118,7 +118,7 @@
     line-height: 1.5;
     margin-bottom: 1rem;
 }
-.line_box {
+.flexible_line_box {
     position: absolute;
     top: 0;
     left: 0;
@@ -141,7 +141,7 @@
 .brown {
     background-color: #d27300;
 }
-.flexible_content_list li:hover .line_box {
+.flexible_content_list li:hover .flexible_line_box {
     width: 100%;
 }
 .flexible_why {
