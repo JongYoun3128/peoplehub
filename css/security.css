@@ -289,7 +289,7 @@ hr {
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease-out;
     background: #f8f9fa;
 }
 
@@ -313,12 +313,12 @@ hr {
 }
 
 .content_bottom_banner > h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
+    font-size: 2.5rem;
+    line-height: 1.3;
 }
 
 .content_bottom_banner > p {
-    padding-top: 10px;
+    padding-top: 30px;
     color: white;
     margin-bottom: 30px;
 }
