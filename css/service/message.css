@@ -6,11 +6,221 @@
     width: 65%;
     margin: 0 auto;
 }
+h5 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+h2 {
+    font-size: 3.25rem;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+h3 {
+    font-size: 2.5rem;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+h4 {
+    font-size: 2rem;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
 
+.message_title {
+    width: 100%;
+    margin-top: 50px;
+    background-image: url(../../images/message_banner.png);
+    background-repeat: no-repeat;
+    background-position: right 30px;
+    background-size: 500px;
+}
+.message_title_list {
+    width: 65%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* .message_title_list h5 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.message_title_list h2 {
+    font-size: 3.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 30px;
+} */
+
+.message_title_list .message_title_detail {
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1.75;
+}
+
+.message_title_list .message_title_btn {
+    margin: 50px auto;
+    cursor: pointer;
+    background-color: #004dc1;
+    width: 150px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 50px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.message_title_list .message_title_btn:hover {
+    background-color: #0a2864;
+    transform: translateY(-5px);
+}
+
+/* 작성방법 영역 */
+
+.writing_method {
+    padding: 100px 0;
+    width: 100%;
+}
+.writing_method_box {
+    text-align: center;
+}
+.writing_method_box p {
+    line-height: 1.75;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.writing_img {
+    width: 100%;
+}
+
+/* 자동완성 영역 */
+.autocomplete {
+    width: 100%;
+    padding: 100px 0;
+    background-color: #f4f7fb;
+}
+
+.autocomplete .autocomplete_box {
+    display: flex;
+    flex-direction: row;
+}
+.autocomplete .autocomplete_box > li {
+    width: 50%;
+}
+.autocomplete_box_img img {
+    width: 100%;
+}
+.autocomplete_text_box {
+    padding: 100px 30px;
+    box-sizing: border-box;
+}
+.autocomplete_text_box p {
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 50px;
+}
+.autocomplete_text_box ul {
+    display: flex;
+    flex-direction: column;
+}
+.autocomplete_text_box ul li {
+    list-style: inside;
+    margin-bottom: 20px;
+    width: 500px;
+}
+
+/* 모바일 체크 영역 */
+.mobile_message_check {
+    width: 100%;
+    padding: 100px 0;
+}
+.mobile_check {
+    display: flex;
+}
+.mobile_check li {
+    width: 50%;
+}
+.mobile_check_text_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 150px;
+    box-sizing: border-box;
+    position: relative;
+}
+.mobile_check_text_box::after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -4;
+    top: 160px;
+    left: 80px;
+    width: 600px;
+    height: 300px;
+    background-image: linear-gradient(90deg, #f4f7fb, white);
+}
+.mobile_check_text_box p {
+    line-height: 1.5;
+}
+.mobile_check_img_box {
+    padding-right: 50px;
+}
+.mobile_check_img_box img {
+    box-shadow: 0 5px 10px #c1c1c1;
+    margin-left: 150px;
+    width: 60%;
+}
+
+/* 실시간 읽음 영역 */
+.reading_check {
+    width: 100%;
+    padding: 100px 0;
+}
+.reading_check .reading_check_box {
+    text-align: center;
+}
+.reading_check .reading_check_box p {
+    line-height: 1.5;
+    margin-bottom: 50px;
+}
+.reading_check .reading_check_box img {
+    width: 70%;
+    box-shadow: 0 5px 10px #c1c1c1;
+}
+
+/* 실시간 자동 완성 영역 */
+.automatic_transmission {
+    width: 100%;
+    padding-top: 100px;
+    background-color: #0a2864;
+}
+.automatic_transmission_box {
+    display: flex;
+}
+.automatic_transmission_box li {
+    width: 50%;
+}
+.transmission_text_box {
+    padding-left: 100px;
+    box-sizing: border-box;
+    padding-top: 100px;
+    color: #fff;
+}
+.transmission_text_box p {
+    line-height: 1.5;
+}
+.transmission_img_box img {
+    margin-left: 50px;
+    width: 70%;
+}
 /* //service_category 영역 */
 .service_category {
     width: 100%;
-    margin-top: 100px;
     padding: 100px 0;
     background-color: #f0f1f3;
 }
