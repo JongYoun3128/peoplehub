@@ -30,6 +30,87 @@ h4 {
     margin-bottom: 30px;
 }
 
+/* 메인 배너 영역 */
+.peristalsis_main {
+    width: 100%;
+}
+.peristalsis_title {
+    padding: 100px 0;
+    width: 100%;
+}
+.peristalsis_title_list {
+    width: 100%;
+    display: flex;
+}
+.peristalsis_title_list li {
+    width: 50%;
+}
+
+.peristalsis_title_img_list img {
+    width: 100%;
+}
+.peristalsis_title_text_list > p {
+    font-size: 20px;
+    line-height: 1.5;
+}
+.peristalsis_title_text_list a {
+    margin-top: 100px;
+    padding: 15px 30px;
+    background-color: #004dc1;
+    color: #fff;
+    display: block;
+    width: fit-content;
+    transition: 0.5s;
+}
+
+.peristalsis_title_text_list a:hover {
+    transform: translateY(-5px);
+    background-color: #0a2864;
+}
+
+/* 시스템 연동 영역 */
+.system_peristalsis {
+    width: 100%;
+}
+.system_title {
+    padding: 100px 0;
+    text-align: center;
+    width: 100%;
+}
+.system_title > p {
+    font-size: 18px;
+    line-height: 1.75;
+}
+.system_img_box {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    padding-bottom: 100px;
+}
+.system_img_box img {
+    width: 100%;
+}
+.btn_box {
+    text-align: center;
+}
+.btn_box p {
+    margin-bottom: 20px;
+}
+.btn_box a {
+    display: flex;
+    justify-content: center;
+    color: #004dc1;
+    font-weight: bold;
+}
+.btn_box a span {
+    display: block;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+.btn_box a:hover span {
+    transform: translateX(5px);
+}
+
 /* //service_category 영역 */
 .service_category {
     width: 100%;
