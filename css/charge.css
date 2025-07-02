@@ -52,6 +52,7 @@
 .charge_free p {
     color: #1e1f21;
     text-decoration: underline;
+    cursor: pointer;
 }
 .charge_tap {
     width: 100%;
@@ -159,6 +160,7 @@
     border: 1px solid #004dc1;
     color: #fff !important;
     font-weight: 600;
+    cursor: pointer;
 }
 .plan_gray_box {
     background-color: #35343c;
@@ -168,6 +170,7 @@
     padding: 1em 1.8em;
     color: #fff !important;
     font-weight: 600;
+    cursor: pointer;
 }
 .plan_text_title {
     font-weight: bold;
