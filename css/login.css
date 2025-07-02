@@ -69,6 +69,14 @@ body {
 .login-container {
     width: 100%;
     max-width: 500px;
+    position: relative;
+}
+
+.home{
+    position: absolute;
+    left: 96%;
+    top: 3px;
+    
 }
 
 .login-header {
