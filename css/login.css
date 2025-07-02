@@ -72,11 +72,10 @@ body {
     position: relative;
 }
 
-.home{
+.home {
     position: absolute;
     left: 96%;
     top: 3px;
-    
 }
 
 .login-header {

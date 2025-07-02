@@ -242,7 +242,7 @@
     line-height: 1.5;
     margin-bottom: 1rem;
 }
-.startup_faq > p {
+.startup_faq > a > p {
     text-align: center;
     color: #004dc1;
     font-weight: 600;
@@ -250,7 +250,7 @@
     margin-top: 30px;
     cursor: pointer;
 }
-.startup_faq > p:hover {
+.startup_faq > a > p:hover {
     color: #0a2865;
 }
 .startup_banner {
