@@ -43,13 +43,13 @@ h4 {
     font-size: 15px;
     font-weight: 600;
     margin-bottom: 30px;
-}
+} */
 .message_title_list h2 {
     font-size: 3.25rem;
     font-weight: 700;
     line-height: 1.3;
     margin-bottom: 30px;
-} */
+}
 
 .message_title_list .message_title_detail {
     font-size: 20px;
@@ -216,7 +216,6 @@ h4 {
 /* //service_category 영역 */
 .service_category {
     width: 100%;
-    margin-top: 100px;
     padding: 100px 0;
     background-color: #f0f1f3;
 }
