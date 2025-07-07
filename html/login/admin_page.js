@@ -1,0 +1,405 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const menuItems = document.querySelectorAll('aside nav ul li');
+    const sections = document.querySelectorAll('main section');
+
+    menuItems.forEach((menu, idx) => {
+        menu.addEventListener('click', () => {
+            menuItems.forEach((li) => li.classList.remove('active'));
+            menu.classList.add('active');
+            sections.forEach((sec, sidx) => {
+                sec.classList.toggle('active', idx === sidx);
+            });
+        });
+    });
+
+    // 기본 첫 번째 메뉴 활성화
+    menuItems[0].classList.add('active');
+    sections[0].classList.add('active');
+
+    // --- 메시지 모달 관련 ---
+    const openModalBtn = document.getElementById('openModalBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const messageModal = document.getElementById('messageModal');
+    const reserveBtn = document.getElementById('reserveBtn');
+    const sendBtn = document.getElementById('sendBtn');
+    const messageForm = document.getElementById('messageForm');
+    const notificationList = document.getElementById('notificationList');
+
+    function openModal() {
+        messageModal.style.display = 'block';
+    }
+    function closeModal() {
+        messageModal.style.display = 'none';
+        messageForm.reset();
+    }
+
+    openModalBtn.addEventListener('click', openModal);
+    closeModalBtn.addEventListener('click', closeModal);
+    window.addEventListener('click', function (e) {
+        if (e.target === messageModal) closeModal();
+    });
+
+    function addMessageToList(type) {
+        const title = document.getElementById('msgTitle').value;
+        const date = document.getElementById('msgDate').value;
+        const time = document.getElementById('msgTime').value;
+        const content = document.getElementById('msgContent').value;
+        const receiver = document.getElementById('msgReceiver').value;
+        let status = '';
+        if (type === 'reserve') status = '예약메시지';
+        else status = '발송완료';
+        const now = new Date();
+        let displayDate = date ? date : now.toISOString().slice(0, 10);
+        let displayTime = time ? time : now.toTimeString().slice(0, 5);
+        const li = document.createElement('li');
+        li.innerHTML = `<span>[${displayDate} ${displayTime}] ${title} (${receiver})<br>${content}</span><span class="status">${status}</span>`;
+        notificationList.prepend(li);
+    }
+
+    reserveBtn.addEventListener('click', function () {
+        if (!messageForm.reportValidity()) return;
+        addMessageToList('reserve');
+        closeModal();
+    });
+    sendBtn.addEventListener('click', function () {
+        if (!messageForm.reportValidity()) return;
+        addMessageToList('send');
+        closeModal();
+    });
+
+    // --- 근무일정 캘린더 관련 ---
+    let monthYear = { year: 2024, month: 6 };
+    const monthLabel = document.getElementById('monthLabel');
+    const prevMonthBtn = document.getElementById('prevMonthBtn');
+    const nextMonthBtn = document.getElementById('nextMonthBtn');
+    const weekCalendar = document.getElementById('weekCalendar');
+    const monthCalendar = document.getElementById('monthCalendar');
+    const monthRows = document.getElementById('monthRows');
+
+    // 일정 저장: { 'YYYY-MM': { 'YYYY-MM-DD': [event, ...] } }
+    let calendarEvents = {};
+
+    function pad(n) {
+        return String(n).padStart(2, '0');
+    }
+
+    function renderMonthCalendar() {
+        monthRows.innerHTML = '';
+        const { year, month } = monthYear;
+        const firstDay = new Date(`${year}-${pad(month)}-01`).getDay();
+        const totalDays = new Date(year, month, 0).getDate();
+        monthLabel.textContent = `${year}년 ${month}월`;
+        let day = 1;
+        for (let row = 0; row < 6; row++) {
+            let tr = document.createElement('tr');
+            for (let col = 0; col < 7; col++) {
+                let td = document.createElement('td');
+                if (row === 0 && col < firstDay) {
+                    td.innerHTML = '';
+                } else if (day > totalDays) {
+                    td.innerHTML = '';
+                } else {
+                    const dateStr = `${year}-${pad(month)}-${pad(day)}`;
+                    td.setAttribute('data-date', dateStr);
+                    td.innerHTML = `<div>${day}</div>`;
+                    // 일정 표시
+                    const events =
+                        (calendarEvents[`${year}-${pad(month)}`] &&
+                            calendarEvents[`${year}-${pad(month)}`][dateStr]) ||
+                        [];
+                    events.forEach((ev) => {
+                        const eventDiv = document.createElement('div');
+                        eventDiv.className = 'calendar-event';
+                        eventDiv.innerHTML = `<span class=\"emoji\">${ev.emojis.join(
+                            ' ',
+                        )}</span> ${ev.title}`;
+                        td.appendChild(eventDiv);
+                    });
+                    day++;
+                }
+                tr.appendChild(td);
+            }
+            monthRows.appendChild(tr);
+        }
+    }
+
+    prevMonthBtn.addEventListener('click', function () {
+        if (monthYear.month === 1) {
+            monthYear.year--;
+            monthYear.month = 12;
+        } else {
+            monthYear.month--;
+        }
+        renderMonthCalendar();
+    });
+    nextMonthBtn.addEventListener('click', function () {
+        if (monthYear.month === 12) {
+            monthYear.year++;
+            monthYear.month = 1;
+        } else {
+            monthYear.month++;
+        }
+        renderMonthCalendar();
+    });
+
+    // 일정추가 모달
+    const openScheduleModalBtn = document.getElementById(
+        'openScheduleModalBtn',
+    );
+    const closeScheduleModalBtn = document.getElementById(
+        'closeScheduleModalBtn',
+    );
+    const scheduleModal = document.getElementById('scheduleModal');
+    const scheduleForm = document.getElementById('scheduleForm');
+    const addScheduleBtn = document.getElementById('addScheduleBtn');
+    const emojiPicker = document.getElementById('emojiPicker');
+    const selectedEmojisDiv = document.getElementById('selectedEmojis');
+
+    let selectedEmojis = [];
+
+    function openScheduleModal() {
+        scheduleModal.style.display = 'block';
+    }
+    function closeScheduleModal() {
+        scheduleModal.style.display = 'none';
+        scheduleForm.reset();
+        selectedEmojis = [];
+        updateSelectedEmojis();
+        // 선택된 버튼 초기화
+        emojiPicker
+            .querySelectorAll('.emoji-btn')
+            .forEach((btn) => btn.classList.remove('selected'));
+    }
+    openScheduleModalBtn.addEventListener('click', openScheduleModal);
+    closeScheduleModalBtn.addEventListener('click', closeScheduleModal);
+    window.addEventListener('click', function (e) {
+        if (e.target === scheduleModal) closeScheduleModal();
+    });
+
+    // 이모티콘 선택/해제
+    emojiPicker.querySelectorAll('.emoji-btn').forEach((btn) => {
+        btn.addEventListener('click', function () {
+            const emoji = btn.textContent;
+            if (selectedEmojis.includes(emoji)) {
+                selectedEmojis = selectedEmojis.filter((e) => e !== emoji);
+                btn.classList.remove('selected');
+            } else {
+                selectedEmojis.push(emoji);
+                btn.classList.add('selected');
+            }
+            updateSelectedEmojis();
+        });
+    });
+    function updateSelectedEmojis() {
+        selectedEmojisDiv.innerHTML = selectedEmojis.join(' ');
+    }
+
+    // 일정 저장 및 캘린더에 표시
+    function addEventToCalendars({ title, date, content, emojis }) {
+        // 월간 이벤트 저장
+        const [y, m, d] = date.split('-');
+        const ym = `${y}-${m}`;
+        if (!calendarEvents[ym]) calendarEvents[ym] = {};
+        if (!calendarEvents[ym][date]) calendarEvents[ym][date] = [];
+        calendarEvents[ym][date].push({ title, content, emojis });
+        // 월간 렌더링
+        renderMonthCalendar();
+        // 주간 (현재 주간은 6/9~6/15로 고정)
+        const weekCell = weekCalendar.querySelector(`td[data-date='${date}']`);
+        if (weekCell) {
+            const eventDiv = document.createElement('div');
+            eventDiv.className = 'calendar-event';
+            eventDiv.innerHTML = `<span class=\"emoji\">${emojis.join(
+                ' ',
+            )}</span> ${title}`;
+            weekCell.appendChild(eventDiv);
+        }
+    }
+
+    addScheduleBtn.addEventListener('click', function () {
+        if (!scheduleForm.reportValidity()) return;
+        const title = document.getElementById('scheduleTitle').value;
+        const date = document.getElementById('scheduleDate').value;
+        const content = document.getElementById('scheduleContent').value;
+        const emojis = selectedEmojis.slice();
+        // 일정 추가 시 월간 캘린더를 해당 년/월로 이동
+        const [y, m] = date.split('-');
+        monthYear.year = parseInt(y, 10);
+        monthYear.month = parseInt(m, 10);
+        addEventToCalendars({ title, date, content, emojis });
+        renderMonthCalendar();
+        closeScheduleModal();
+    });
+
+    // --- 휴가관리 월간 캘린더 관련 ---
+    let leaveMonthYear = { year: 2024, month: 7 };
+    const leaveMonthLabel = document.getElementById('leaveMonthLabel');
+    const leavePrevMonthBtn = document.getElementById('leavePrevMonthBtn');
+    const leaveNextMonthBtn = document.getElementById('leaveNextMonthBtn');
+    const leaveMonthRows = document.getElementById('leaveMonthRows');
+
+    // 휴가 일정 예시 데이터
+    let leaveEvents = {
+        '2024-07': {
+            '2024-07-10': [{ name: '김철수', type: '연차', emoji: '' }],
+            '2024-07-14': [{ name: '이영애', type: '연차', emoji: '' }],
+            '2024-07-12': [{ name: '김대우', type: '휴가', emoji: '' }],
+            '2024-07-13': [{ name: '김대우', type: '휴가', emoji: '' }],
+            '2024-07-14': [{ name: '김대우', type: '휴가', emoji: '' }],
+            '2024-07-28': [{ name: '이영애', type: '연차', emoji: '' }],
+            '2024-07-30': [{ name: '이영애', type: '반차', emoji: '' }],
+        },
+    };
+
+    function pad(n) {
+        return String(n).padStart(2, '0');
+    }
+
+    function renderLeaveMonthCalendar() {
+        leaveMonthRows.innerHTML = '';
+        const { year, month } = leaveMonthYear;
+        const firstDay = new Date(`${year}-${pad(month)}-01`).getDay();
+        const totalDays = new Date(year, month, 0).getDate();
+        leaveMonthLabel.textContent = `${year}년 ${month}월`;
+        let day = 1;
+        for (let row = 0; row < 6; row++) {
+            let tr = document.createElement('tr');
+            for (let col = 0; col < 7; col++) {
+                let td = document.createElement('td');
+                if (row === 0 && col < firstDay) {
+                    td.innerHTML = '';
+                } else if (day > totalDays) {
+                    td.innerHTML = '';
+                } else {
+                    const dateStr = `${year}-${pad(month)}-${pad(day)}`;
+                    td.setAttribute('data-date', dateStr);
+                    td.innerHTML = `<div>${day}</div>`;
+                    // 휴가 일정 표시
+                    const events =
+                        (leaveEvents[`${year}-${pad(month)}`] &&
+                            leaveEvents[`${year}-${pad(month)}`][dateStr]) ||
+                        [];
+                    events.forEach((ev) => {
+                        const eventDiv = document.createElement('div');
+                        eventDiv.className = 'calendar-event';
+                        eventDiv.innerHTML = `<span class=\"emoji\">${ev.emoji}</span> ${ev.name} (${ev.type})`;
+                        td.appendChild(eventDiv);
+                    });
+                    day++;
+                }
+                tr.appendChild(td);
+            }
+            leaveMonthRows.appendChild(tr);
+        }
+    }
+
+    leavePrevMonthBtn.addEventListener('click', function () {
+        if (leaveMonthYear.month === 1) {
+            leaveMonthYear.year--;
+            leaveMonthYear.month = 12;
+        } else {
+            leaveMonthYear.month--;
+        }
+        renderLeaveMonthCalendar();
+        renderLeaveHistory();
+    });
+    leaveNextMonthBtn.addEventListener('click', function () {
+        if (leaveMonthYear.month === 12) {
+            leaveMonthYear.year++;
+            leaveMonthYear.month = 1;
+        } else {
+            leaveMonthYear.month++;
+        }
+        renderLeaveMonthCalendar();
+        renderLeaveHistory();
+    });
+
+    renderLeaveMonthCalendar();
+    renderLeaveHistory();
+
+    // --- 휴가신청 모달 관련 ---
+    const openLeaveModalBtn = document.getElementById('openLeaveModalBtn');
+    const closeLeaveModalBtn = document.getElementById('closeLeaveModalBtn');
+    const leaveModal = document.getElementById('leaveModal');
+    const addLeaveBtn = document.getElementById('addLeaveBtn');
+    const leaveForm = document.getElementById('leaveForm');
+
+    function openLeaveModal() {
+        leaveModal.style.display = 'block';
+    }
+    function closeLeaveModal() {
+        leaveModal.style.display = 'none';
+        leaveForm.reset();
+    }
+    openLeaveModalBtn.addEventListener('click', openLeaveModal);
+    closeLeaveModalBtn.addEventListener('click', closeLeaveModal);
+    window.addEventListener('click', function (e) {
+        if (e.target === leaveModal) closeLeaveModal();
+    });
+
+    addLeaveBtn.addEventListener('click', function () {
+        if (!leaveForm.reportValidity()) return;
+        const name = document.getElementById('leaveName').value;
+        const startDate = document.getElementById('leaveStartDate').value;
+        const endDate = document.getElementById('leaveEndDate').value;
+        const type = document.getElementById('leaveType').value;
+        const reason = document.getElementById('leaveReason').value;
+        if (startDate > endDate) {
+            alert('시작일이 종료일보다 늦을 수 없습니다.');
+            return;
+        }
+        let current = new Date(startDate);
+        const end = new Date(endDate);
+        while (current <= end) {
+            const y = current.getFullYear();
+            const m = String(current.getMonth() + 1).padStart(2, '0');
+            const d = String(current.getDate()).padStart(2, '0');
+            const dateStr = `${y}-${m}-${d}`;
+            const ym = `${y}-${m}`;
+            if (!leaveEvents[ym]) leaveEvents[ym] = {};
+            if (!leaveEvents[ym][dateStr]) leaveEvents[ym][dateStr] = [];
+            leaveEvents[ym][dateStr].push({ name, type, emoji: '', reason });
+            current.setDate(current.getDate() + 1);
+        }
+        // 월간 캘린더를 해당 년/월로 이동 (시작일 기준)
+        const [sy, sm] = startDate.split('-');
+        leaveMonthYear.year = parseInt(sy, 10);
+        leaveMonthYear.month = parseInt(sm, 10);
+        renderLeaveMonthCalendar();
+        renderLeaveHistory();
+        closeLeaveModal();
+    });
+
+    // --- 휴가신청 내역 렌더링 ---
+    function renderLeaveHistory() {
+        const historyDiv = document.getElementById('leaveHistory');
+        let allEvents = [];
+        // leaveEvents 구조: { 'YYYY-MM': { 'YYYY-MM-DD': [ {name, type, reason, ...}, ... ] } }
+        Object.keys(leaveEvents).forEach((ym) => {
+            Object.keys(leaveEvents[ym]).forEach((date) => {
+                leaveEvents[ym][date].forEach((ev) => {
+                    allEvents.push({
+                        name: ev.name,
+                        type: ev.type,
+                        reason: ev.reason,
+                        date: date,
+                    });
+                });
+            });
+        });
+        // 날짜순 정렬
+        allEvents.sort((a, b) => a.date.localeCompare(b.date));
+        if (allEvents.length === 0) {
+            historyDiv.innerHTML =
+                '<h3>휴가 신청 내역</h3><div style="color:#888;">신청 내역이 없습니다.</div>';
+            return;
+        }
+        let html =
+            '<h3>휴가 신청 내역</h3><table class="leave-history-table"><thead><tr><th>이름</th><th>날짜</th><th>휴가종류</th><th>사유</th></tr></thead><tbody>';
+        allEvents.forEach((ev) => {
+            html += `<tr><td>${ev.name}</td><td>${ev.date}</td><td>${ev.type}</td><td>${ev.reason}</td></tr>`;
+        });
+        html += '</tbody></table>';
+        historyDiv.innerHTML = html;
+    }
+});
