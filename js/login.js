@@ -13,7 +13,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
 
         setTimeout(() => {
             alert('인사관리 시스템 로그인 성공!\n사용자: ' + username);
-            window.location.href = './program.html';
+            window.location.href = './admin_page.html';
             button.textContent = originalText;
             button.disabled = false;
         }, 1000);

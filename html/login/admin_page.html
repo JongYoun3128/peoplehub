@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <title>PeopleHub 관리자</title>
+        <link rel="stylesheet" href="admin_page.css" />
+    </head>
+    <body>
+        <header>
+            <div class="logo">PeopleHub</div>
+            <div class="user-info">
+                <span>관리자 홍길동</span>
+                <button>로그아웃</button>
+            </div>
+        </header>
+        <aside>
+            <nav>
+                <ul>
+                    <li class="active">대시보드</li>
+                    <li>출퇴근기록</li>
+                    <li>근무일정</li>
+                    <li>휴가관리</li>
+                    <li>직원관리</li>
+                    <li>알림/메시지</li>
+                    <li>설정</li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <section id="dashboard" class="active">
+                <h2>오늘의 출근/퇴근 현황</h2>
+                <div class="stats">
+                    <div class="stat-box">
+                        <span>출근</span><strong>25명</strong>
+                    </div>
+                    <div class="stat-box late">
+                        <span>지각</span><strong>2명</strong>
+                    </div>
+                    <div class="stat-box absent">
+                        <span>결근</span><strong>1명</strong>
+                    </div>
+                    <div class="stat-box overtime">
+                        <span>초과근무</span><strong>3명</strong>
+                    </div>
+                </div>
+                <h3>최근 출퇴근 기록</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>이름</th>
+                            <th>출근</th>
+                            <th>퇴근</th>
+                            <th>상태</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>김철수</td>
+                            <td>09:00</td>
+                            <td>18:32</td>
+                            <td>정상</td>
+                        </tr>
+                        <tr>
+                            <td>이영애</td>
+                            <td>09:05</td>
+                            <td>18:00</td>
+                            <td class="late">지각</td>
+                        </tr>
+                        <tr>
+                            <td>김대우</td>
+                            <td>09:00</td>
+                            <td>18:32</td>
+                            <td>정상</td>
+                        </tr>
+                        <tr>
+                            <td>김태희</td>
+                            <td>09:15</td>
+                            <td>18:05</td>
+                            <td class="late">지각</td>
+                        </tr>
+                        <tr>
+                            <td>박승희</td>
+                            <td>09:00</td>
+                            <td>18:00</td>
+                            <td>정상</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>오늘의 휴가 현황</h3>
+                <div class="leave-status">
+                    <span>휴가자: <strong>2명</strong></span>
+                </div>
+                <h3>근무일정 캘린더</h3>
+                <div class="calendar-placeholder">[캘린더 컴포넌트 자리]</div>
+            </section>
+            <section id="attendance">
+                <h2>출퇴근기록</h2>
+                <div class="filter-bar">
+                    <input type="date" />
+                    <select>
+                        <option>전체 부서</option>
+                        <option>영업팀</option>
+                        <option>개발팀</option>
+                    </select>
+                    <input type="text" placeholder="직원명 검색" />
+                    <button>검색</button>
+                    <button class="excel">엑셀 다운로드</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>이름</th>
+                            <th>부서</th>
+                            <th>출근</th>
+                            <th>퇴근</th>
+                            <th>상태</th>
+                            <th>인증</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>김철수</td>
+                            <td>개발팀</td>
+                            <td>09:00</td>
+                            <td>18:32</td>
+                            <td>정상</td>
+                            <td><span class="wifi">WiFi</span></td>
+                        </tr>
+                        <tr>
+                            <td>이영애</td>
+                            <td>영업팀</td>
+                            <td>09:05</td>
+                            <td>18:00</td>
+                            <td class="late">지각</td>
+                            <td><span class="gps">GPS</span></td>
+                        </tr>
+                        <tr>
+                            <td>김대우</td>
+                            <td>개발팀</td>
+                            <td>09:00</td>
+                            <td>18:32</td>
+                            <td>정상</td>
+                            <td><span class="wifi">WiFi</span></td>
+                        </tr>
+                        <tr>
+                            <td>김태희</td>
+                            <td>영업팀</td>
+                            <td>09:15</td>
+                            <td>18:05</td>
+                            <td class="late">지각</td>
+                            <td><span class="gps">GPS</span></td>
+                        </tr>
+                        <tr>
+                            <td>박승희</td>
+                            <td>개발팀</td>
+                            <td>09:00</td>
+                            <td>18:00</td>
+                            <td>정상</td>
+                            <td><span class="wifi">WiFi</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="schedule">
+                <h2>근무일정</h2>
+                <div class="calendar-controls">
+                    <button class="add" id="openScheduleModalBtn">
+                        일정추가
+                    </button>
+                </div>
+                <div class="calendar-label">주간 캘린더</div>
+                <div id="weekCalendar" class="calendar-view active">
+                    <table class="calendar-table">
+                        <thead>
+                            <tr>
+                                <th>일</th>
+                                <th>월</th>
+                                <th>화</th>
+                                <th>수</th>
+                                <th>목</th>
+                                <th>금</th>
+                                <th>토</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="weekRow">
+                                <td data-date="2024-06-09"></td>
+                                <td data-date="2024-06-10"></td>
+                                <td data-date="2024-06-11"></td>
+                                <td data-date="2024-06-12"></td>
+                                <td data-date="2024-06-13"></td>
+                                <td data-date="2024-06-14"></td>
+                                <td data-date="2024-06-15"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="calendar-label">월간 캘린더</div>
+                <div class="month-header">
+                    <button id="prevMonthBtn">&lt;</button>
+                    <span id="monthLabel">2024년 6월</span>
+                    <button id="nextMonthBtn">&gt;</button>
+                </div>
+                <div id="monthCalendar" class="calendar-view active">
+                    <table class="calendar-table">
+                        <thead>
+                            <tr>
+                                <th>일</th>
+                                <th>월</th>
+                                <th>화</th>
+                                <th>수</th>
+                                <th>목</th>
+                                <th>금</th>
+                                <th>토</th>
+                            </tr>
+                        </thead>
+                        <tbody id="monthRows">
+                            <!-- JS로 6월 1~30일 자동 생성 -->
+                        </tbody>
+                    </table>
+                </div>
+                <!-- 일정추가 모달 -->
+                <div id="scheduleModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" id="closeScheduleModalBtn"
+                            >&times;</span
+                        >
+                        <h3>일정 추가</h3>
+                        <form id="scheduleForm">
+                            <label
+                                >제목
+                                <input type="text" id="scheduleTitle" required
+                            /></label>
+                            <label
+                                >날짜
+                                <input type="date" id="scheduleDate" required
+                            /></label>
+                            <label
+                                >내용
+                                <textarea
+                                    id="scheduleContent"
+                                    required
+                                ></textarea>
+                            </label>
+                            <label
+                                >이모티콘
+                                <div id="emojiPicker" class="emoji-picker">
+                                    <button type="button" class="emoji-btn">
+                                        😊
+                                    </button>
+                                    <button type="button" class="emoji-btn">
+                                        🏖️
+                                    </button>
+                                    <button type="button" class="emoji-btn">
+                                        📅
+                                    </button>
+                                    <button type="button" class="emoji-btn">
+                                        🎉
+                                    </button>
+                                    <button type="button" class="emoji-btn">
+                                        💼
+                                    </button>
+                                    <button type="button" class="emoji-btn">
+                                        ✈️
+                                    </button>
+                                    <button type="button" class="emoji-btn">
+                                        🏥
+                                    </button>
+                                    <button type="button" class="emoji-btn">
+                                        🏠
+                                    </button>
+                                </div>
+                                <div
+                                    id="selectedEmojis"
+                                    class="selected-emojis"
+                                ></div>
+                            </label>
+                            <div class="modal-btns full-width">
+                                <button
+                                    type="button"
+                                    id="addScheduleBtn"
+                                    class="full-width"
+                                >
+                                    일정추가
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <section id="leave">
+                <h2>휴가관리</h2>
+                <div class="leave-controls">
+                    <button class="add" id="openLeaveModalBtn">휴가신청</button>
+                </div>
+                <!-- 휴가신청 모달 -->
+                <div id="leaveModal" class="modal" style="display: none">
+                    <div class="modal-content">
+                        <span class="close" id="closeLeaveModalBtn"
+                            >&times;</span
+                        >
+                        <h3>휴가 신청</h3>
+                        <form id="leaveForm">
+                            <label
+                                >이름
+                                <input
+                                    type="text"
+                                    id="leaveName"
+                                    class="leave-input"
+                                    required
+                                />
+                            </label>
+                            <label
+                                >시작일
+                                <input
+                                    type="date"
+                                    id="leaveStartDate"
+                                    class="leave-input"
+                                    required
+                                />
+                            </label>
+                            <label
+                                >종료일
+                                <input
+                                    type="date"
+                                    id="leaveEndDate"
+                                    class="leave-input"
+                                    required
+                                />
+                            </label>
+                            <label
+                                >휴가 종류
+                                <select
+                                    id="leaveType"
+                                    class="leave-input"
+                                    required
+                                >
+                                    <option value="연차">연차</option>
+                                    <option value="반차">반차</option>
+                                    <option value="휴가">휴가</option>
+                                </select>
+                            </label>
+                            <label
+                                >사유
+                                <input
+                                    type="text"
+                                    id="leaveReason"
+                                    class="leave-input"
+                                    required
+                                />
+                            </label>
+                            <div class="modal-btns full-width">
+                                <button
+                                    type="button"
+                                    id="addLeaveBtn"
+                                    class="full-width"
+                                >
+                                    휴가신청
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="leave-month-header">
+                    <button id="leavePrevMonthBtn">&lt;</button>
+                    <span id="leaveMonthLabel">2024년 6월</span>
+                    <button id="leaveNextMonthBtn">&gt;</button>
+                </div>
+                <div id="leaveCalendar" class="leave-calendar-view">
+                    <table class="calendar-table">
+                        <thead>
+                            <tr>
+                                <th>일</th>
+                                <th>월</th>
+                                <th>화</th>
+                                <th>수</th>
+                                <th>목</th>
+                                <th>금</th>
+                                <th>토</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaveMonthRows">
+                            <!-- JS로 월간 휴가 캘린더 자동 생성 -->
+                        </tbody>
+                    </table>
+                </div>
+                <div id="leaveHistory"></div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>이름</th>
+                            <th>잔여 연차</th>
+                            <th>사용 연차</th>
+                            <th>휴가 신청</th>
+                            <th>상태</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>김철수</td>
+                            <td>5일</td>
+                            <td>10일</td>
+                            <td><button>신청내역</button></td>
+                            <td>정상</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="employee">
+                <h2>직원관리</h2>
+                <button class="add">직원 추가</button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>이름</th>
+                            <th>부서</th>
+                            <th>직급</th>
+                            <th>연락처</th>
+                            <th>기기매칭</th>
+                            <th>관리</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>김철수</td>
+                            <td>개발팀</td>
+                            <td>대리</td>
+                            <td>010-1234-5678</td>
+                            <td>O</td>
+                            <td class="employee_btn_04">
+                                <button>수정</button><button>삭제</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="notification">
+                <h2>알림/메시지</h2>
+                <button class="add" id="openModalBtn">공지/메시지 발송</button>
+                <ul class="notification-list" id="notificationList">
+                    <li>
+                        <span>[2024-06-01] 지각자 2명 발생</span>
+                        <span class="status">발송완료</span>
+                    </li>
+                </ul>
+                <!-- 메시지 발송 모달 -->
+                <div id="messageModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" id="closeModalBtn">&times;</span>
+                        <h3>공지/메시지 발송</h3>
+                        <form id="messageForm">
+                            <label
+                                >제목 <input type="text" id="msgTitle" required
+                            /></label>
+                            <label
+                                >예약날짜 <input type="date" id="msgDate"
+                            /></label>
+                            <label
+                                >예약시간 <input type="time" id="msgTime"
+                            /></label>
+                            <label
+                                >내용
+                                <textarea id="msgContent" required></textarea>
+                            </label>
+                            <label
+                                >받을사람
+                                <select id="msgReceiver">
+                                    <option value="모든 사원">모든 사원</option>
+                                    <option value="임원">임원</option>
+                                    <option value="부장">부장</option>
+                                    <option value="팀장">팀장</option>
+                                </select>
+                            </label>
+                            <div class="modal-btns">
+                                <button type="button" id="reserveBtn">
+                                    예약하기
+                                </button>
+                                <button type="button" id="sendBtn">
+                                    발송하기
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <section id="settings">
+                <h2>설정</h2>
+                <form>
+                    <label
+                        >출퇴근 인증 방식
+                        <select>
+                            <option>위치(GPS)</option>
+                            <option>WiFi</option>
+                            <option>둘 다</option>
+                        </select>
+                    </label>
+                    <label
+                        >조직/지점 관리
+                        <button>관리</button>
+                    </label>
+                    <label
+                        >권한 관리
+                        <button>관리</button>
+                    </label>
+                </form>
+            </section>
+        </main>
+        <script src="admin_page.js"></script>
+    </body>
+</html>
