@@ -463,10 +463,6 @@ button.full-width {
     margin-bottom: 16px;
 }
 
-.employee-controls .add {
-    /* 휴가관리 버튼과 동일한 스타일이 이미 .add에 있다면 생략 가능 */
-}
-
 #attendance table {
     border-collapse: collapse;
     width: 100%;
