@@ -553,3 +553,20 @@ button.full-width {
     color: #1976d2;
     outline: none;
 }
+
+#dashboard table {
+    border-collapse: collapse;
+    width: 100%;
+}
+#dashboard table th,
+#dashboard table td {
+    border: 1px solid #e0e0e0;
+    padding: 8px;
+    text-align: center;
+}
+
+.notification-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 3rem;
+}
