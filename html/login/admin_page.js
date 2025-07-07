@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // --- 근무일정 캘린더 관련 ---
-    let monthYear = { year: 2024, month: 6 };
+    let monthYear = { year: 2025, month: 7 };
     const monthLabel = document.getElementById('monthLabel');
     const prevMonthBtn = document.getElementById('prevMonthBtn');
     const nextMonthBtn = document.getElementById('nextMonthBtn');
@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // --- 휴가관리 월간 캘린더 관련 ---
-    let leaveMonthYear = { year: 2024, month: 7 };
+    let leaveMonthYear = { year: 2025, month: 7 };
     const leaveMonthLabel = document.getElementById('leaveMonthLabel');
     const leavePrevMonthBtn = document.getElementById('leavePrevMonthBtn');
     const leaveNextMonthBtn = document.getElementById('leaveNextMonthBtn');
@@ -240,14 +240,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 휴가 일정 예시 데이터
     let leaveEvents = {
-        '2024-07': {
-            '2024-07-10': [{ name: '김철수', type: '연차', emoji: '' }],
-            '2024-07-14': [{ name: '이영애', type: '연차', emoji: '' }],
-            '2024-07-12': [{ name: '김대우', type: '휴가', emoji: '' }],
-            '2024-07-13': [{ name: '김대우', type: '휴가', emoji: '' }],
-            '2024-07-14': [{ name: '김대우', type: '휴가', emoji: '' }],
-            '2024-07-28': [{ name: '이영애', type: '연차', emoji: '' }],
-            '2024-07-30': [{ name: '이영애', type: '반차', emoji: '' }],
+        '2025-07': {
+            
         },
     };
 
@@ -367,6 +361,7 @@ document.addEventListener('DOMContentLoaded', function () {
         leaveMonthYear.month = parseInt(sm, 10);
         renderLeaveMonthCalendar();
         renderLeaveHistory();
+        renderLeaveSummary();
         closeLeaveModal();
     });
 
@@ -395,11 +390,199 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
         let html =
-            '<h3>휴가 신청 내역</h3><table class="leave-history-table"><thead><tr><th>이름</th><th>날짜</th><th>휴가종류</th><th>사유</th></tr></thead><tbody>';
+            '<h3>휴가 신청 내역</h3>';
         allEvents.forEach((ev) => {
-            html += `<tr><td>${ev.name}</td><td>${ev.date}</td><td>${ev.type}</td><td>${ev.reason}</td></tr>`;
+            
         });
         html += '</tbody></table>';
         historyDiv.innerHTML = html;
     }
+
+    // --- 휴가신청 요약(잔여/사용 연차) 표 렌더링 ---
+    function renderLeaveSummary() {
+        const summaryBody = document.getElementById('leaveSummaryBody');
+        if (!summaryBody) return;
+        // 직원별 사용 연차 집계
+        const BASIC_LEAVE = 15; // 기본 연차
+        const summary = {};
+        Object.keys(leaveEvents).forEach((ym) => {
+            Object.keys(leaveEvents[ym]).forEach((date) => {
+                leaveEvents[ym][date].forEach((ev) => {
+                    if (!summary[ev.name]) summary[ev.name] = { used: 0 };
+                    // 연차, 반차, 휴가 모두 1일로 가정, 반차는 0.5일로 처리 가능
+                    if (ev.type === '반차') summary[ev.name].used += 0.5;
+                    else summary[ev.name].used += 1;
+                });
+            });
+        });
+        // 표 갱신
+        summaryBody.innerHTML = '';
+        Object.keys(summary).forEach((name) => {
+            const used = summary[name].used;
+            const remain = BASIC_LEAVE - used;
+            summaryBody.innerHTML += `
+                <tr>
+                    <td>${name}</td>
+                    <td>${remain}일</td>
+                    <td>${used}일</td>
+                    <td><button class="leave-detail-btn">신청내역</button></td>
+                    <td>정상</td>
+                </tr>
+            `;
+        });
+    }
+
+    // --- 신청내역 모달 기능 ---
+    const leaveDetailModal = document.getElementById('leaveDetailModal');
+    const leaveDetailContent = document.getElementById('leaveDetailContent');
+    const closeLeaveDetailModalBtn = document.getElementById('closeLeaveDetailModalBtn');
+    // 모달 닫기
+    function closeLeaveDetailModal() {
+        leaveDetailModal.style.display = 'none';
+        leaveDetailContent.innerHTML = '';
+    }
+    closeLeaveDetailModalBtn.addEventListener('click', closeLeaveDetailModal);
+    window.addEventListener('click', function(e) {
+        if (e.target === leaveDetailModal) closeLeaveDetailModal();
+    });
+    // 신청내역 버튼 이벤트 위임
+    document.getElementById('leaveSummaryBody').addEventListener('click', function(e) {
+        if (e.target.classList.contains('leave-detail-btn')) {
+            const row = e.target.closest('tr');
+            const name = row.querySelector('td').textContent;
+            // 해당 직원의 신청내역 추출
+            let details = [];
+            Object.keys(leaveEvents).forEach((ym) => {
+                Object.keys(leaveEvents[ym]).forEach((date) => {
+                    leaveEvents[ym][date].forEach((ev) => {
+                        if (ev.name === name) {
+                            details.push({ date, type: ev.type, reason: ev.reason });
+                        }
+                    });
+                });
+            });
+            // 날짜순 정렬
+            details.sort((a, b) => a.date.localeCompare(b.date));
+            // 내용 생성
+            if (details.length === 0) {
+                leaveDetailContent.innerHTML = '<div style="color:#888;">신청 내역이 없습니다.</div>';
+            } else {
+                let html = '<table class="leave-history-table"><thead><tr><th>날짜</th><th>휴가종류</th><th>사유</th></tr></thead><tbody>';
+                details.forEach(ev => {
+                    html += `<tr><td>${ev.date}</td><td>${ev.type}</td><td>${ev.reason}</td></tr>`;
+                });
+                html += '</tbody></table>';
+                leaveDetailContent.innerHTML = html;
+            }
+            leaveDetailModal.style.display = 'block';
+        }
+    });
+
+    // 페이지 로드시 요약 표도 초기 렌더링
+    renderLeaveSummary();
+
+    // 직원 추가 모달 관련
+    const openEmployeeModalBtn = document.querySelector('#employee .add');
+    const closeEmployeeModalBtn = document.getElementById('closeEmployeeModalBtn');
+    const employeeModal = document.getElementById('employeeModal');
+    const addEmployeeBtn = document.getElementById('addEmployeeBtn');
+    const employeeForm = document.getElementById('employeeForm');
+    const employeeTableBody = document.querySelector('#employee table tbody');
+
+    // 수정모드 관련 변수
+    let editMode = false;
+    let editingRow = null;
+    // 수정완료 버튼 생성
+    let editEmployeeBtn = document.createElement('button');
+    editEmployeeBtn.type = 'button';
+    editEmployeeBtn.id = 'editEmployeeBtn';
+    editEmployeeBtn.className = 'full-width';
+    editEmployeeBtn.textContent = '수정완료';
+    editEmployeeBtn.style.display = 'none';
+    // 모달 버튼 영역에 추가
+    const modalBtns = employeeForm.querySelector('.modal-btns');
+    modalBtns.appendChild(editEmployeeBtn);
+
+    function openEmployeeModal() {
+        employeeModal.style.display = 'block';
+    }
+    function closeEmployeeModal() {
+        employeeModal.style.display = 'none';
+        employeeForm.reset();
+        editMode = false;
+        editingRow = null;
+        addEmployeeBtn.style.display = '';
+        editEmployeeBtn.style.display = 'none';
+    }
+    openEmployeeModalBtn.addEventListener('click', function() {
+        openEmployeeModal();
+        addEmployeeBtn.style.display = '';
+        editEmployeeBtn.style.display = 'none';
+    });
+    closeEmployeeModalBtn.addEventListener('click', closeEmployeeModal);
+    window.addEventListener('click', function (e) {
+        if (e.target === employeeModal) closeEmployeeModal();
+    });
+
+    // 직원 추가
+    addEmployeeBtn.addEventListener('click', function () {
+        if (!employeeForm.reportValidity()) return;
+        const name = document.getElementById('empName').value;
+        const dept = document.getElementById('empDept').value;
+        const rank = document.getElementById('empRank').value;
+        const phone = document.getElementById('empPhone').value;
+        // 기기매칭, 관리(수정/삭제) 기본값
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${name}</td>
+            <td>${dept}</td>
+            <td>${rank}</td>
+            <td>${phone}</td>
+            <td>O</td>
+            <td class="employee_btn_04">
+                <button class="edit-btn">수정</button><button class="delete-btn">삭제</button>
+            </td>
+        `;
+        employeeTableBody.appendChild(row);
+        closeEmployeeModal();
+    });
+
+    // 수정/삭제 버튼 이벤트 위임
+    employeeTableBody.addEventListener('click', function(e) {
+        const target = e.target;
+        const row = target.closest('tr');
+        if (target.classList.contains('edit-btn')) {
+            // 수정 모드 진입
+            const tds = row.querySelectorAll('td');
+            document.getElementById('empName').value = tds[0].textContent;
+            document.getElementById('empDept').value = tds[1].textContent;
+            document.getElementById('empRank').value = tds[2].textContent;
+            document.getElementById('empPhone').value = tds[3].textContent;
+            openEmployeeModal();
+            addEmployeeBtn.style.display = 'none';
+            editEmployeeBtn.style.display = '';
+            editMode = true;
+            editingRow = row;
+        } else if (target.classList.contains('delete-btn')) {
+            if (confirm('정말 삭제하시겠습니까?')) {
+                row.remove();
+            }
+        }
+    });
+
+    // 수정완료 버튼 동작
+    editEmployeeBtn.addEventListener('click', function() {
+        if (!employeeForm.reportValidity() || !editingRow) return;
+        const name = document.getElementById('empName').value;
+        const dept = document.getElementById('empDept').value;
+        const rank = document.getElementById('empRank').value;
+        const phone = document.getElementById('empPhone').value;
+        const tds = editingRow.querySelectorAll('td');
+        tds[0].textContent = name;
+        tds[1].textContent = dept;
+        tds[2].textContent = rank;
+        tds[3].textContent = phone;
+        // 수정모드 종료
+        closeEmployeeModal();
+    });
 });

@@ -287,7 +287,7 @@ form label {
     border: 1px solid #e0e0e0;
     height: 60px;
     text-align: center;
-    vertical-align: top;
+    vertical-align: middle;
 }
 .calendar-table td > div:first-child {
     text-align: left;
