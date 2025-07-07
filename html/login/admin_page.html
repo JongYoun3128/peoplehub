@@ -98,7 +98,30 @@
                     <span>휴가자: <strong>2명</strong></span>
                 </div>
                 <h3>근무일정 캘린더</h3>
-                <div class="calendar-placeholder">[캘린더 컴포넌트 자리]</div>
+                <div class="calendar-label">월간 캘린더</div>
+                <div class="month-header">
+                    <button id="dashboardPrevMonthBtn">&lt;</button>
+                    <span id="dashboardMonthLabel">2024년 7월</span>
+                    <button id="dashboardNextMonthBtn">&gt;</button>
+                </div>
+                <div id="dashboardMonthCalendar" class="calendar-view active">
+                    <table class="calendar-table">
+                        <thead>
+                            <tr>
+                                <th>일</th>
+                                <th>월</th>
+                                <th>화</th>
+                                <th>수</th>
+                                <th>목</th>
+                                <th>금</th>
+                                <th>토</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dashboardMonthRows">
+                            <!-- JS로 월간 캘린더 자동 생성 -->
+                        </tbody>
+                    </table>
+                </div>
             </section>
             <section id="attendance">
                 <h2>출퇴근기록</h2>
@@ -425,7 +448,9 @@
             </section>
             <section id="employee">
                 <h2>직원관리</h2>
-                <button class="add">직원 추가</button>
+                <div class="employee-controls">
+                    <button class="add">직원추가</button>
+                </div>
                 <!-- 직원 추가 모달 -->
                 <div id="employeeModal" class="modal">
                     <div class="modal-content">
@@ -524,24 +549,53 @@
             </section>
             <section id="settings">
                 <h2>설정</h2>
-                <form>
-                    <label
-                        >출퇴근 인증 방식
-                        <select>
-                            <option>위치(GPS)</option>
-                            <option>WiFi</option>
-                            <option>둘 다</option>
-                        </select>
-                    </label>
-                    <label
-                        >조직/지점 관리
-                        <button>관리</button>
-                    </label>
-                    <label
-                        >권한 관리
-                        <button>관리</button>
-                    </label>
-                </form>
+                <div class="settings-tabs">
+                    <button class="settings-tab active" data-tab="personal">개인 설정</button>
+                    <button class="settings-tab" data-tab="work">업무 환경 설정</button>
+                    <button class="settings-tab" data-tab="security">보안 설정</button>
+                    <button class="settings-tab" data-tab="notification">알림 및 구독 설정</button>
+                    <button class="settings-tab" data-tab="custom">기타 개인화 설정</button>
+                </div>
+                <div class="settings-content">
+                    <div class="settings-panel active" id="tab-personal">
+                        <ul class="settings-list">
+                            <li><button type="button" class="settings-action">비밀번호 변경</button></li>
+                            <li><button type="button" class="settings-action">이메일 / 연락처 수정</button></li>
+                            <li><button type="button" class="settings-action">프로필 사진 등록/변경</button></li>
+                            <li><button type="button" class="settings-action">알림 설정 (이메일, 푸시, 시스템 알림 등)</button></li>
+                            <li><button type="button" class="settings-action">언어 / 지역 설정</button></li>
+                        </ul>
+                    </div>
+                    <div class="settings-panel" id="tab-work">
+                        <ul class="settings-list">
+                            <li><button type="button" class="settings-action">기본 부서 / 직무 설정</button></li>
+                            <li><button type="button" class="settings-action">근무 시간 / 출퇴근 시간 설정</button></li>
+                            <li><button type="button" class="settings-action">권한 설정 확인</button></li>
+                        </ul>
+                    </div>
+                    <div class="settings-panel" id="tab-security">
+                        <ul class="settings-list">
+                            <li><button type="button" class="settings-action">2단계 인증 설정</button></li>
+                            <li><button type="button" class="settings-action">최근 로그인 내역 확인</button></li>
+                            <li><button type="button" class="settings-action">기기 관리 / 로그인 세션 종료</button></li>
+                            <li><button type="button" class="settings-action">자동 로그아웃 타이머 설정</button></li>
+                        </ul>
+                    </div>
+                    <div class="settings-panel" id="tab-notification">
+                        <ul class="settings-list">
+                            <li><button type="button" class="settings-action">업무 리마인더 설정</button></li>
+                            <li><button type="button" class="settings-action">뉴스레터, 사내공지 수신 여부</button></li>
+                            <li><button type="button" class="settings-action">특정 업무 기능 관련 알림 켜기/끄기</button></li>
+                        </ul>
+                    </div>
+                    <div class="settings-panel" id="tab-custom">
+                        <ul class="settings-list">
+                            <li><button type="button" class="settings-action">테마 / UI 설정 (밝은/어두운 테마 등)</button></li>
+                            <li><button type="button" class="settings-action">개인 즐겨찾기 메뉴 / 단축키 설정</button></li>
+                            <li><button type="button" class="settings-action">대시보드 구성 (위젯 배치, 홈화면 커스터마이징 등)</button></li>
+                        </ul>
+                    </div>
+                </div>
             </section>
         </main>
         <script src="admin_page.js"></script>

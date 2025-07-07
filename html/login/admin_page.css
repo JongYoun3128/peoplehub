@@ -435,3 +435,113 @@ button.full-width {
 #leaveType {
     width: 100%;
 }
+
+/* 직원관리 section 내 버튼 고정 */
+#employee {
+  position: relative;
+}
+#employee .add {
+  
+    margin-bottom: 2.2rem;
+  z-index: 1;
+}
+
+#employee table {
+  border-collapse: collapse;
+  width: 100%;
+}
+#employee table th, #employee table td {
+  border: 1px solid #e0e0e0;
+  padding: 8px;
+  text-align: center;
+}
+
+/* 직원관리 section 버튼 배치 휴가관리와 동일하게 */
+.employee-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.employee-controls .add {
+  /* 휴가관리 버튼과 동일한 스타일이 이미 .add에 있다면 생략 가능 */
+}
+
+#attendance table {
+  border-collapse: collapse;
+  width: 100%;
+}
+#attendance table th, #attendance table td {
+  border: 1px solid #e0e0e0;
+  padding: 8px;
+  text-align: center;
+}
+
+/* 설정 페이지 탭 스타일 */
+.settings-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.settings-tab {
+  background: #f5f6fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px 6px 0 0;
+  padding: 10px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #333;
+  outline: none;
+  transition: background 0.2s, color 0.2s;
+}
+.settings-tab.active {
+  background: #fff;
+  border-bottom: 1px solid #fff;
+  color: #1976d2;
+  font-weight: bold;
+}
+.settings-content {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 0 0 8px 8px;
+  padding: 32px 24px 24px 24px;
+  min-height: 220px;
+}
+.settings-panel { display: none; }
+.settings-panel.active { display: block; }
+.settings-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.settings-list li {
+  display: flex;
+  align-items: center;
+  font-size: 1.08rem;
+  padding: 14px 0;
+  border-bottom: 1px solid #f0f0f0;
+  gap: 12px;
+}
+.settings-list li:last-child { border-bottom: none; }
+.settings-list .icon {
+  font-size: 1.3em;
+  width: 2em;
+  text-align: center;
+  opacity: 0.85;
+}
+.settings-list .settings-action {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.08rem;
+  padding: 14px 0;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.15s, color 0.15s;
+}
+.settings-list .settings-action:hover, .settings-list .settings-action:focus {
+  background: #f5f6fa;
+  color: #1976d2;
+  outline: none;
+}

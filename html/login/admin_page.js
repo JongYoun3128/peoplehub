@@ -75,6 +75,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const weekCalendar = document.getElementById('weekCalendar');
     const monthCalendar = document.getElementById('monthCalendar');
     const monthRows = document.getElementById('monthRows');
+    // 대시보드 캘린더 요소
+    const dashboardMonthLabel = document.getElementById('dashboardMonthLabel');
+    const dashboardPrevMonthBtn = document.getElementById('dashboardPrevMonthBtn');
+    const dashboardNextMonthBtn = document.getElementById('dashboardNextMonthBtn');
+    const dashboardMonthRows = document.getElementById('dashboardMonthRows');
 
     // 일정 저장: { 'YYYY-MM': { 'YYYY-MM-DD': [event, ...] } }
     let calendarEvents = {};
@@ -121,6 +126,49 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             monthRows.appendChild(tr);
         }
+        // 대시보드 캘린더도 같이 렌더링
+        renderDashboardMonthCalendar();
+    }
+
+    function renderDashboardMonthCalendar() {
+        if (!dashboardMonthRows) return;
+        dashboardMonthRows.innerHTML = '';
+        const { year, month } = monthYear;
+        const firstDay = new Date(`${year}-${pad(month)}-01`).getDay();
+        const totalDays = new Date(year, month, 0).getDate();
+        if (dashboardMonthLabel) dashboardMonthLabel.textContent = `${year}년 ${month}월`;
+        let day = 1;
+        for (let row = 0; row < 6; row++) {
+            let tr = document.createElement('tr');
+            for (let col = 0; col < 7; col++) {
+                let td = document.createElement('td');
+                if (row === 0 && col < firstDay) {
+                    td.innerHTML = '';
+                } else if (day > totalDays) {
+                    td.innerHTML = '';
+                } else {
+                    const dateStr = `${year}-${pad(month)}-${pad(day)}`;
+                    td.setAttribute('data-date', dateStr);
+                    td.innerHTML = `<div>${day}</div>`;
+                    // 일정 표시
+                    const events =
+                        (calendarEvents[`${year}-${pad(month)}`] &&
+                            calendarEvents[`${year}-${pad(month)}`][dateStr]) ||
+                        [];
+                    events.forEach((ev) => {
+                        const eventDiv = document.createElement('div');
+                        eventDiv.className = 'calendar-event';
+                        eventDiv.innerHTML = `<span class=\"emoji\">${ev.emojis.join(
+                            ' ',
+                        )}</span> ${ev.title}`;
+                        td.appendChild(eventDiv);
+                    });
+                    day++;
+                }
+                tr.appendChild(td);
+            }
+            dashboardMonthRows.appendChild(tr);
+        }
     }
 
     prevMonthBtn.addEventListener('click', function () {
@@ -141,6 +189,27 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         renderMonthCalendar();
     });
+    // 대시보드 캘린더 월 이동 버튼 이벤트
+    if (dashboardPrevMonthBtn && dashboardNextMonthBtn) {
+        dashboardPrevMonthBtn.addEventListener('click', function () {
+            if (monthYear.month === 1) {
+                monthYear.year--;
+                monthYear.month = 12;
+            } else {
+                monthYear.month--;
+            }
+            renderMonthCalendar();
+        });
+        dashboardNextMonthBtn.addEventListener('click', function () {
+            if (monthYear.month === 12) {
+                monthYear.year++;
+                monthYear.month = 1;
+            } else {
+                monthYear.month++;
+            }
+            renderMonthCalendar();
+        });
+    }
 
     // 일정추가 모달
     const openScheduleModalBtn = document.getElementById(
@@ -585,4 +654,21 @@ document.addEventListener('DOMContentLoaded', function () {
         // 수정모드 종료
         closeEmployeeModal();
     });
+
+    // 설정 페이지 탭 전환 기능
+    const settingsTabs = document.querySelectorAll('.settings-tab');
+    const settingsPanels = document.querySelectorAll('.settings-panel');
+    settingsTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            settingsTabs.forEach(t => t.classList.remove('active'));
+            settingsPanels.forEach(p => p.classList.remove('active'));
+            tab.classList.add('active');
+            const target = tab.getAttribute('data-tab');
+            document.getElementById('tab-' + target).classList.add('active');
+        });
+    });
+
+    // 페이지 로드시 캘린더 렌더링
+    renderMonthCalendar();
+    renderDashboardMonthCalendar();
 });
