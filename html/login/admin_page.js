@@ -344,8 +344,12 @@ document.addEventListener('DOMContentLoaded', function () {
                         [];
                     events.forEach((ev) => {
                         const eventDiv = document.createElement('div');
-                        eventDiv.className = 'calendar-event';
-                        eventDiv.innerHTML = `<span class=\"emoji\">${ev.emoji}</span> ${ev.name} (${ev.type})`;
+                        let typeClass = '';
+                        if (ev.type === '휴가') typeClass = 'leave-type-holiday';
+                        else if (ev.type === '연차') typeClass = 'leave-type-annual';
+                        else if (ev.type === '반차') typeClass = 'leave-type-half';
+                        eventDiv.className = 'calendar-event ' + typeClass;
+                        eventDiv.innerHTML = `<span class=\"emoji\">${ev.emoji || ''}</span> ${ev.name} (${ev.type})`;
                         td.appendChild(eventDiv);
                     });
                     day++;
