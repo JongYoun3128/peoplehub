@@ -459,25 +459,14 @@
                         >
                         <h3>직원 추가</h3>
                         <form id="employeeForm">
-                            <label
-                                >이름 <input type="text" id="empName" required
-                            /></label>
-                            <label
-                                >부서 <input type="text" id="empDept" required
-                            /></label>
-                            <label
-                                >직급 <input type="text" id="empRank" required
-                            /></label>
-                            <label
-                                >연락처
-                                <input type="text" id="empPhone" required
-                            /></label>
+                            <label>사원번호 <input type="text" id="empId" required /></label>
+                            <label>이름 <input type="text" id="empName" required /></label>
+                            <label>부서 <input type="text" id="empDept" required /></label>
+                            <label>직급 <input type="text" id="empRank" required /></label>
+                            <label>연락처 <input type="text" id="empPhone" required /></label>
+                            <label>입사일 <input type="date" id="empJoinDate" required /></label>
                             <div class="modal-btns full-width">
-                                <button
-                                    type="button"
-                                    id="addEmployeeBtn"
-                                    class="full-width"
-                                >
+                                <button type="button" id="addEmployeeBtn" class="full-width">
                                     +직원추가
                                 </button>
                             </div>
@@ -487,10 +476,12 @@
                 <table>
                     <thead>
                         <tr>
+                            <th>사원번호</th>
                             <th>이름</th>
                             <th>부서</th>
                             <th>직급</th>
                             <th>연락처</th>
+                            <th>입사일</th>
                             <th>기기매칭</th>
                             <th>관리</th>
                         </tr>

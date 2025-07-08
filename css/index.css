@@ -401,6 +401,7 @@
 
 .Vacation_img_box img {
     width: 80%;
+    margin-top: 50px;
 }
 
 /* //전자결제 */
@@ -448,7 +449,7 @@
 }
 
 .electronic_payment_img_box img {
-    width: 85%;
+    margin-bottom: 100px;
 }
 
 .electronic_sub_payment {
@@ -465,7 +466,7 @@
     width: 60%;
 }
 .electronic_sub_payment_box .electronic_sub_payment_img_box img {
-    width: 120%;
+    width: 400px;
 }
 
 .electronic_sub_payment_text_box {
@@ -523,9 +524,9 @@
     width: 50%;
 }
 
-.personnel_information_list_img_box img {
+/* .personnel_information_list_img_box img {
     width: 100%;
-}
+} */
 .message_and_contract {
     width: 100%;
 }
@@ -568,9 +569,15 @@
     font-weight: 600;
 }
 .message_and_contract_list li img {
-    width: 100%;
+    width: 70%;
+    margin-top: 50px;
+    margin-left: 70px;
 }
-
+.message_and_contract_list li:first-child img {
+    width: 70%;
+    margin-top: 50px;
+    margin-left: 70px;
+}
 /* //근태정산 */
 .attendance_settlement {
     width: 100%;
@@ -589,7 +596,7 @@
 }
 
 .attendance_settlement_img_box img {
-    width: 90%;
+    width: 110%;
 }
 .attendance_settlement_img_box::after {
     content: '';
@@ -605,7 +612,7 @@
 
 .attendance_settlement_text_box {
     width: 50%;
-    padding-left: 70px;
+    padding-left: 170px;
 }
 
 .attendance_settlement_text_box h5 {

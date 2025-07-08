@@ -247,19 +247,17 @@ form label {
     justify-content: flex-end;
     margin-top: 1rem;
 }
-.modal-btns button {
-    flex: 1;
-    background: #1976d2;
-    color: #fff;
+.modal-btns button,
+.modal-btns button:first-child,
+.modal-content button {
+    color: #fff !important;
     border: none;
     border-radius: 4px;
     padding: 0.5rem 1rem;
     cursor: pointer;
     font-size: 1rem;
 }
-.modal-btns button:first-child {
-    background: #388e3c;
-}
+
 .status {
     margin-left: 1rem;
     font-size: 0.95rem;
@@ -285,7 +283,7 @@ form label {
 .calendar-table th,
 .calendar-table td {
     border: 1px solid #e0e0e0;
-    height: 60px;
+    height: 40px;
     text-align: center;
     vertical-align: top;
 }
@@ -296,9 +294,23 @@ form label {
 .calendar-table th {
     background: #f0f4f8;
     text-align: center;
+    height: 32px;
+    vertical-align: middle;
 }
 .calendar-table td {
     min-width: 80px;
+    height: 48px;
+    vertical-align: middle;
+}
+.calendar-table td > div:first-child {
+    text-align: left;
+    font-weight: bold;
+    line-height: 1;
+    margin-top: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
 }
 
 .calendar-event {
@@ -586,4 +598,7 @@ button.full-width {
     border-radius: 6px;
     padding: 2px 6px;
     display: inline-block;
+}
+#scheduleModal .emoji-btn {
+    background: #fff;
 }

@@ -600,17 +600,21 @@ document.addEventListener('DOMContentLoaded', function () {
     // 직원 추가
     addEmployeeBtn.addEventListener('click', function () {
         if (!employeeForm.reportValidity()) return;
+        const empId = document.getElementById('empId').value;
         const name = document.getElementById('empName').value;
         const dept = document.getElementById('empDept').value;
         const rank = document.getElementById('empRank').value;
         const phone = document.getElementById('empPhone').value;
+        const joinDate = document.getElementById('empJoinDate').value;
         // 기기매칭, 관리(수정/삭제) 기본값
         const row = document.createElement('tr');
         row.innerHTML = `
+            <td>${empId}</td>
             <td>${name}</td>
             <td>${dept}</td>
             <td>${rank}</td>
             <td>${phone}</td>
+            <td>${joinDate}</td>
             <td>O</td>
             <td class="employee_btn_04">
                 <button class="edit-btn">수정</button><button class="delete-btn">삭제</button>
@@ -627,10 +631,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (target.classList.contains('edit-btn')) {
             // 수정 모드 진입
             const tds = row.querySelectorAll('td');
-            document.getElementById('empName').value = tds[0].textContent;
-            document.getElementById('empDept').value = tds[1].textContent;
-            document.getElementById('empRank').value = tds[2].textContent;
-            document.getElementById('empPhone').value = tds[3].textContent;
+            document.getElementById('empId').value = tds[0].textContent;
+            document.getElementById('empName').value = tds[1].textContent;
+            document.getElementById('empDept').value = tds[2].textContent;
+            document.getElementById('empRank').value = tds[3].textContent;
+            document.getElementById('empPhone').value = tds[4].textContent;
+            document.getElementById('empJoinDate').value = tds[5].textContent;
             openEmployeeModal();
             addEmployeeBtn.style.display = 'none';
             editEmployeeBtn.style.display = '';
@@ -646,15 +652,19 @@ document.addEventListener('DOMContentLoaded', function () {
     // 수정완료 버튼 동작
     editEmployeeBtn.addEventListener('click', function() {
         if (!employeeForm.reportValidity() || !editingRow) return;
+        const empId = document.getElementById('empId').value;
         const name = document.getElementById('empName').value;
         const dept = document.getElementById('empDept').value;
         const rank = document.getElementById('empRank').value;
         const phone = document.getElementById('empPhone').value;
+        const joinDate = document.getElementById('empJoinDate').value;
         const tds = editingRow.querySelectorAll('td');
-        tds[0].textContent = name;
-        tds[1].textContent = dept;
-        tds[2].textContent = rank;
-        tds[3].textContent = phone;
+        tds[0].textContent = empId;
+        tds[1].textContent = name;
+        tds[2].textContent = dept;
+        tds[3].textContent = rank;
+        tds[4].textContent = phone;
+        tds[5].textContent = joinDate;
         // 수정모드 종료
         closeEmployeeModal();
     });
