@@ -6,7 +6,10 @@
 #work_schedule_main {
     width: 100%;
 }
-
+.work_wrap {
+    width: 100%;
+    overflow: hidden;
+}
 .work_schedule_main_title {
     width: 100%;
     margin-top: 50px;

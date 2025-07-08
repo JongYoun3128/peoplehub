@@ -17,7 +17,7 @@
 }
 .top_banner_box span {
     margin-left: 20px;
-    border: 1px solid #000;
+    border: 1px solid #004dc1;
     padding: 6px 8px;
     border-radius: 10px;
     cursor: pointer;
@@ -88,7 +88,7 @@
 
 .header_wrap .header .login_box .login_button a {
     padding: 0.8em 1.2em;
-    border: 1px solid #000;
+    border: 1px solid #004dc1;
     border-radius: 3px;
     color: #004dc1;
     transition: 0.3s;
@@ -100,7 +100,7 @@
 
 .header_wrap .header .login_box .experience_button a {
     padding: 0.8em 1.2em;
-    border: 1px solid #000;
+    border: 1px solid #004dc1;
     border-radius: 3px;
     background-color: #004dc1;
     color: #fff;
