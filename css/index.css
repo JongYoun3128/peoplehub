@@ -419,6 +419,7 @@
 .electronic_payment_text_box {
     width: 40%;
     margin-top: 100px;
+    margin-left: 150px;
 }
 .electronic_payment_text_box .electronic_payment_sub_title {
     font-size: 0.875rem;
