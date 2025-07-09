@@ -488,6 +488,7 @@
 
 .personnel_information {
     width: 100%;
+    margin-top: 100px;
 }
 
 .personnel_information_list {
@@ -502,7 +503,7 @@
 
 .personnel_information_list_text_box {
     width: 40%;
-    margin-left: 40px;
+    margin-left: 7%;
 }
 .personnel_information_list_text_box h5 {
     color: #1e1f21;
@@ -524,9 +525,10 @@
     width: 50%;
 }
 
-/* .personnel_information_list_img_box img {
-    width: 100%;
-} */
+.personnel_information_list_img_box img {
+    width: 60%;
+    margin-left: 15%;
+}
 .message_and_contract {
     width: 100%;
 }
@@ -603,10 +605,10 @@
     position: absolute;
     display: block;
     z-index: -1;
-    top: -25px;
+    top: -50px;
     left: -25px;
-    width: 500px;
-    height: 430px;
+    width: 550px;
+    height: 250px;
     background-color: #f4f7fb;
 }
 
