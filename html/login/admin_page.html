@@ -250,69 +250,152 @@
                     </table>
                 </div>
                 <!-- 일정추가 모달 -->
-                <div id="scheduleModal" class="modal">
-                    <div class="modal-content">
-                        <span class="close" id="closeScheduleModalBtn"
-                            >&times;</span
-                        >
+                <style>
+                .schedule-modal-content {
+                    max-width: 420px;
+                    width: 95%;
+                    margin: auto;
+                    padding: 2rem 1.5rem 1.3rem 1.5rem;
+                    border-radius: 14px;
+                    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+                    background: #fff;
+                    position: relative;
+                }
+                .schedule-modal-content h3 {
+                    font-size: 1.35rem;
+                    font-weight: 800;
+                    margin-bottom: 1.1rem;
+                    color: #222;
+                    text-align: left;
+                }
+                .schedule-modal-form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                }
+                .schedule-modal-group {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.1rem;
+                }
+                .schedule-modal-label {
+                    font-weight: 600;
+                    font-size: 1rem;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.18em;
+                    margin-bottom: 0.1rem;
+                }
+                .schedule-modal-required {
+                    color: red;
+                    font-size: 1.1em;
+                }
+                .schedule-modal-input,
+                .schedule-modal-select,
+                .schedule-modal-textarea {
+                    width: 100%;
+                    box-sizing: border-box;
+                    padding: 0.62rem 0.8rem;
+                    border-radius: 6px;
+                    border: 1.2px solid #d0d4df;
+                    font-size: 1rem;
+                }
+                .schedule-modal-row {
+                    display: flex;
+                    gap: 0.3rem;
+                    overflow: hidden;
+                }
+                .schedule-modal-row .schedule-modal-group {
+                    flex: none;
+                    width: calc(50% - 0.15rem);
+                }
+                .schedule-modal-row .schedule-modal-input {
+                    width: 98%;
+                }
+                .schedule-modal-btns {
+                    display: flex;
+                    gap: 0.5rem;
+                    margin-top: 1.1rem;
+                }
+                .schedule-modal-btn {
+                    flex: 1 1 0;
+                    background: #407BFF;
+                    color: white;
+                    border: none;
+                    padding: 0.85rem 0;
+                    border-radius: 7px;
+                    font-size: 1.08rem;
+                    font-weight: 600;
+                    letter-spacing: 0.5px;
+                    box-shadow: 0 2px 8px rgba(64,123,255,0.08);
+                    transition: background 0.2s;
+                    cursor: pointer;
+                }
+                .schedule-modal-btn.cancel {
+                    background: #FF5C5C;
+                }
+                .schedule-modal-close {
+                    font-size: 1.7rem;
+                    top: 1.1rem;
+                    right: 1.2rem;
+                    position: absolute;
+                    cursor: pointer;
+                }
+                </style>
+                <div id="scheduleModal" class="modal" style="display:none;">
+                    <div class="schedule-modal-content">
+                        <span class="close schedule-modal-close" id="closeScheduleModalBtn">&times;</span>
                         <h3>일정 추가</h3>
-                        <form id="scheduleForm">
-                            <label
-                                >제목
-                                <input type="text" id="scheduleTitle" required
-                            /></label>
-                            <label
-                                >날짜
-                                <input type="date" id="scheduleDate" required
-                            /></label>
-                            <label
-                                >내용
-                                <textarea
-                                    id="scheduleContent"
-                                    required
-                                ></textarea>
-                            </label>
-                            <label
-                                >이모티콘
-                                <div id="emojiPicker" class="emoji-picker">
-                                    <button type="button" class="emoji-btn">
-                                        😊
-                                    </button>
-                                    <button type="button" class="emoji-btn">
-                                        🏖️
-                                    </button>
-                                    <button type="button" class="emoji-btn">
-                                        📅
-                                    </button>
-                                    <button type="button" class="emoji-btn">
-                                        🎉
-                                    </button>
-                                    <button type="button" class="emoji-btn">
-                                        💼
-                                    </button>
-                                    <button type="button" class="emoji-btn">
-                                        ✈️
-                                    </button>
-                                    <button type="button" class="emoji-btn">
-                                        🏥
-                                    </button>
-                                    <button type="button" class="emoji-btn">
-                                        🏠
-                                    </button>
+                        <form id="scheduleForm" class="schedule-modal-form">
+                            <div class="schedule-modal-group">
+                                <label for="scheduleTitleInput" class="schedule-modal-label">일정 제목<span class="schedule-modal-required">*</span></label>
+                                <input type="text" id="scheduleTitleInput" name="scheduleTitle" required class="schedule-modal-input" />
+                            </div>
+                            <div class="schedule-modal-group">
+                                <label for="scheduleDescInput" class="schedule-modal-label">일정 설명</label>
+                                <textarea id="scheduleDescInput" name="scheduleDesc" rows="2" class="schedule-modal-textarea"></textarea>
+                            </div>
+                            <div class="schedule-modal-group">
+                                <label for="scheduleTypeInput" class="schedule-modal-label">일정 유형</label>
+                                <select id="scheduleTypeInput" name="scheduleType" class="schedule-modal-select">
+                                    <option value="회의">회의</option>
+                                    <option value="업무">업무</option>
+                                    <option value="외근">외근</option>
+                                    <option value="출장">출장</option>
+                                    <option value="기타">기타</option>
+                                </select>
+                            </div>
+                            <div class="schedule-modal-row" style="overflow:hidden;">
+                                <div class="schedule-modal-group" style="width:calc(50% - 0.15rem);">
+                                    <label for="scheduleStartInput" class="schedule-modal-label">시작일</label>
+                                    <input type="datetime-local" id="scheduleStartInput" name="scheduleStart" class="schedule-modal-input" style="width:98%;" />
                                 </div>
-                                <div
-                                    id="selectedEmojis"
-                                    class="selected-emojis"
-                                ></div>
-                            </label>
-                            <div class="modal-btns full-width">
-                                <button
-                                    type="button"
-                                    id="addScheduleBtn"
-                                    class="full-width"
-                                >
-                                    일정추가
-                                </button>
+                                <div class="schedule-modal-group" style="width:calc(50% - 0.15rem);">
+                                    <label for="scheduleEndInput" class="schedule-modal-label">종료일</label>
+                                    <input type="datetime-local" id="scheduleEndInput" name="scheduleEnd" class="schedule-modal-input" style="width:98%;" />
+                                </div>
+                            </div>
+                            <div class="schedule-modal-group">
+                                <label for="schedulePlaceInput" class="schedule-modal-label">장소</label>
+                                <input type="text" id="schedulePlaceInput" name="schedulePlace" class="schedule-modal-input" />
+                            </div>
+                            <div class="schedule-modal-group">
+                                <label for="scheduleAlarmInput" class="schedule-modal-label">알림 설정</label>
+                                <select id="scheduleAlarmInput" name="scheduleAlarm" class="schedule-modal-select">
+                                    <option value="없음">없음</option>
+                                    <option value="10분 전">10분 전</option>
+                                    <option value="30분 전">30분 전</option>
+                                    <option value="1시간 전">1시간 전</option>
+                                    <option value="하루 전">하루 전</option>
+                                </select>
+                            </div>
+                            <div class="schedule-modal-group">
+                                <label for="scheduleMemoInput" class="schedule-modal-label">비고/메모</label>
+                                <textarea id="scheduleMemoInput" name="scheduleMemo" rows="2" class="schedule-modal-textarea"></textarea>
+                            </div>
+                            <div class="schedule-modal-btns">
+                                <button type="submit" id="saveScheduleBtn" class="schedule-modal-btn">저장</button>
+                                <button type="button" id="cancelScheduleBtn" class="schedule-modal-btn cancel">취소</button>
                             </div>
                         </form>
                     </div>

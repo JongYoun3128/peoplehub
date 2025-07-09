@@ -115,9 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     events.forEach((ev) => {
                         const eventDiv = document.createElement('div');
                         eventDiv.className = 'calendar-event';
-                        eventDiv.innerHTML = `<span class=\"emoji\">${ev.emojis.join(
-                            ' ',
-                        )}</span> ${ev.title}`;
+                        eventDiv.innerHTML = `<b>[${ev.type}]</b> ${ev.title}`;
                         td.appendChild(eventDiv);
                     });
                     day++;
@@ -158,9 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     events.forEach((ev) => {
                         const eventDiv = document.createElement('div');
                         eventDiv.className = 'calendar-event';
-                        eventDiv.innerHTML = `<span class=\"emoji\">${ev.emojis.join(
-                            ' ',
-                        )}</span> ${ev.title}`;
+                        eventDiv.innerHTML = `<b>[${ev.type}]</b> ${ev.title}`;
                         td.appendChild(eventDiv);
                     });
                     day++;
@@ -212,19 +208,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // 일정추가 모달
-    const openScheduleModalBtn = document.getElementById(
-        'openScheduleModalBtn',
-    );
-    const closeScheduleModalBtn = document.getElementById(
-        'closeScheduleModalBtn',
-    );
+    const openScheduleModalBtn = document.getElementById('openScheduleModalBtn');
+    const closeScheduleModalBtn = document.getElementById('closeScheduleModalBtn');
     const scheduleModal = document.getElementById('scheduleModal');
     const scheduleForm = document.getElementById('scheduleForm');
-    const addScheduleBtn = document.getElementById('addScheduleBtn');
-    const emojiPicker = document.getElementById('emojiPicker');
-    const selectedEmojisDiv = document.getElementById('selectedEmojis');
-
-    let selectedEmojis = [];
+    const saveScheduleBtn = document.getElementById('saveScheduleBtn');
+    const cancelScheduleBtn = document.getElementById('cancelScheduleBtn');
 
     function openScheduleModal() {
         scheduleModal.style.display = 'block';
@@ -232,70 +221,59 @@ document.addEventListener('DOMContentLoaded', function () {
     function closeScheduleModal() {
         scheduleModal.style.display = 'none';
         scheduleForm.reset();
-        selectedEmojis = [];
-        updateSelectedEmojis();
-        // 선택된 버튼 초기화
-        emojiPicker
-            .querySelectorAll('.emoji-btn')
-            .forEach((btn) => btn.classList.remove('selected'));
     }
     openScheduleModalBtn.addEventListener('click', openScheduleModal);
     closeScheduleModalBtn.addEventListener('click', closeScheduleModal);
+    cancelScheduleBtn.addEventListener('click', closeScheduleModal);
     window.addEventListener('click', function (e) {
         if (e.target === scheduleModal) closeScheduleModal();
     });
 
-    // 이모티콘 선택/해제
-    emojiPicker.querySelectorAll('.emoji-btn').forEach((btn) => {
-        btn.addEventListener('click', function () {
-            const emoji = btn.textContent;
-            if (selectedEmojis.includes(emoji)) {
-                selectedEmojis = selectedEmojis.filter((e) => e !== emoji);
-                btn.classList.remove('selected');
-            } else {
-                selectedEmojis.push(emoji);
-                btn.classList.add('selected');
-            }
-            updateSelectedEmojis();
-        });
-    });
-    function updateSelectedEmojis() {
-        selectedEmojisDiv.innerHTML = selectedEmojis.join(' ');
-    }
-
-    // 일정 저장 및 캘린더에 표시
-    function addEventToCalendars({ title, date, content, emojis }) {
-        // 월간 이벤트 저장
-        const [y, m, d] = date.split('-');
-        const ym = `${y}-${m}`;
-        if (!calendarEvents[ym]) calendarEvents[ym] = {};
-        if (!calendarEvents[ym][date]) calendarEvents[ym][date] = [];
-        calendarEvents[ym][date].push({ title, content, emojis });
-        // 월간 렌더링
+    // 일정 저장 및 캘린더에 표시 (기간 전체 등록)
+    function addEventToCalendars({ title, desc, type, start, end, place, alarm, memo }) {
+        // 시작~종료일 범위의 모든 날짜에 등록
+        const startDate = new Date(start);
+        const endDate = end ? new Date(end) : startDate;
+        let cur = new Date(startDate);
+        while (cur <= endDate) {
+            const y = cur.getFullYear();
+            const m = String(cur.getMonth() + 1).padStart(2, '0');
+            const d = String(cur.getDate()).padStart(2, '0');
+            const date = `${y}-${m}-${d}`;
+            const ym = `${y}-${m}`;
+            if (!calendarEvents[ym]) calendarEvents[ym] = {};
+            if (!calendarEvents[ym][date]) calendarEvents[ym][date] = [];
+            calendarEvents[ym][date].push({ title, desc, type, start, end, place, alarm, memo });
+            cur.setDate(cur.getDate() + 1);
+        }
         renderMonthCalendar();
-        // 주간 (현재 주간은 6/9~6/15로 고정)
-        const weekCell = weekCalendar.querySelector(`td[data-date='${date}']`);
+        // 주간 캘린더에도 표시 (해당 주에 있으면)
+        // (여기선 시작일만 표시)
+        const weekCell = weekCalendar.querySelector(`td[data-date='${start.split('T')[0]}']`);
         if (weekCell) {
             const eventDiv = document.createElement('div');
             eventDiv.className = 'calendar-event';
-            eventDiv.innerHTML = `<span class=\"emoji\">${emojis.join(
-                ' ',
-            )}</span> ${title}`;
+            eventDiv.innerHTML = `<b>[${type}]</b> ${title}`;
             weekCell.appendChild(eventDiv);
         }
     }
 
-    addScheduleBtn.addEventListener('click', function () {
+    saveScheduleBtn.addEventListener('click', function (e) {
+        e.preventDefault();
         if (!scheduleForm.reportValidity()) return;
-        const title = document.getElementById('scheduleTitle').value;
-        const date = document.getElementById('scheduleDate').value;
-        const content = document.getElementById('scheduleContent').value;
-        const emojis = selectedEmojis.slice();
-        // 일정 추가 시 월간 캘린더를 해당 년/월로 이동
-        const [y, m] = date.split('-');
+        const title = document.getElementById('scheduleTitleInput').value;
+        const desc = document.getElementById('scheduleDescInput').value;
+        const type = document.getElementById('scheduleTypeInput').value;
+        const start = document.getElementById('scheduleStartInput').value;
+        const end = document.getElementById('scheduleEndInput').value;
+        const place = document.getElementById('schedulePlaceInput').value;
+        const alarm = document.getElementById('scheduleAlarmInput').value;
+        const memo = document.getElementById('scheduleMemoInput').value;
+        // 월간 캘린더를 해당 년/월로 이동
+        const [y, m] = start.split('T')[0].split('-');
         monthYear.year = parseInt(y, 10);
         monthYear.month = parseInt(m, 10);
-        addEventToCalendars({ title, date, content, emojis });
+        addEventToCalendars({ title, desc, type, start, end, place, alarm, memo });
         renderMonthCalendar();
         closeScheduleModal();
     });
