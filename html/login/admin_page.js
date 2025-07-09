@@ -114,7 +114,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         [];
                     events.forEach((ev) => {
                         const eventDiv = document.createElement('div');
-                        eventDiv.className = 'calendar-event';
+                        let typeClass = '';
+                        if (ev.type === '회의') typeClass = 'type-meeting';
+                        else if (ev.type === '업무') typeClass = 'type-work';
+                        else if (ev.type === '외근') typeClass = 'type-out';
+                        else if (ev.type === '출장') typeClass = 'type-trip';
+                        else typeClass = 'type-etc';
+                        eventDiv.className = 'calendar-event ' + typeClass;
                         eventDiv.innerHTML = `<b>[${ev.type}]</b> ${ev.title}`;
                         td.appendChild(eventDiv);
                     });
@@ -155,7 +161,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         [];
                     events.forEach((ev) => {
                         const eventDiv = document.createElement('div');
-                        eventDiv.className = 'calendar-event';
+                        let typeClass = '';
+                        if (ev.type === '회의') typeClass = 'type-meeting';
+                        else if (ev.type === '업무') typeClass = 'type-work';
+                        else if (ev.type === '외근') typeClass = 'type-out';
+                        else if (ev.type === '출장') typeClass = 'type-trip';
+                        else typeClass = 'type-etc';
+                        eventDiv.className = 'calendar-event ' + typeClass;
                         eventDiv.innerHTML = `<b>[${ev.type}]</b> ${ev.title}`;
                         td.appendChild(eventDiv);
                     });
@@ -252,7 +264,13 @@ document.addEventListener('DOMContentLoaded', function () {
         const weekCell = weekCalendar.querySelector(`td[data-date='${start.split('T')[0]}']`);
         if (weekCell) {
             const eventDiv = document.createElement('div');
-            eventDiv.className = 'calendar-event';
+            let typeClass = '';
+            if (type === '회의') typeClass = 'type-meeting';
+            else if (type === '업무') typeClass = 'type-work';
+            else if (type === '외근') typeClass = 'type-out';
+            else if (type === '출장') typeClass = 'type-trip';
+            else typeClass = 'type-etc';
+            eventDiv.className = 'calendar-event ' + typeClass;
             eventDiv.innerHTML = `<b>[${type}]</b> ${title}`;
             weekCell.appendChild(eventDiv);
         }

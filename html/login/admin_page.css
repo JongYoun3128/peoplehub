@@ -114,11 +114,12 @@ td {
 th {
     background: #f0f4f8;
 }
-.employee_btn_04 {
-    width: 130px;
-    display: flex;
-    justify-content: space-between;
+.employee_btn_04 {    
+    width: 200px;   
     margin: 0 auto;
+}
+.employee_btn_04 .edit-btn{
+    margin-right: 10px;
 }
 .late {
     color: #d32f2f;
@@ -287,30 +288,45 @@ form label {
     text-align: center;
     vertical-align: top;
 }
-.calendar-table td > div:first-child {
-    text-align: left;
-    font-weight: bold;
-}
-.calendar-table th {
-    background: #f0f4f8;
-    text-align: center;
-    height: 32px;
-    vertical-align: middle;
-}
 .calendar-table td {
     min-width: 80px;
-    height: 48px;
-    vertical-align: middle;
+    height: 100px;
+    max-height: 100px;
+    vertical-align: top;
+    overflow: hidden;
+    position: relative;
+    padding: 4px;
 }
 .calendar-table td > div:first-child {
     text-align: left;
     font-weight: bold;
     line-height: 1;
     margin-top: 0;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    height: 100%;
+    display: block;
+    height: auto;
+}
+.calendar-table .calendar-event {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.95em;
+    margin-bottom: 2px;
+    background: #eaf2ff;
+    border-radius: 4px;
+    padding: 2px 4px;
+    width: max-content;
+    max-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #222;
+}
+
+.calendar-table td {
+    /* 일정이 많을 때 스크롤 표시 */
+    overflow-y: auto;
 }
 
 .calendar-event {
@@ -601,4 +617,19 @@ button.full-width {
 }
 #scheduleModal .emoji-btn {
     background: #fff;
+}
+.calendar-table .calendar-event.type-meeting {
+    background: #ffb3b3;
+}
+.calendar-table .calendar-event.type-work {
+    background: #ffe0b2;
+}
+.calendar-table .calendar-event.type-out {
+    background: #fff9c4;
+}
+.calendar-table .calendar-event.type-trip {
+    background: #c8e6c9;
+}
+.calendar-table .calendar-event.type-etc {
+    background: #bbdefb;
 }
