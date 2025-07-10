@@ -1,21 +1,4 @@
-$('.header_menu_service').click(function () {
-    $('.sub_menu_box').slideToggle();
-    $('.solution_menu').slideUp();
-    $('.resources_menu').slideUp();
-});
-
-$('.header_menu_solution').click(function () {
-    $('.solution_menu').slideToggle();
-    $('.sub_menu_box').slideUp();
-    $('.resources_menu').slideUp();
-});
-
-$('.header_menu_resources').click(function () {
-    $('.resources_menu').slideToggle();
-    $('.solution_menu').slideUp();
-    $('.sub_menu_box').slideUp();
-});
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     const hamburgerBtn = document.querySelector('.hamburger_menu');
     const mobileMenu = document.querySelector('.mobile_menu');
     const mobileMenuItems = document.querySelectorAll('.mobile_menu_item');
@@ -29,15 +12,15 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('모바일 메뉴 초기화 완료');
 
     // 햄버거 메뉴 토글
-    hamburgerBtn.addEventListener('click', function (e) {
+    hamburgerBtn.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-
+        
         console.log('햄버거 버튼 클릭됨');
-
+        
         hamburgerBtn.classList.toggle('active');
         mobileMenu.classList.toggle('active');
-
+        
         // 메뉴가 열릴 때 body 스크롤 방지
         if (mobileMenu.classList.contains('active')) {
             document.body.style.overflow = 'hidden';
@@ -49,13 +32,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // 서브메뉴 토글
-    mobileMenuItems.forEach((item) => {
+    mobileMenuItems.forEach(item => {
         const title = item.querySelector('.mobile_menu_title');
         if (title) {
-            title.addEventListener('click', function (e) {
+            title.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
-
+                
                 console.log('서브메뉴 토글:', title.textContent);
                 item.classList.toggle('active');
             });
@@ -63,12 +46,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // 모바일 메뉴 외부 클릭 시 닫기
-    document.addEventListener('click', function (e) {
-        if (
-            mobileMenu.classList.contains('active') &&
-            !hamburgerBtn.contains(e.target) &&
-            !mobileMenu.contains(e.target)
-        ) {
+    document.addEventListener('click', function(e) {
+        if (mobileMenu.classList.contains('active') && 
+            !hamburgerBtn.contains(e.target) && 
+            !mobileMenu.contains(e.target)) {
+            
             hamburgerBtn.classList.remove('active');
             mobileMenu.classList.remove('active');
             document.body.style.overflow = '';
@@ -77,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // ESC 키로 메뉴 닫기
-    document.addEventListener('keydown', function (e) {
+    document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
             hamburgerBtn.classList.remove('active');
             mobileMenu.classList.remove('active');
@@ -87,11 +69,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // 윈도우 리사이즈 시 메뉴 닫기
-    window.addEventListener('resize', function () {
-        if (
-            window.innerWidth > 768 &&
-            mobileMenu.classList.contains('active')
-        ) {
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && mobileMenu.classList.contains('active')) {
             hamburgerBtn.classList.remove('active');
             mobileMenu.classList.remove('active');
             document.body.style.overflow = '';
@@ -101,8 +80,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 모바일 메뉴 내부 링크 클릭 시 메뉴 닫기
     const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-    mobileMenuLinks.forEach((link) => {
-        link.addEventListener('click', function () {
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', function() {
             // 서브메뉴 토글 링크는 제외
             if (!this.classList.contains('mobile_menu_title')) {
                 setTimeout(() => {
@@ -114,4 +93,4 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-});
+}); 

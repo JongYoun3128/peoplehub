@@ -1,6 +1,206 @@
 .main {
     width: 100%;
 }
+.top_banner {
+    width: 100%;
+    background-color: #6dc2ff;
+    position: sticky;
+    z-index: 3;
+    top: 0;
+}
+.top_banner_box {
+    display: flex;
+    width: 65%;
+    margin: 0 auto;
+}
+.top_banner_box p {
+    margin: 0 auto;
+    padding: 15px 0;
+    font-size: 12px;
+}
+.top_banner_box span {
+    margin-left: 20px;
+    border: 1px solid #004dc1;
+    padding: 6px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #004dc1;
+    color: #fff;
+    transition: 0.3s;
+}
+.top_banner_box span:hover {
+    background-color: #0a2864;
+}
+.header_wrap {
+    width: 100%;
+    border-bottom: 1px solid #f0f1f3;
+    position: sticky;
+    z-index: 3;
+    top: 42px;
+    background-color: #fff;
+}
+
+.header_wrap .header {
+    width: 65%;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 500;
+}
+.header_left_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header_wrap .header .header_logo {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.header_wrap .header .header_menu {
+    display: flex;
+}
+
+.header_wrap .header .header_menu > li {
+    margin: 0 30px;
+    position: relative;
+}
+
+.line_box {
+    position: absolute;
+    bottom: -10px;
+    height: 1px;
+    width: 0;
+    background-color: #004dc1;
+    transition: 0.3s;
+}
+.header_wrap .header .header_menu > li:hover .line_box {
+    width: 100%;
+}
+
+.header_wrap .header .login_box {
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+}
+
+.header_wrap .header .login_box .login_button a {
+    padding: 0.8em 1.2em;
+    border: 1px solid #004dc1;
+    border-radius: 3px;
+    color: #004dc1;
+    transition: 0.3s;
+}
+.header_wrap .header .login_box .login_button a:hover {
+    background-color: #004dc1;
+    color: #fff;
+}
+
+.header_wrap .header .login_box .experience_button a {
+    padding: 0.8em 1.2em;
+    border: 1px solid #004dc1;
+    border-radius: 3px;
+    background-color: #004dc1;
+    color: #fff;
+}
+.header_wrap .header .header_menu .sub_menu_box {
+    width: 1920px;
+    position: absolute;
+    left: -480px;
+    top: 58px;
+    background-color: #fff;
+    padding-bottom: 50px;
+    display: none;
+}
+.header_wrap .header .header_menu .sub_menu {
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    width: 65%;
+    padding-left: 250px;
+}
+.header_wrap .header .header_menu .sub_menu li {
+    width: 320px;
+    margin-top: 50px;
+}
+.header_wrap .header .header_menu .sub_menu li a {
+    display: flex;
+}
+.header_wrap .header .header_menu .sub_menu li a img {
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    background-color: #f8f9faa7;
+    margin-right: 20px;
+}
+.header_wrap .header .header_menu .sub_menu li a .header_menu_text h4 {
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 700;
+}
+.header_wrap .header .header_menu .sub_menu li a .header_menu_text {
+    width: 200px;
+}
+.header_menu_solution {
+    position: relative;
+}
+.header_menu_solution .solution_menu {
+    position: absolute;
+    top: 25px;
+    width: 150px;
+    padding: 15px 10px 0 10px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 2px rgba(159, 176, 199, 0.3);
+    background-color: #fff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: none;
+}
+
+.header_menu_solution .solution_menu li {
+    margin-bottom: 20px;
+    font-weight: 400;
+    color: #1e1f21;
+    cursor: pointer;
+}
+.header_menu_solution .solution_menu .solution_menu_sub_title_color:hover {
+    color: #004dc1;
+}
+.header_menu_solution .solution_menu .solution_menu_sub_title {
+    color: #8c909f;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.header_menu_resources {
+    position: relative;
+}
+.header_menu_resources .resources_menu {
+    position: absolute;
+    top: 25px;
+    width: 120px;
+    padding: 15px 10px 0 10px;
+    box-shadow: 0 2px 2px rgba(159, 176, 199, 0.3);
+    background-color: #fff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: none;
+}
+.header_menu_resources .resources_menu li {
+    margin-bottom: 20px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.header_menu_resources .resources_menu li:hover {
+    color: #004dc1;
+}
 
 .main_banner {
     width: 100%;
@@ -1086,4 +1286,496 @@
 }
 .banner_box_text ul li:hover {
     transform: translateY(-5px);
+}
+.footer_wrap {
+    width: 100%;
+    height: 600px;
+    box-sizing: border-box;
+    padding-top: 50px;
+}
+.footer {
+    margin: 0 auto;
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+}
+.footer_text {
+    font-size: 13px;
+    line-height: 22px;
+}
+.footer_list {
+    line-height: 2.2;
+}
+.footer_list li a {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #1e1f21;
+}
+.footer_list li {
+    width: 130px;
+    box-sizing: border-box;
+}
+.footer_logo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.footer_bold {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.footer_last {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 20px;
+    margin-top: 20px;
+}
+.footer_bottom {
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background-color: #f4f7fb;
+}
+.footer_bottom_list {
+    width: 65%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.footer_bottom_contact {
+    display: flex;
+    gap: 30px;
+    color: #969faa;
+    margin-right: 300px;
+    font-size: 14px;
+}
+.footer_icon_list {
+    display: flex;
+    padding-top: 10px;
+    gap: 10px;
+    margin-right: 20px;
+}
+.footer_icon_list img {
+    width: 30px;
+}
+.footer_link_list {
+    display: flex;
+    padding-top: 10px;
+    gap: 10px;
+    margin-left: 20px;
+}
+.footer_link_list img {
+    width: 100px;
+}
+
+/* 햄버거 메뉴 기본 숨김 */
+.hamburger_menu {
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.mobile_menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 999;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+/* 반응형 스타일 */
+@media screen and (max-width: 1024px) {
+    .top_banner_box {
+        width: 90%;
+    }
+
+    .header_wrap .header {
+        width: 90%;
+    }
+
+    .footer {
+        width: 90%;
+    }
+
+    .footer_bottom_list {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* 상단 배너 숨김 */
+    .top_banner {
+        display: none;
+    }
+
+    /* 헤더 고정 위치 조정 */
+    .header_wrap {
+        top: 0;
+    }
+
+    /* 헤더 높이 조정 */
+    .header_wrap .header {
+        height: 70px;
+        width: 95%;
+    }
+
+    /* 로고 크기 조정 */
+    .header_wrap .header .header_logo {
+        width: 140px;
+        height: 70px;
+        margin-right: 20px;
+    }
+
+    .header_wrap .header .header_logo img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* 데스크톱 메뉴 숨김 */
+    .header_wrap .header .header_menu {
+        display: none;
+    }
+
+    /* 데스크톱 로그인 버튼 숨김 */
+    .header_wrap .header .login_box {
+        display: none;
+    }
+
+    /* 햄버거 메뉴 버튼 표시 */
+    .hamburger_menu {
+        display: block;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .hamburger_btn {
+        width: 30px;
+        height: 25px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .hamburger_btn span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #004dc1;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* 햄버거 버튼 활성화 상태 */
+    .hamburger_menu.active .hamburger_btn span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .hamburger_menu.active .hamburger_btn span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger_menu.active .hamburger_btn span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    /* 모바일 메뉴 */
+    .mobile_menu {
+        display: block;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: #fff;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+        overflow-y: auto;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile_menu.active {
+        transform: translateX(0);
+    }
+
+    .mobile_menu_content {
+        padding: 20px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .mobile_menu_list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex: 1;
+        width: 100%;
+    }
+
+    .mobile_menu_item {
+        border-bottom: 1px solid #f0f1f3;
+        width: 100%;
+    }
+
+    .mobile_menu_item a {
+        display: block;
+        padding: 15px 0;
+        color: #1e1f21;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .mobile_menu_title {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .mobile_menu_title::after {
+        content: '+';
+        font-size: 20px;
+        color: #004dc1;
+        transition: transform 0.3s ease;
+        font-weight: bold;
+    }
+
+    .mobile_menu_item.active .mobile_menu_title::after {
+        transform: rotate(45deg);
+    }
+
+    .mobile_submenu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background-color: #f8f9fa;
+        width: 100%;
+    }
+
+    .mobile_menu_item.active .mobile_submenu {
+        max-height: 500px;
+    }
+
+    .mobile_submenu li {
+        width: 100%;
+    }
+
+    .mobile_submenu li a {
+        padding: 12px 20px;
+        font-size: 14px;
+        color: #666;
+        border-bottom: 1px solid #e9ecef;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .mobile_submenu li:last-child a {
+        border-bottom: none;
+    }
+
+    /* 모바일 로그인 섹션 */
+    .mobile_login_section {
+        padding: 20px 0;
+        border-top: 1px solid #f0f1f3;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .mobile_login_btn,
+    .mobile_inquiry_btn,
+    .mobile_experience_btn {
+        display: block;
+        padding: 12px 20px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .mobile_login_btn {
+        background-color: transparent;
+        color: #004dc1;
+        border: 1px solid #004dc1;
+    }
+
+    .mobile_inquiry_btn {
+        background-color: transparent;
+        color: #1e1f21;
+        border: 1px solid #ddd;
+    }
+
+    .mobile_experience_btn {
+        background-color: #004dc1;
+        color: #fff;
+        border: 1px solid #004dc1;
+    }
+
+    .mobile_login_btn:hover,
+    .mobile_inquiry_btn:hover,
+    .mobile_experience_btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 푸터 반응형 */
+    .footer_wrap {
+        height: auto;
+        padding: 30px 0;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer_text,
+    .footer_introduction,
+    .footer_solution,
+    .footer_resources,
+    .footer_peopelhub {
+        width: 100%;
+    }
+
+    .footer_list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer_list li {
+        width: auto;
+        text-align: center;
+    }
+
+    .footer_logo {
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer_bottom {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .footer_bottom_list {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .footer_bottom_contact {
+        margin-right: 0;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .footer_icon_list,
+    .footer_link_list {
+        margin: 0;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header_wrap .header {
+        width: 95%;
+        height: 60px;
+    }
+
+    .header_wrap .header .header_logo {
+        width: 70px;
+        height: 60px;
+        margin-right: 15px;
+    }
+
+    .hamburger_btn {
+        width: 25px;
+        height: 20px;
+    }
+
+    .hamburger_btn span {
+        height: 2px;
+    }
+
+    .mobile_menu {
+        top: 60px;
+        height: calc(100vh - 60px);
+        width: 100%;
+        left: 0;
+    }
+
+    .mobile_menu_content {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .mobile_menu_item a {
+        padding: 12px 0;
+        font-size: 15px;
+        width: 100%;
+    }
+
+    .mobile_submenu li a {
+        padding: 10px 15px;
+        font-size: 13px;
+        width: 100%;
+    }
+
+    .mobile_login_section {
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    .mobile_login_btn,
+    .mobile_inquiry_btn,
+    .mobile_experience_btn {
+        padding: 10px 15px;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .footer_wrap {
+        padding: 20px 0;
+    }
+
+    .footer {
+        gap: 20px;
+    }
+
+    .footer_bottom_contact {
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .footer_icon_list img {
+        width: 25px;
+    }
+
+    .footer_link_list img {
+        width: 80px;
+    }
 }
