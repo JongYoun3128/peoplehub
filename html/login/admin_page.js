@@ -551,6 +551,7 @@ document.addEventListener('DOMContentLoaded', function () {
     renderLeaveSummary();
 
     // 직원 추가 모달 관련
+    // 직원 추가 모달 동작 및 표 추가/수정/삭제 기능
     const openEmployeeModalBtn = document.querySelector('#employee .add');
     const closeEmployeeModalBtn = document.getElementById('closeEmployeeModalBtn');
     const employeeModal = document.getElementById('employeeModal');
@@ -558,111 +559,102 @@ document.addEventListener('DOMContentLoaded', function () {
     const employeeForm = document.getElementById('employeeForm');
     const employeeTableBody = document.querySelector('#employee table tbody');
 
-    // 수정모드 관련 변수
+    // 탭 전환
+    const modalTabs = document.querySelectorAll('.employee-modal-tab');
+    const modalPanels = document.querySelectorAll('.employee-modal-panel');
+    modalTabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        modalTabs.forEach(t => t.classList.remove('active'));
+        modalPanels.forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+      });
+    });
+
+    // 모달 열기/닫기
+    openEmployeeModalBtn.addEventListener('click', function() {
+      employeeModal.style.display = 'block';
+    });
+    closeEmployeeModalBtn.addEventListener('click', function() {
+      employeeModal.style.display = 'none';
+      employeeForm.reset();
+    });
+    window.addEventListener('click', function(e) {
+      if (e.target === employeeModal) {
+        employeeModal.style.display = 'none';
+        employeeForm.reset();
+      }
+    });
+
+    // 직원 추가/수정
     let editMode = false;
     let editingRow = null;
-    // 수정완료 버튼 생성
-    let editEmployeeBtn = document.createElement('button');
-    editEmployeeBtn.type = 'button';
-    editEmployeeBtn.id = 'editEmployeeBtn';
-    editEmployeeBtn.className = 'full-width';
-    editEmployeeBtn.textContent = '수정완료';
-    editEmployeeBtn.style.display = 'none';
-    // 모달 버튼 영역에 추가
-    const modalBtns = employeeForm.querySelector('.modal-btns');
-    modalBtns.appendChild(editEmployeeBtn);
-
-    function openEmployeeModal() {
-        employeeModal.style.display = 'block';
-    }
-    function closeEmployeeModal() {
+    employeeForm.onsubmit = function(e) {
+      e.preventDefault();
+      // 값 수집
+      const empId = document.getElementById('empId').value;
+      const empFirstName = document.getElementById('empFirstName').value;
+      const empDept = document.getElementById('empDept').value;
+      const empRank = document.getElementById('empRank').value;
+      const empPhone = document.getElementById('empPhone').value;
+      const empJoinDate = document.getElementById('empJoinDate').value;
+      const empEmail = document.getElementById('empEmail').value;
+      // 표에 추가/수정
+      if (editMode && editingRow) {
+        const tds = editingRow.querySelectorAll('td');
+        tds[0].textContent = empId;
+        tds[1].textContent = empFirstName;
+        tds[2].textContent = empDept;
+        tds[3].textContent = empRank;
+        tds[4].textContent = empPhone;
+        tds[5].textContent = empJoinDate;
+        tds[6].textContent = empEmail;
         employeeModal.style.display = 'none';
         employeeForm.reset();
         editMode = false;
         editingRow = null;
-        addEmployeeBtn.style.display = '';
-        editEmployeeBtn.style.display = 'none';
-    }
-    openEmployeeModalBtn.addEventListener('click', function() {
-        openEmployeeModal();
-        addEmployeeBtn.style.display = '';
-        editEmployeeBtn.style.display = 'none';
-    });
-    closeEmployeeModalBtn.addEventListener('click', closeEmployeeModal);
-    window.addEventListener('click', function (e) {
-        if (e.target === employeeModal) closeEmployeeModal();
-    });
-
-    // 직원 추가
-    addEmployeeBtn.addEventListener('click', function () {
-        if (!employeeForm.reportValidity()) return;
-        const empId = document.getElementById('empId').value;
-        const name = document.getElementById('empName').value;
-        const dept = document.getElementById('empDept').value;
-        const rank = document.getElementById('empRank').value;
-        const phone = document.getElementById('empPhone').value;
-        const joinDate = document.getElementById('empJoinDate').value;
-        // 기기매칭, 관리(수정/삭제) 기본값
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${empId}</td>
-            <td>${name}</td>
-            <td>${dept}</td>
-            <td>${rank}</td>
-            <td>${phone}</td>
-            <td>${joinDate}</td>
-            <td>O</td>
-            <td class="employee_btn_04">
-                <button class="edit-btn">수정</button><button class="delete-btn">삭제</button>
-            </td>
-        `;
-        employeeTableBody.appendChild(row);
-        closeEmployeeModal();
-    });
+        return;
+      }
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${empId}</td>
+        <td>${empFirstName}</td>
+        <td>${empDept}</td>
+        <td>${empRank}</td>
+        <td>${empPhone}</td>
+        <td>${empJoinDate}</td>
+        <td>${empEmail}</td>
+        <td class="employee_btn_04">
+          <button class="edit-btn">수정</button><button class="delete-btn">삭제</button>
+        </td>
+      `;
+      employeeTableBody.appendChild(row);
+      employeeModal.style.display = 'none';
+      employeeForm.reset();
+    };
 
     // 수정/삭제 버튼 이벤트 위임
     employeeTableBody.addEventListener('click', function(e) {
-        const target = e.target;
-        const row = target.closest('tr');
-        if (target.classList.contains('edit-btn')) {
-            // 수정 모드 진입
-            const tds = row.querySelectorAll('td');
-            document.getElementById('empId').value = tds[0].textContent;
-            document.getElementById('empName').value = tds[1].textContent;
-            document.getElementById('empDept').value = tds[2].textContent;
-            document.getElementById('empRank').value = tds[3].textContent;
-            document.getElementById('empPhone').value = tds[4].textContent;
-            document.getElementById('empJoinDate').value = tds[5].textContent;
-            openEmployeeModal();
-            addEmployeeBtn.style.display = 'none';
-            editEmployeeBtn.style.display = '';
-            editMode = true;
-            editingRow = row;
-        } else if (target.classList.contains('delete-btn')) {
-            if (confirm('정말 삭제하시겠습니까?')) {
-                row.remove();
-            }
+      const target = e.target;
+      const row = target.closest('tr');
+      if (target.classList.contains('edit-btn')) {
+        // 수정 모드 진입
+        const tds = row.querySelectorAll('td');
+        document.getElementById('empId').value = tds[0].textContent;
+        document.getElementById('empFirstName').value = tds[1].textContent;
+        document.getElementById('empDept').value = tds[2].textContent;
+        document.getElementById('empRank').value = tds[3].textContent;
+        document.getElementById('empPhone').value = tds[4].textContent;
+        document.getElementById('empJoinDate').value = tds[5].textContent;
+        document.getElementById('empEmail').value = tds[6].textContent;
+        employeeModal.style.display = 'block';
+        editMode = true;
+        editingRow = row;
+      } else if (target.classList.contains('delete-btn')) {
+        if (confirm('정말 삭제하시겠습니까?')) {
+          row.remove();
         }
-    });
-
-    // 수정완료 버튼 동작
-    editEmployeeBtn.addEventListener('click', function() {
-        if (!employeeForm.reportValidity() || !editingRow) return;
-        const empId = document.getElementById('empId').value;
-        const name = document.getElementById('empName').value;
-        const dept = document.getElementById('empDept').value;
-        const rank = document.getElementById('empRank').value;
-        const phone = document.getElementById('empPhone').value;
-        const joinDate = document.getElementById('empJoinDate').value;
-        const tds = editingRow.querySelectorAll('td');
-        tds[0].textContent = empId;
-        tds[1].textContent = name;
-        tds[2].textContent = dept;
-        tds[3].textContent = rank;
-        tds[4].textContent = phone;
-        tds[5].textContent = joinDate;
-        // 수정모드 종료
-        closeEmployeeModal();
+      }
     });
 
     // 설정 페이지 탭 전환 기능

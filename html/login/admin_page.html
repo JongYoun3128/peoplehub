@@ -635,47 +635,7 @@
                 <div class="employee-controls">
                     <button class="add">직원추가</button>
                 </div>
-                <!-- 직원 추가 모달 -->
-                <div id="employeeModal" class="modal">
-                    <div class="modal-content">
-                        <span class="close" id="closeEmployeeModalBtn"
-                            >&times;</span
-                        >
-                        <h3>직원 추가</h3>
-                        <form id="employeeForm">
-                            <label
-                                >사원번호
-                                <input type="text" id="empId" required
-                            /></label>
-                            <label
-                                >이름 <input type="text" id="empName" required
-                            /></label>
-                            <label
-                                >부서 <input type="text" id="empDept" required
-                            /></label>
-                            <label
-                                >직급 <input type="text" id="empRank" required
-                            /></label>
-                            <label
-                                >연락처
-                                <input type="text" id="empPhone" required
-                            /></label>
-                            <label
-                                >입사일
-                                <input type="date" id="empJoinDate" required
-                            /></label>
-                            <div class="modal-btns full-width">
-                                <button
-                                    type="button"
-                                    id="addEmployeeBtn"
-                                    class="full-width"
-                                >
-                                    +직원추가
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+
                 <table>
                     <thead>
                         <tr>
@@ -685,13 +645,271 @@
                             <th>직급</th>
                             <th>연락처</th>
                             <th>입사일</th>
-                            <th>기기매칭</th>
+                            <th>이메일</th>
                             <th>관리</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
                 </table>
             </section>
+            <!-- 직원 추가 모달 (이미지와 동일한 디자인) -->
+            <div
+                id="employeeModal"
+                class="modal"
+                style="display: none; z-index: 1000"
+            >
+                <div class="employee-modal-content">
+                    <h2
+                        style="
+                            font-size: 1.3rem;
+                            font-weight: 700;
+                            margin-bottom: 1.2rem;
+                        "
+                    >
+                        홍길동의 인사 정보
+                    </h2>
+                    <div class="employee-modal-tabs">
+                        <button
+                            class="employee-modal-tab active"
+                            data-tab="basic"
+                        >
+                            기본정보
+                        </button>
+                        <button class="employee-modal-tab" data-tab="work">
+                            근로정보
+                        </button>
+                    </div>
+                    <form id="employeeForm">
+                        <div class="employee-modal-panel active" id="tab-basic">
+                            <div class="employee-modal-twocol">
+                                <div
+                                    class="employee-modal-col employee-modal-col-left"
+                                >
+                                    <div class="employee-modal-row">
+                                        <label
+                                            >사원번호
+                                            <input
+                                                type="text"
+                                                id="empId"
+                                                required
+                                        /></label>
+                                    </div>
+                                    <div class="employee-modal-row">
+                                        <label
+                                            >이름
+                                            <input
+                                                type="text"
+                                                id="empFirstName"
+                                                class="employee-modal-input"
+                                            />
+                                        </label>
+                                    </div>
+                                    <div class="employee-modal-row">
+                                        <label
+                                            >연락처
+                                            <input
+                                                type="text"
+                                                id="empPhone"
+                                                class="employee-modal-input"
+                                            />
+                                        </label>
+                                    </div>
+                                    <div class="employee-modal-row">
+                                        <label
+                                            >이메일
+                                            <input
+                                                type="email"
+                                                id="empEmail"
+                                                class="employee-modal-input"
+                                            />
+                                        </label>
+                                    </div>
+                                    <div class="employee-modal-row">
+                                        <label
+                                            >입사일
+                                            <input
+                                                type="date"
+                                                id="empJoinDate"
+                                                class="employee-modal-input"
+                                            />
+                                        </label>
+                                    </div>
+                                    <div class="employee-modal-row">
+                                        <label
+                                            >부서
+                                            <select
+                                                id="empDept"
+                                                class="employee-modal-input"
+                                            >
+                                                <option value="인사팀">
+                                                    인사팀
+                                                </option>
+                                                <option value="기술팀">
+                                                    기술팀
+                                                </option>
+                                                <option value="영업팀">
+                                                    영업팀
+                                                </option>
+                                                <option value="지원팀">
+                                                    지원팀
+                                                </option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                    <div class="employee-modal-row">
+                                        <label
+                                            >직급
+                                            <select
+                                                id="empRank"
+                                                class="employee-modal-input"
+                                            >
+                                                <option value="임원">
+                                                    임원
+                                                </option>
+                                                <option value="부장">
+                                                    부장
+                                                </option>
+                                                <option value="팀장">
+                                                    팀장
+                                                </option>
+                                                <option value="대리">
+                                                    대리
+                                                </option>
+                                                <option value="사원">
+                                                    사원
+                                                </option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div
+                                    class="employee-modal-col employee-modal-col-right"
+                                >
+                                    <div class="employee-modal-row">
+                                        <label
+                                            >생년월일
+                                            <input type="text" id="empBirth"
+                                        /></label>
+                                    </div>
+                                    <div class="employee-modal-row">
+                                        <label
+                                            >고용형태
+                                            <input type="text" id="empType"
+                                        /></label>
+                                    </div>
+                                    <div class="employee-modal-row">
+                                        <label
+                                            >인사이동
+                                            <input type="text" id="empMove"
+                                        /></label>
+                                    </div>
+                                    <div class="employee-modal-row">
+                                        <label
+                                            >승진이력
+                                            <input
+                                                type="text"
+                                                id="empPromotion"
+                                        /></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="employee-modal-panel" id="tab-work">
+                            <div class="employee-modal-row">
+                                <label
+                                    >성명
+                                    <input type="text" value="홍길동" readonly
+                                /></label>
+                                <label
+                                    >생년월일
+                                    <input
+                                        type="text"
+                                        value="1992-03-15"
+                                        readonly
+                                /></label>
+                            </div>
+                            <div class="employee-modal-row">
+                                <label
+                                    >주소
+                                    <input
+                                        type="text"
+                                        value="서울시 강남구 테헤란로 123"
+                                        readonly
+                                /></label>
+                                <label
+                                    >가족관계
+                                    <input
+                                        type="text"
+                                        value="배우자, 자녀1"
+                                        readonly
+                                /></label>
+                            </div>
+                            <div class="employee-modal-row">
+                                <label
+                                    >학력
+                                    <input
+                                        type="text"
+                                        value="서울대학교 경영학과 졸업"
+                                        readonly
+                                /></label>
+                                <label
+                                    >경력
+                                    <input
+                                        type="text"
+                                        value="2021~현재 PeopleHub 대리(3년차)"
+                                        readonly
+                                /></label>
+                            </div>
+                            <div class="employee-modal-row">
+                                <label
+                                    >자격
+                                    <input
+                                        type="text"
+                                        value="ERP 정보관리사, 컴퓨터활용능력 1급"
+                                        readonly
+                                /></label>
+                            </div>
+                            <div class="employee-modal-row">
+                                <label
+                                    >임금
+                                    <input
+                                        type="text"
+                                        value="연 4,200만원"
+                                        readonly
+                                /></label>
+                                <label
+                                    >근로시간
+                                    <input
+                                        type="text"
+                                        value="주 40시간"
+                                        readonly
+                                /></label>
+                                <label
+                                    >휴가
+                                    <input type="text" value="연 15일" readonly
+                                /></label>
+                            </div>
+                        </div>
+                        <div class="employee-modal-btns">
+                            <button
+                                type="button"
+                                id="closeEmployeeModalBtn"
+                                class="employee-modal-btn cancel"
+                            >
+                                닫기
+                            </button>
+                            <button
+                                type="submit"
+                                id="addEmployeeBtn"
+                                class="employee-modal-btn save"
+                            >
+                                저장
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- // 직원 추가 모달 -->
             <section id="notification">
                 <h2>알림/메시지</h2>
                 <div class="notification-controls">
