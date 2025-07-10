@@ -505,7 +505,7 @@
 
 .personnel_information_list_text_box {
     width: 40%;
-    margin-left: 7%;
+    margin-left: 3%;
 }
 .personnel_information_list_text_box h5 {
     color: #1e1f21;
@@ -524,11 +524,11 @@
     line-height: 1.75;
 }
 .personnel_information_list_img_box {
-    width: 50%;
+    width: 60%;
 }
 
 .personnel_information_list_img_box img {
-    width: 60%;
+    width: 80%;
     margin-left: 15%;
 }
 .message_and_contract {
