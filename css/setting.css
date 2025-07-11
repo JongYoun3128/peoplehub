@@ -104,3 +104,109 @@
     font-size: 15px;
     font-weight: 600;
 }
+
+@media screen and (max-width: 1024px) {
+    .wrap {
+        width: 90% !important;
+        min-width: 0;
+        max-width: 100vw;
+        margin: 24px auto !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        padding: 8px 0 !important;
+        box-sizing: border-box;
+        display: flex !important;
+    }
+    .side {
+        margin-right: 0 !important;
+        margin-bottom: 24px !important;
+        width: 100% !important;
+    }
+    .side_list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 100px;
+    }
+    .side_list li {
+        width: 25% !important;
+        min-width: 0;
+        max-width: 100vw;
+        height: 44px !important;
+        font-size: 1rem !important;
+        line-height: 44px !important;
+        box-sizing: border-box;
+    }
+    .setting_title {
+        width: 100% !important;
+        min-width: 0;
+        max-width: 100vw;
+        height: auto !important;
+        padding: 16px 0 !important;
+        margin-bottom: 24px !important;
+        text-align: center !important;
+    }
+    .setting_title h1 {
+        font-size: 1.3rem !important;
+        margin-bottom: 12px !important;
+    }
+    .setting_title p {
+        font-size: 0.95rem !important;
+        margin-bottom: 16px !important;
+    }
+    .setting_text {
+        font-size: 1rem !important;
+        margin-bottom: 24px !important;
+        text-align: center !important;
+    }
+    .setting_list_title {
+        text-align: center;
+    }
+    .setting_list p {
+        font-size: 1rem !important;
+        margin-bottom: 20px !important;
+        word-break: break-all;
+        text-align: center !important;
+    }
+    .setting_list p span {
+        display: none;
+    }
+    .start_banner {
+        width: 90%;
+        padding: 32px 0 !important;
+        text-align: center !important;
+        margin: 0 auto;
+    }
+    .start_banner h2 {
+        font-size: 1.2rem !important;
+        margin-bottom: 16px !important;
+    }
+    .start_banner h3 {
+        font-size: 1rem !important;
+        margin-bottom: 16px !important;
+    }
+    .start_banner p {
+        width: 100% !important;
+        max-width: 240px;
+        font-size: 1rem !important;
+        padding: 0.8em 0 !important;
+        margin: 0 auto 8px auto !important;
+        display: block;
+    }
+    html,
+    body {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+    }
+    .side_list li a {
+        font-size: 1rem;
+    }
+    .setting_answer_title {
+        text-align: center;
+    }
+    .setting_answer p {
+        text-align: center;
+    }
+    .setting_answer p span {
+        display: none;
+    }
+}

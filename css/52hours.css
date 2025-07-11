@@ -654,3 +654,284 @@
 .hour_input_box {
     padding-top: 40px;
 }
+
+@media (max-width: 768px) {
+    .wrap {
+        width: 100vw;
+        overflow-x: hidden;
+        padding: 0 5vw;
+        box-sizing: border-box;
+    }
+    .hour,
+    .hour_all,
+    .hour_time,
+    .hour_report,
+    .hour_banner_slide,
+    .hour_side,
+    .hour_rest,
+    .service_category,
+    #wrap,
+    .hour_time_slide,
+    .hour_report_slide {
+        width: 100%;
+        margin: 0 auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box;
+        margin-bottom: 32px !important;
+        margin-top: 32px !important;
+    }
+    .hour_title,
+    .hour_info_title,
+    .hour_work_title,
+    .hour_all_title,
+    .hour_time_title,
+    .hour_report_title {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 0 2vw;
+        box-sizing: border-box;
+        margin-bottom: 24px;
+        margin-top: 24px;
+    }
+    .hour_title {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        margin-bottom: 40px;
+    }
+    .hour_title_img img {
+        width: 90vw;
+        max-width: 320px;
+        height: auto;
+        display: block;
+        margin: 0 auto 16px auto;
+    }
+    .hour_title_text {
+        margin-right: 0;
+        text-align: center;
+    }
+    .hour_title_text h2 {
+        font-size: 1.4rem;
+        line-height: 1.5;
+        word-break: keep-all;
+        margin-bottom: 10px;
+    }
+    .hour_title_text_flex {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 20px;
+        align-items: center;
+    }
+    .hour_title_text_flex h5,
+    .hour_title_text_flex p {
+        padding: 0.7em 1.5em;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 6px;
+    }
+    .service_category_list h2 {
+        margin-bottom: 50px;
+    }
+    .hour_info_list,
+    .hour_work_list,
+    .hour_all_list,
+    .hour_time_title_btn,
+    .hour_time_title_flex,
+    .hour_report_title_btn,
+    .hour_report_title_flex,
+    .service_category_list_box,
+    .hour_input_input {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 24px !important;
+        width: 100% !important;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    .hour_info_list01,
+    .hour_info_list03,
+    .hour_work_list li,
+    .hour_all_list li,
+    .service_category_list_box > li {
+        width: 100% !important;
+        max-width: 350px;
+        margin: 0 auto 24px auto !important;
+        box-sizing: border-box;
+        padding: 18px 10px !important;
+    }
+    .hour_info_list01_box,
+    .hour_info_list03_box {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+    .hour_info_list01_box_circle,
+    .hour_info_list03_box_circle {
+        width: 60px;
+        height: 60px;
+        padding-top: 12px;
+        font-size: 0.95rem;
+    }
+    .hour_info_list01_box_circle p,
+    .hour_info_list03_box_circle p {
+        font-size: 1rem;
+        margin-top: 4px;
+    }
+    .hour_info_list01_box_plus {
+        font-size: 1.1rem;
+    }
+    .hour_info_list01 > p,
+    .hour_info_list03 > p {
+        font-size: 1rem;
+        margin-top: 8px;
+    }
+    .hour_work {
+        padding: 32px 0;
+    }
+    .hour_work_title {
+        font-size: 1.2rem;
+        margin-bottom: 24px;
+    }
+    .all_01,
+    .all_02,
+    .all_03,
+    .all_04,
+    .all_05,
+    .all {
+        display: block;
+        margin: 0 auto 10px auto;
+    }
+    .hour_all_list li h2 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+    .hour_all_list li p {
+        font-size: 0.98rem;
+        line-height: 1.5;
+    }
+    .hour_time_title_text h2,
+    .hour_report_title_text {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    .hour_time_title_flex_box img,
+    .hour_report_title_flex_box img {
+        width: 50px;
+        height: auto;
+        display: block;
+        margin: 0 auto 8px auto;
+    }
+    .hour_time_title_flex_box p,
+    .hour_report_title_flex_box p {
+        font-size: 0.98rem;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+    .hour_time_slide img,
+    .hour_report_slide img {
+        width: 100vw;
+        max-width: 320px;
+        height: auto;
+        display: block;
+        margin: 0 auto 12px auto;
+    }
+    /* 슬라이더/배너 모바일에서 숨김 */
+    .hour_banner_slide,
+    .hour_banner_slide_box,
+    .hour_banner_slide_list {
+        display: none !important;
+    }
+    .hour_side_box,
+    .hour_rest_box {
+        flex-direction: column;
+        align-items: center;
+        width: 100% !important;
+        margin: 0 auto 24px auto !important;
+        gap: 20px;
+        box-sizing: border-box;
+        padding: 0 0 18px 0 !important;
+    }
+    .hour_side_box_img img,
+    .hour_rest_img img {
+        width: 90vw;
+        max-width: 320px;
+        height: auto;
+        display: block;
+        margin: 0 auto 12px auto;
+    }
+    .hour_side_box_text,
+    .hour_rest_text {
+        padding: 0 !important;
+        margin: 0 !important;
+        text-align: center;
+    }
+    .box_text_icon img,
+    .box_rest_icon img {
+        float: none;
+        margin: 0 auto 8px auto;
+        display: block;
+    }
+    .service_category_list_box > li > a > ul {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .service_category_list_box > li > a > ul > li img {
+        width: 22px;
+        margin: 0 auto 4px auto;
+        display: block;
+    }
+    .service_category_list_box > li > a > ul > li h2 {
+        font-size: 0.98rem;
+        text-align: center;
+    }
+    .service_category_list_box > li > a > p {
+        font-size: 0.95rem;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+    .input_banner {
+        width: 100% !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin: 0 auto 24px auto !important;
+        box-sizing: border-box;
+        padding: 12px 0 !important;
+    }
+    .hour_input_banner_text h2 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+    .hour_input_banner_text p {
+        font-size: 0.98rem;
+        margin-bottom: 6px;
+    }
+    .hour_input {
+        width: 100% !important;
+        max-width: 320px;
+        margin: 0 auto 8px auto;
+        font-size: 1rem;
+    }
+    .hour_input_input {
+        width: 100% !important;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+    .hour_input_input p {
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+    .hour_input_box {
+        padding-top: 12px;
+    }
+    body {
+        overflow-x: hidden !important;
+    }
+}
