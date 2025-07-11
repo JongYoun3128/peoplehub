@@ -78,6 +78,7 @@
 }
 .work_schedule_information_list_sub_detail_02 .sub_detail_box {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     padding: 0 20px;
 }
@@ -86,6 +87,8 @@
     padding: 30px 20px;
     box-sizing: border-box;
     border: 1px solid #c2cad5;
+
+    margin-bottom: 20px;
     border-radius: 10px;
 }
 
@@ -401,4 +404,74 @@
     font-size: 15px;
     font-weight: normal;
     line-height: 1.5;
+}
+
+@media (max-width: 500px) {
+    /* main#work_schedule_main > * {
+        width: 100% !important;
+        display: block !important;
+        box-sizing: border-box;
+    }
+    main#work_schedule_main * {
+        text-align: center !important;
+    }
+    .work_schedule_main_title,
+    .work_schedule_information,
+    .top_down,
+    .bottom_Up,
+    .deemed,
+    .employee_web,
+    .service_category {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+    .work_schedule_main_title_list,
+    .work_schedule_information_list,
+    .top_down_contents,
+    .bottom_Up_contents,
+    .deemed_contents,
+    .employee_web_contents {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .work_schedule_main_title_list h2,
+    .work_schedule_main_title_list h5,
+    .work_schedule_main_title_list p,
+    .work_schedule_main_title_detail,
+    .top_down_title h2,
+    .top_down_contents_text_box h2,
+    .top_down_contents_text_box p,
+    .bottom_Up_contents_text_box h2,
+    .bottom_Up_contents_text_box p,
+    .deemed_contents_text_box h2,
+    .deemed_contents_text_box p,
+    .employee_web_contents_text_box h2,
+    .employee_web_contents_text_box p,
+    .top_down_contents li {
+        text-align: center !important;
+        width: 100%;
+    } */
+
+    /* service_category 한 박스씩 세로로 */
+    /* .service_category_list_box {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: 1.2rem !important;
+    }
+    .service_category_list_box > li {
+        width: 95% !important;
+        margin: 0 auto !important;
+        min-width: 0 !important;
+        max-width: 500px !important;
+    }
+    .service_category_list_box h2,
+    .service_category_list_box p {
+        text-align: center !important;
+    } */
 }

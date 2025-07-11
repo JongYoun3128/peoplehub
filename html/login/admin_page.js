@@ -615,46 +615,46 @@ document.addEventListener('DOMContentLoaded', function () {
         editingRow = null;
         return;
       }
-      const row = document.createElement('tr');
-      row.innerHTML = `
-        <td>${empId}</td>
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${empId}</td>
         <td>${empFirstName}</td>
         <td>${empDept}</td>
         <td>${empRank}</td>
         <td>${empPhone}</td>
         <td>${empJoinDate}</td>
         <td>${empEmail}</td>
-        <td class="employee_btn_04">
-          <button class="edit-btn">수정</button><button class="delete-btn">삭제</button>
-        </td>
-      `;
-      employeeTableBody.appendChild(row);
+            <td class="employee_btn_04">
+                <button class="edit-btn">수정</button><button class="delete-btn">삭제</button>
+            </td>
+        `;
+        employeeTableBody.appendChild(row);
       employeeModal.style.display = 'none';
       employeeForm.reset();
     };
 
     // 수정/삭제 버튼 이벤트 위임
     employeeTableBody.addEventListener('click', function(e) {
-      const target = e.target;
-      const row = target.closest('tr');
-      if (target.classList.contains('edit-btn')) {
-        // 수정 모드 진입
-        const tds = row.querySelectorAll('td');
-        document.getElementById('empId').value = tds[0].textContent;
+        const target = e.target;
+        const row = target.closest('tr');
+        if (target.classList.contains('edit-btn')) {
+            // 수정 모드 진입
+            const tds = row.querySelectorAll('td');
+            document.getElementById('empId').value = tds[0].textContent;
         document.getElementById('empFirstName').value = tds[1].textContent;
-        document.getElementById('empDept').value = tds[2].textContent;
-        document.getElementById('empRank').value = tds[3].textContent;
-        document.getElementById('empPhone').value = tds[4].textContent;
-        document.getElementById('empJoinDate').value = tds[5].textContent;
+            document.getElementById('empDept').value = tds[2].textContent;
+            document.getElementById('empRank').value = tds[3].textContent;
+            document.getElementById('empPhone').value = tds[4].textContent;
+            document.getElementById('empJoinDate').value = tds[5].textContent;
         document.getElementById('empEmail').value = tds[6].textContent;
         employeeModal.style.display = 'block';
-        editMode = true;
-        editingRow = row;
-      } else if (target.classList.contains('delete-btn')) {
-        if (confirm('정말 삭제하시겠습니까?')) {
-          row.remove();
+            editMode = true;
+            editingRow = row;
+        } else if (target.classList.contains('delete-btn')) {
+            if (confirm('정말 삭제하시겠습니까?')) {
+                row.remove();
+            }
         }
-      }
     });
 
     // 설정 페이지 탭 전환 기능
