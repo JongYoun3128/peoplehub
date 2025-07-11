@@ -617,6 +617,9 @@
         gap: 24px;
         margin: 0 auto;
     }
+    .electrinic_payment_banner_list {
+        justify-content: center;
+    }
     .electrinic_payment_banner_list > li,
     .payment_work_list li,
     .payment_vacation_detail_list li,
@@ -634,6 +637,13 @@
         padding: 18px 10px;
         text-align: center;
     }
+    .service_category {
+        padding: 40px 0;
+    }
+    .service_category_list > h2 {
+        font-size: 1.7rem;
+        margin-bottom: 50px;
+    }
     .main_title_list h2,
     .electrinic_payment_banner_list_02 h2,
     .payment_work_title,
@@ -642,8 +652,7 @@
     .payment_custom_list h2,
     .one_click_title h2,
     .automatic_approval_list .automatic_approval_title h2,
-    .payment_rule_title h2,
-    .service_category_list h2 {
+    .payment_rule_title h2 {
         font-size: 2rem !important;
     }
     .main_title_list .main_title_detail,
@@ -664,8 +673,15 @@
     .electrinic_payment_banner_list_02 ul li p {
         align-items: center;
         text-align: center;
-        width: fit-content;
-        margin: 0 auto;
+        margin-left: 50px;
+        width: 300px;
+    }
+    .sub_title_box h5 {
+        text-align: center;
+    }
+    .sub_title_box h2 {
+        text-align: center;
+        font-size: 1.6rem;
     }
     .main_title img,
     .electrinic_payment_banner_list_01 img,
@@ -709,12 +725,11 @@
         display: block;
     }
     .service_category_list_box > li > a > ul > li h2 {
-        font-size: 1.2rem;
         text-align: center;
         margin-bottom: 10px;
     }
     .service_category_list_box > li > a > p {
-        font-size: 0.95rem;
+        font-size: 1rem;
         text-align: center;
         margin-bottom: 6px;
     }
@@ -760,9 +775,8 @@
     .payment_custom_list h2,
     .one_click_title h2,
     .automatic_approval_list .automatic_approval_title h2,
-    .payment_rule_title h2,
-    .service_category_list h2 {
-        font-size: 1.2rem !important;
+    .payment_rule_title h2 {
+        font-size: 1.7rem !important;
     }
     .main_title {
         padding: 40px 0 !important;
