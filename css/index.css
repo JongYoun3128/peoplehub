@@ -2149,8 +2149,10 @@
     }
 
     .personnel_information {
-        width: 100%;
-        margin-top: 100px;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 50px;
+        border-radius: 15px;
     }
 
     .personnel_information_list {
@@ -2164,7 +2166,7 @@
     }
 
     .personnel_information_list_text_box {
-        width: 40%;
+        width: 50%;
         margin-left: 3%;
     }
     .personnel_information_list_text_box h5 {
@@ -2184,7 +2186,7 @@
         line-height: 1.75;
     }
     .personnel_information_list_img_box {
-        width: 60%;
+        width: 50%;
     }
 
     .personnel_information_list_img_box img {
@@ -2192,14 +2194,19 @@
         margin-left: 15%;
     }
     .message_and_contract {
-        width: 100%;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 25px;
+    }
+    .message_and_contract .wrapper {
+        background-color: #fff;
     }
     .message_and_contract_list {
         display: flex;
         justify-content: space-between;
     }
     .message_and_contract_list li {
-        width: 49%;
+        width: 45.5%;
     }
     .message_and_contract_list li p {
         font-size: 15px;
@@ -2220,7 +2227,7 @@
         border-radius: 12px;
         margin: 20px 0;
         padding: 30px;
-        background-color: #f4f7fb;
+        background-color: none;
         box-sizing: border-box;
     }
     .message_and_contract_list .contents_box h5 {
@@ -2231,18 +2238,601 @@
     .message_and_contract_list .contents_box h2 {
         font-size: 20px;
         font-weight: 600;
+        line-height: 1.3;
     }
     .message_and_contract_list li img {
         width: 70%;
-        margin-top: 50px;
-        margin-left: 70px;
+        margin-top: 30px;
+        margin-left: 0;
     }
     .message_and_contract_list li:first-child img {
         width: 70%;
-        margin-top: 50px;
-        margin-left: 70px;
+        margin-top: 30px;
+        margin-left: 0px;
     }
 
+    /* //근태정산 */
+    .attendance_settlement {
+        width: 90%;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin: 100px auto;
+    }
+
+    .attendance_settlement_list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .attendance_settlement_img_box {
+        width: 50%;
+        padding: 20px;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .attendance_settlement_img_box img {
+        width: 100%;
+    }
+    .attendance_settlement_img_box::after {
+        content: '';
+        position: absolute;
+        display: none;
+        z-index: -1;
+        top: -50px;
+        left: -25px;
+        width: 550px;
+        height: 250px;
+        background-color: #f4f7fb;
+    }
+
+    .attendance_settlement_text_box {
+        width: 50%;
+        padding-left: 50px;
+        padding: 25px;
+        box-sizing: border-box;
+    }
+
+    .attendance_settlement_text_box h5 {
+        margin-bottom: 20px;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .attendance_settlement_text_box h2 {
+        font-size: 1.7rem;
+        margin-bottom: 20px;
+    }
+
+    .attendance_settlement_text_box p {
+        line-height: 1.75;
+        margin-bottom: 50px;
+    }
+
+    /* //연동 */
+
+    .peristalsis {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 100px;
+    }
+
+    .peristalsis_title_box {
+        width: 100%;
+        text-align: center;
+        padding: 50px 20px;
+        box-sizing: border-box;
+    }
+
+    .peristalsis_title_box h5 {
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .peristalsis_title_box h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .peristalsis_title_box p {
+        line-height: 1.75;
+    }
+
+    .peristalsis_contents_box {
+        display: flex;
+        flex-direction: column;
+        padding: 0 40px;
+        box-sizing: border-box;
+        margin-top: 50px;
+    }
+
+    .peristalsis_contents_text_box {
+        width: 100%;
+    }
+    .peristalsis_contents_text_box .peristalsis_contents_text_list > li {
+        list-style: disc;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .peristalsis_contents_text_box .peristalsis_contents_text_list > li > p {
+        margin-top: 10px;
+        margin-bottom: 30px;
+        line-height: 1.75;
+        font-weight: 400;
+    }
+    .peristalsis_contents_img_box {
+        margin: 0 auto;
+        margin-top: 30px;
+        width: 100%;
+    }
+    .peristalsis_contents_img_box img {
+        width: 100%;
+        padding-right: 50px;
+        padding-bottom: 50px;
+        box-sizing: border-box;
+    }
+
+    /* /모바일/웹앱/데스크탑 */
+    .mobile_web_desk {
+        width: 100%;
+        display: none;
+    }
+    .mobile_web_desk_wrap {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .mobile_web_desk_wrap .mobile_web_desk_title {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 2rem;
+        line-height: 1.3;
+        font-weight: 600;
+    }
+
+    .mobile_web_desk_box {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .mobile_web_list {
+        border-radius: 5px;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        height: 400px;
+        padding: 0 50px;
+        box-sizing: border-box;
+        background-color: #edf6fe;
+        transition: 0.3s;
+    }
+    .mobile_web_list:hover {
+        scale: 1.03;
+    }
+    .mobile_web_list .mobile_wep_text_box {
+        margin-top: 70px;
+        padding-left: 30px;
+        width: 50%;
+        color: #1e1f21;
+    }
+    .mobile_web_list .mobile_wep_text_box h5 {
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+    .mobile_web_list .mobile_wep_text_box h2 {
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 16px;
+        line-height: 1.5;
+    }
+    .mobile_web_list .mobile_wep_text_box p {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 1.75;
+    }
+    .mobile_web_list .mobile_web_img_box {
+        width: 50%;
+    }
+    .mobile_web_list .mobile_web_img_box img {
+        margin-left: 50px;
+        width: 80%;
+    }
+
+    .desk_list {
+        margin-top: 30px;
+        border-radius: 5px;
+        display: flex;
+        overflow: hidden;
+        height: 400px;
+        padding: 0 50px;
+        box-sizing: border-box;
+        background-color: #edf6fe;
+        transition: 0.3s;
+    }
+    .desk_list:hover {
+        scale: 1.03;
+    }
+
+    .desk_list .desk_text_box {
+        color: #1e1f21;
+        width: 50%;
+        margin-top: 70px;
+        padding-left: 30px;
+    }
+    .desk_list .desk_text_box h5 {
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+    .desk_list .desk_text_box h2 {
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 16px;
+        line-height: 1.5;
+    }
+    .desk_list .desk_text_box p {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 1.75;
+    }
+    .desk_list .desk_img_box {
+        width: 50%;
+    }
+    .desk_list .desk_img_box img {
+        width: 150%;
+    }
+
+    /* //지도 */
+
+    .world_international {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 100px;
+        position: relative;
+    }
+    .world_international .wrapper {
+        background-image: url(../images/Global_network_generated.jpg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+    .world_international_title {
+        color: #fff;
+        width: 100%;
+    }
+    .world_international_title > br {
+        display: none;
+    }
+    .world_international::after {
+        position: absolute;
+        z-index: -5;
+        bottom: 0;
+        content: '';
+        width: 100%;
+        height: 330px;
+        display: none;
+        background-color: #f4f7fb;
+        border-radius: 15px;
+    }
+    .world_international .world_international_list {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .world_international_list .world_international_img_box {
+        width: 1000px;
+        height: 700px;
+        border-top-right-radius: 200px;
+        background-color: #004dc1;
+        overflow: hidden;
+        position: relative;
+        display: none;
+    }
+    .world_international_list .world_international_img_box img {
+        position: absolute;
+        top: 0;
+        left: -80px;
+        width: 550px;
+        height: 100%;
+    }
+
+    .world_international_list .world_international_text_box {
+        margin-top: 80px;
+        padding: 20px 50px;
+    }
+    .world_international_list .world_international_text_box h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1.5;
+        margin-bottom: 150px;
+    }
+    .world_international_list .world_international_text_box p {
+        font-size: 17px;
+        line-height: 1.75;
+        margin-bottom: 80px;
+    }
+
+    .world_international_list .world_international_text_box .text_list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .world_international_list .world_international_text_box .text_list li h2 {
+        margin-bottom: 10px;
+    }
+
+    /* //industries 섹션 */
+
+    .industries {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 100px;
+        background-image: linear-gradient(white, #f4f7fb);
+        border-radius: 15px;
+    }
+    .industries .wrapper {
+        padding: 50px 20px;
+        box-sizing: border-box;
+    }
+
+    .industries .industries_list .industries_list_title {
+        text-align: center;
+    }
+    .industries .industries_list .industries_list_title h5 {
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    .industries .industries_list .industries_list_title h2 {
+        font-weight: 600;
+        font-size: 1.7rem;
+    }
+
+    .industries_list .industries_img_list {
+        margin-top: 50px;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+    }
+
+    .industries_list .industries_img_list > li .industries_img_list_01 {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: row wrap;
+        justify-content: space-between;
+    }
+    .industries_list .industries_img_list > li .industries_img_list_01 > li {
+        width: 15%;
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: normal;
+        font-size: 15px;
+    }
+    .industries_list
+        .industries_img_list
+        > li
+        .industries_img_list_01
+        > li
+        img {
+        background-color: #fff;
+        border-radius: 7px;
+        padding: 10px;
+        box-sizing: border-box;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .industries_list .industries_img_list > li .industries_img_list_02 {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    .industries_list .industries_img_list > li .industries_img_list_02 > li {
+        width: 15%;
+        font-weight: normal;
+        text-align: center;
+        font-size: 15px;
+    }
+    .industries_list
+        .industries_img_list
+        > li
+        .industries_img_list_02
+        > li
+        img {
+        background-color: #fff;
+        border-radius: 7px;
+        padding: 10px;
+        box-sizing: border-box;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* //근무제도 섹션 */
+    .work_system {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 100px;
+        padding: 50px 0;
+        background-image: linear-gradient(#f4f7fb, #f4f7fb);
+        border-radius: 15px;
+    }
+    .work_system .wrapper {
+        width: 100%;
+        padding: 50px 20px;
+        box-sizing: border-box;
+        border-radius: 15px;
+    }
+    .work_system_list {
+        display: flex;
+        flex-direction: column;
+    }
+    .work_system_title {
+        font-size: 2.5rem;
+        line-height: 1.3;
+        font-weight: 700;
+        margin-left: 0;
+        margin-bottom: 50px;
+    }
+
+    .work_system_list_btn {
+        display: flex;
+        justify-content: right;
+    }
+
+    .work_system_list_btn li {
+        width: 250px;
+        padding: 30px 15px;
+        border: 1px solid #c0c6d9;
+        background-color: #fff;
+        border-radius: 5px;
+        box-sizing: border-box;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .work_system_list_btn li:hover {
+        transform: translateY(-8px);
+    }
+
+    .work_system_list_btn li h3 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    .work_system_list_btn li h3 span {
+        color: #004dc1;
+    }
+    .work_system_list_btn li p {
+        font-size: 15px;
+        font-weight: normal;
+        line-height: 1.75;
+    }
+
+    /* //인력관리 섹션 */
+    .human_resources_management {
+        padding: 0;
+        width: 90%;
+        margin: 100px auto;
+        position: relative;
+    }
+    .human_resources_management .wrapper {
+        width: 100%;
+        background-color: #fff !important;
+    }
+    .management_list {
+        display: flex;
+        flex-direction: column;
+    }
+    .management_text_list {
+        width: 100%;
+    }
+    .management_text_box {
+        width: 100%;
+    }
+    .management_text_list .management_text_box h2 {
+        font-size: 1.7rem;
+        font-weight: 700;
+        margin-bottom: 30px;
+        line-height: 1.3;
+        text-align: center;
+    }
+    .management_text_list .management_text_box p {
+        font-size: 17px;
+        font-weight: normal;
+        margin-bottom: 30px;
+        line-height: 1.75;
+        text-align: center;
+    }
+
+    .management_text_list .management_logo_list {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        text-align: center;
+        justify-content: space-between;
+    }
+
+    .management_text_list .management_logo_list li {
+        width: 28%;
+        margin: 20px 10px;
+        filter: saturate(0);
+        transition: 0.3s;
+    }
+    .management_text_list .management_logo_list li:hover {
+        filter: none;
+    }
+    .management_text_list .management_logo_list li img {
+        width: 50%;
+    }
+
+    .management_img_box {
+        width: 100%;
+    }
+
+    .management_img_box img {
+        width: 80%;
+        display: block;
+        margin: 20px auto;
+        margin-left: 100px;
+    }
+
+    /* //하단 배너 섹션 */
+
+    .bottom_banner {
+        width: 100%;
+        padding: 80px 0;
+        background-color: #004dc1;
+        color: white;
+        margin-top: 100px;
+    }
+    .banner_box_text {
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .banner_box_text h2 {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .banner_box_text h3 {
+        font-size: 15px;
+        margin-bottom: 32px;
+        opacity: 0.62;
+        line-height: 1.75;
+    }
+    .banner_box_text ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    .banner_box_text ul li {
+        width: 80px;
+        padding: 1em 2rem;
+        font-size: 15px;
+        font-weight: 600;
+        color: #004dc1;
+        transition: ease-out 0.3s;
+        cursor: pointer;
+    }
+    .banner_box_text ul li:first-child {
+        background-color: #fff;
+    }
+    .banner_box_text ul li:last-child {
+        background-color: none;
+        color: #fff;
+        border: 1px solid #fff;
+    }
+    .banner_box_text ul li:last-child:hover {
+        background-color: #fff;
+        color: #004dc1;
+    }
+    .banner_box_text ul li:hover {
+        transform: translateY(-5px);
+    }
     /* 푸터 반응형 */
     .footer_wrap {
         height: auto;
