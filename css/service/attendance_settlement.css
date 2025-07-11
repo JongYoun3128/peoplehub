@@ -414,3 +414,203 @@
     font-weight: normal;
     line-height: 1.5;
 }
+
+/* =========================
+   Responsive: Mobile/Tablet (Content Only)
+   ========================= */
+@media (max-width: 1024px) {
+    main.attendance_settlement_main,
+    .attendance_settlement_main {
+        width: 90% !important;
+        max-width: 100vw;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        padding: 0;
+        margin: 0 auto;
+    }
+    #wrap {
+        width: 100% !important;
+        min-width: 0;
+        max-width: 100vw;
+        box-sizing: border-box;
+        padding: 0 2vw;
+        overflow-x: hidden;
+    }
+    .settlement_main_title,
+    .settlement_banner_01,
+    .settlement_update,
+    .settlement_report,
+    .settlement_report_file,
+    .automatic_list,
+    .settlement_solution,
+    .service_category {
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .service_category {
+        padding: 30px 0;
+    }
+    .settlement_main_title_list,
+    .banner_01_list,
+    .update_list,
+    .report_list,
+    .report_detail,
+    .report_file_list,
+    .solution_list,
+    .service_category_list_box {
+        flex-direction: column !important;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        align-items: center;
+        gap: 24px;
+        margin: 0 auto;
+    }
+    .update_list li,
+    .report_list li,
+    .report_detail li,
+    .solution_list > li {
+        width: 100% !important;
+        min-width: 0;
+        max-width: 100vw;
+        box-sizing: border-box;
+        margin: 0 0 18px 0;
+        padding: 18px 10px;
+        overflow-x: hidden;
+        text-align: center;
+    }
+
+    .service_category_list_box > li {
+        width: 90%;
+    }
+    .settlement_main_title_list h2,
+    .banner_01_list h2,
+    .update_list .update_text_box h2,
+    .report_text_box h2,
+    .report_file_list h2,
+    .automatic_list h2,
+    .solution_title {
+        font-size: 2rem !important;
+    }
+    .service_category_list > h2 {
+        margin-bottom: 50px;
+        font-size: 1.7rem;
+    }
+    .settlement_main_title_list .settlement_main_title_detail,
+    .banner_01_list p,
+    .update_list .update_text_box p,
+    .report_text_box > p,
+    .report_file_list p,
+    .automatic_list p,
+    .solution_text_box_detail_01,
+    .service_category_list_box > li > a > p {
+        font-size: 1rem !important;
+        margin-bottom: 24px !important;
+    }
+    .banner_01_list img,
+    .update_list .update_img_box img,
+    .report_img_box img,
+    .report_file_list img,
+    .solution_img_box img {
+        width: 100% !important;
+        max-width: 90vw !important;
+        min-width: 0 !important;
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+        float: none !important;
+    }
+    .automatic_list {
+        width: 98% !important;
+        margin: 20px auto !important;
+        padding: 24px 2vw !important;
+        min-width: 0 !important;
+    }
+    .automatic_link_box {
+        position: static !important;
+        display: block !important;
+        margin: 20px auto 0 auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        text-align: center !important;
+    }
+    .solution_list > li {
+        margin-bottom: 24px !important;
+    }
+    .solution_img_box img {
+        width: 90vw !important;
+        max-width: 320px !important;
+    }
+    .service_category_list_box > li > a > ul {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .service_category_list_box > li > a > ul > li img {
+        width: 22px;
+        margin: 0 auto 4px auto;
+        display: block;
+    }
+    .service_category_list_box > li > a > ul > li > h2 {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .service_category_list_box > li > a > p {
+        font-size: 0.95rem;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+    /* Remove any negative margins or paddings that could cause overflow */
+    [class*='_box'],
+    [class*='_list'],
+    [class*='_img'] {
+        box-sizing: border-box !important;
+        max-width: 100vw !important;
+    }
+}
+
+@media (max-width: 600px) {
+    main.attendance_settlement_main,
+    .attendance_settlement_main {
+        padding: 0 !important;
+    }
+    #wrap {
+        width: 100% !important;
+        max-width: 100vw !important;
+        padding: 0 2vw !important;
+        box-sizing: border-box !important;
+    }
+    .banner_01_list img,
+    .update_list .update_img_box img,
+    .report_img_box img,
+    .report_file_list img,
+    .solution_img_box img {
+        max-width: 98vw !important;
+        min-width: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .settlement_main_title_list h2,
+    .banner_01_list h2,
+    .update_list .update_text_box h2,
+    .report_text_box h2,
+    .report_file_list h2,
+    .automatic_list h2,
+    .solution_title {
+        font-size: 1.2rem !important;
+    }
+    .settlement_main_title {
+        padding: 40px 0 !important;
+        background-size: cover !important;
+    }
+    .automatic_list {
+        padding: 16px 1vw !important;
+    }
+}

@@ -300,3 +300,190 @@ h4 {
     font-weight: normal;
     line-height: 1.5;
 }
+
+/* =========================
+   Responsive: Mobile/Tablet (Content Only)
+   ========================= */
+@media (max-width: 1024px) {
+    main.electronic_contract_main,
+    .electronic_contract_main {
+        width: 90% !important;
+        max-width: 100vw;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0 auto;
+    }
+    #wrap {
+        width: 100% !important;
+        min-width: 0;
+        max-width: 100vw;
+        box-sizing: border-box;
+        padding: 0 2vw;
+    }
+    .main_title,
+    .contract_template,
+    .contract_document_work,
+    .bulk_transfer,
+    .contract_reassurance,
+    .service_category {
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .main_title_list,
+    .template_list,
+    .document_work_list,
+    .bulk_transfer_list,
+    .bulk_transfer_sub_list,
+    .reassurance_list,
+    .reassurance_img_list,
+    .service_category_list_box {
+        flex-direction: column !important;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+        align-items: center;
+        gap: 24px;
+        margin: 0 auto;
+    }
+    .template_list > li,
+    .document_work_list > li,
+    .bulk_transfer_sub_list li,
+    .reassurance_img_list li,
+    .service_category_list_box > li {
+        width: 100% !important;
+        min-width: 0;
+        max-width: 100vw;
+        box-sizing: border-box;
+        margin: 0 0 18px 0;
+        padding: 18px 10px;
+        text-align: center;
+    }
+    .main_title_list h2,
+    .template_text_list h3,
+    .bulk_transfer_list h3,
+    .reassurance_list h3 {
+        font-size: 2rem !important;
+    }
+    .main_title_list .main_title_detail,
+    .template_text_list > p,
+    .bulk_transfer_list p,
+    .reassurance_list > p,
+    .reassurance_img_list p,
+    .service_category_list_box > li > a > p {
+        font-size: 1rem !important;
+        margin-bottom: 24px !important;
+        text-align: center;
+    }
+    .template_text_list ul li a {
+        text-align: center;
+        display: block;
+        margin-top: 50px;
+    }
+    .service_category {
+        padding: 40px 0;
+    }
+    .reassurance_img_list li img {
+        width: 220px;
+    }
+    .document_work_text h3 {
+        font-size: 1.7rem;
+    }
+    .main_title img,
+    .template_img_box img,
+    .document_work_img img,
+    .bulk_transfer_list img,
+    .bulk_transfer_sub_list_02 img {
+        width: 100% !important;
+        max-width: 90vw !important;
+        min-width: 0 !important;
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+    .document_work_img {
+        position: static !important;
+        padding-left: 0 !important;
+        margin-top: 24px !important;
+    }
+    .document_work_img img {
+        position: static !important;
+        margin-left: 0 !important;
+        top: auto !important;
+    }
+    .bulk_transfer_sub_list_01,
+    .bulk_transfer_sub_list_02 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        text-align: center !important;
+    }
+    .reassurance_img_list {
+        width: 100% !important;
+    }
+    .service_category_list_box > li > a > ul {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .service_category_list > h2 {
+        font-size: 1.7rem;
+        margin-bottom: 50px;
+    }
+
+    .service_category_list_box > li > a > ul > li img {
+        width: 22px;
+        margin: 0 auto 4px auto;
+        display: block;
+    }
+    .service_category_list_box > li > a > ul > li h2 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .service_category_list_box > li > a > p {
+        font-size: 0.95rem;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+    /* Remove any negative margins or paddings that could cause overflow */
+    [class*='_box'],
+    [class*='_list'],
+    [class*='_img'] {
+        box-sizing: border-box !important;
+        max-width: 100vw !important;
+    }
+}
+
+@media (max-width: 600px) {
+    main.electronic_contract_main,
+    .electronic_contract_main {
+        padding: 0 !important;
+    }
+    #wrap {
+        width: 100% !important;
+        max-width: 100vw !important;
+        padding: 0 2vw !important;
+        box-sizing: border-box !important;
+    }
+    .main_title img,
+    .template_img_box img,
+    .document_work_img img,
+    .bulk_transfer_list img,
+    .bulk_transfer_sub_list_02 img {
+        max-width: 98vw !important;
+        min-width: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .main_title_list h2,
+    .template_text_list h3,
+    .bulk_transfer_list h3,
+    .reassurance_list h3 {
+        font-size: 1.2rem !important;
+    }
+    .main_title {
+        padding: 40px 0 !important;
+    }
+}

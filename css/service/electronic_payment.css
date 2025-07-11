@@ -563,3 +563,208 @@
     color: #004dc1;
     transform: translateY(-5px);
 }
+
+/* =========================
+   Responsive: Mobile/Tablet (Content Only)
+   ========================= */
+@media (max-width: 1024px) {
+    main.electrinic_payment_main,
+    .electrinic_payment_main {
+        width: 90% !important;
+        max-width: 100vw;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0 auto;
+    }
+    #wrap {
+        width: 100% !important;
+        min-width: 0;
+        max-width: 100vw;
+        box-sizing: border-box;
+        padding: 0 2vw;
+    }
+    .main_title,
+    .electrinic_payment_banner_01,
+    .payment_work,
+    .payment_vacation,
+    .payment_record,
+    .payment_custom,
+    .payment_one_click,
+    .payment_automatic_approval,
+    .payment_rule,
+    .service_category {
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .main_title_list,
+    .electrinic_payment_banner_list,
+    .payment_work_list,
+    .payment_vacation_detail_list,
+    .payment_record_list,
+    .payment_custom_list,
+    .automatic_approval_list,
+    .payment_rule_list,
+    .payment_rule_detail > ul,
+    .service_category_list_box {
+        flex-direction: column !important;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+        align-items: center;
+        gap: 24px;
+        margin: 0 auto;
+    }
+    .electrinic_payment_banner_list > li,
+    .payment_work_list li,
+    .payment_vacation_detail_list li,
+    .payment_record_list li,
+    .payment_custom_list li,
+    .automatic_approval_list > li,
+    .payment_rule_list > li,
+    .payment_rule_detail > ul > li,
+    .service_category_list_box > li {
+        width: 100% !important;
+        min-width: 0;
+        max-width: 100vw;
+        box-sizing: border-box;
+        margin: 0 0 18px 0;
+        padding: 18px 10px;
+        text-align: center;
+    }
+    .main_title_list h2,
+    .electrinic_payment_banner_list_02 h2,
+    .payment_work_title,
+    .payment_vacation_title h2,
+    .payment_record_list li h2,
+    .payment_custom_list h2,
+    .one_click_title h2,
+    .automatic_approval_list .automatic_approval_title h2,
+    .payment_rule_title h2,
+    .service_category_list h2 {
+        font-size: 2rem !important;
+    }
+    .main_title_list .main_title_detail,
+    .payment_work_list .text_list ul li p,
+    .payment_vacation_title p,
+    .payment_vacation_detail_list p,
+    .payment_record_list li p,
+    .payment_custom_list li p,
+    .one_click_title p,
+    .automatic_approval_detail p,
+    .payment_rule_title p,
+    .payment_rule_detail > ul > li p,
+    .service_category_list_box > li > a > p {
+        font-size: 1rem !important;
+        margin-bottom: 24px !important;
+        text-align: center;
+    }
+    .electrinic_payment_banner_list_02 ul li p {
+        align-items: center;
+        text-align: center;
+        width: fit-content;
+        margin: 0 auto;
+    }
+    .main_title img,
+    .electrinic_payment_banner_list_01 img,
+    .payment_work_list li img,
+    .payment_vacation_img_box img,
+    .payment_custom_img_box img,
+    .one_click_img_box img,
+    .automatic_approval_img_box img,
+    .payment_rule_img_box img,
+    .payment_rule_detail > ul > li img {
+        width: 100% !important;
+        max-width: 90vw !important;
+        min-width: 0 !important;
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+    .payment_vacation_img_box {
+        position: static !important;
+    }
+    .payment_vacation_img_box::after {
+        display: none !important;
+    }
+    .payment_custom_img_box img {
+        width: 100% !important;
+        max-width: 320px !important;
+    }
+    .payment_rule_img_box img {
+        width: 100% !important;
+        max-width: 320px !important;
+    }
+    .service_category_list_box > li > a > ul {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .service_category_list_box > li > a > ul > li img {
+        width: 22px;
+        margin: 0 auto 4px auto;
+        display: block;
+    }
+    .service_category_list_box > li > a > ul > li h2 {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .service_category_list_box > li > a > p {
+        font-size: 0.95rem;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+    /* Remove any negative margins or paddings that could cause overflow */
+    [class*='_box'],
+    [class*='_list'],
+    [class*='_img'] {
+        box-sizing: border-box !important;
+        max-width: 100vw !important;
+    }
+}
+
+@media (max-width: 600px) {
+    main.electrinic_payment_main,
+    .electrinic_payment_main {
+        padding: 0 !important;
+    }
+    #wrap {
+        width: 100% !important;
+        max-width: 100vw !important;
+        padding: 0 2vw !important;
+        box-sizing: border-box !important;
+    }
+    .main_title img,
+    .electrinic_payment_banner_list_01 img,
+    .payment_work_list li img,
+    .payment_vacation_img_box img,
+    .payment_custom_img_box img,
+    .one_click_img_box img,
+    .automatic_approval_img_box img,
+    .payment_rule_img_box img,
+    .payment_rule_detail > ul > li img {
+        max-width: 98vw !important;
+        min-width: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .main_title_list h2,
+    .electrinic_payment_banner_list_02 h2,
+    .payment_work_title,
+    .payment_vacation_title h2,
+    .payment_record_list li h2,
+    .payment_custom_list h2,
+    .one_click_title h2,
+    .automatic_approval_list .automatic_approval_title h2,
+    .payment_rule_title h2,
+    .service_category_list h2 {
+        font-size: 1.2rem !important;
+    }
+    .main_title {
+        padding: 40px 0 !important;
+    }
+}

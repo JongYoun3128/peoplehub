@@ -361,3 +361,193 @@ h4 {
     font-weight: normal;
     line-height: 1.5;
 }
+
+/* =========================
+   Responsive: Mobile/Tablet (Content Only)
+   ========================= */
+@media (max-width: 1024px) {
+    main.desktop_main,
+    .desktop_main {
+        width: 90% !important;
+        max-width: 100vw;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0 auto;
+    }
+    #wrap {
+        width: 100% !important;
+        min-width: 0;
+        max-width: 100vw;
+        box-sizing: border-box;
+        padding: 0 2vw;
+        overflow-x: hidden;
+    }
+    .main_title,
+    .desktop_merit,
+    .desktop_convenient,
+    .desktop_time_management,
+    .desktop_manpower,
+    .desktop_system_stability,
+    .service_category {
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .main_title_list,
+    .merit_list,
+    .merit_text_list,
+    .convenient_list,
+    .time_management_list,
+    .time_detail_list,
+    .manpower_list,
+    .manpower_img_list,
+    .system_stability_list,
+    .system_stability_text_list,
+    .service_category_list_box {
+        flex-direction: column !important;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        align-items: center;
+        gap: 24px;
+        margin: 0 auto;
+    }
+    .merit_text_list li,
+    .convenient_list > li,
+    .time_detail_list li,
+    .manpower_img_list li,
+    .service_category_list_box > li {
+        width: 100% !important;
+        min-width: 0;
+        max-width: 100vw;
+        box-sizing: border-box;
+        margin: 0 0 18px 0;
+        padding: 18px 10px;
+        overflow-x: hidden;
+        text-align: center;
+    }
+    .main_title_list h2,
+    .merit_list h4,
+    .time_management_list h3,
+    .manpower_list h4,
+    .system_stability_list h4 {
+        font-size: 2rem !important;
+    }
+    .service_category_list > h2 {
+        margin-bottom: 50px;
+        font-size: 1.7rem;
+    }
+    .main_title_list .main_title_detail,
+    .merit_text_list li p,
+    .convenient_text_list li p,
+    .time_management_list > p,
+    .time_text_list ul li p,
+    .manpower_img_list li p,
+    .system_stability_list p,
+    .service_category_list_box > li > a > p {
+        font-size: 0.9rem !important;
+        margin-bottom: 24px !important;
+        text-align: center;
+    }
+    .system_stability_list a {
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    .main_title img,
+    .convenient_img_box img,
+    .time_img_box img {
+        width: 100% !important;
+        max-width: 90vw !important;
+        min-width: 0 !important;
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+        float: none !important;
+    }
+    .merit_list {
+        padding: 24px 2vw !important;
+        min-width: 0 !important;
+    }
+    .system_stability_list {
+        padding: 0 2vw !important;
+        position: static !important;
+    }
+    .system_stability_text_list {
+        position: static !important;
+        margin: 40px auto 0 auto !important;
+        text-align: center !important;
+    }
+    .service_category_list_box > li > a > ul {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .service_category_list_box > li > a > ul > li img {
+        width: 22px;
+        margin: 0 auto 4px auto;
+        display: block;
+    }
+    .service_category_list_box > li > a > ul > li h2 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .service_category_list_box > li > a > p {
+        font-size: 0.95rem;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+    /* Remove any negative margins or paddings that could cause overflow */
+    [class*='_box'],
+    [class*='_list'],
+    [class*='_img'] {
+        box-sizing: border-box !important;
+        max-width: 100vw !important;
+    }
+    .manpower_img_list li img {
+        width: 130px;
+    }
+}
+
+@media (max-width: 600px) {
+    main.desktop_main,
+    .desktop_main {
+        padding: 0 !important;
+    }
+    #wrap {
+        width: 100% !important;
+        max-width: 100vw !important;
+        padding: 0 2vw !important;
+        box-sizing: border-box !important;
+    }
+    .main_title img,
+    .convenient_img_box img,
+    .time_img_box img {
+        max-width: 98vw !important;
+        min-width: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .main_title_list h2,
+    .merit_list h4,
+    .time_management_list h3,
+    .manpower_list h4,
+    .system_stability_list h4,
+    .service_category_list > h2 {
+        text-align: center;
+    }
+    .main_title {
+        padding: 40px 0 !important;
+    }
+    .merit_list {
+        padding: 16px 1vw !important;
+    }
+    .system_stability_list {
+        padding: 0 1vw !important;
+    }
+}

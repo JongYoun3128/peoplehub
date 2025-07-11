@@ -651,13 +651,17 @@
     .hour_info_list01,
     .hour_info_list03,
     .hour_work_list li,
-    .hour_all_list li,
-    .service_category_list_box > li {
+    .hour_all_list li {
         width: 100% !important;
         max-width: 350px;
         margin: 0 auto 24px auto !important;
         box-sizing: border-box;
         padding: 18px 10px !important;
+    }
+
+    .service_category_list_box > li {
+        width: 90%;
+        margin: 0 auto;
     }
     .hour_info_list01_box,
     .hour_info_list03_box {
@@ -763,7 +767,7 @@
         margin: 0 auto 8px auto;
         display: block;
     }
-    .service_category_list h2 {
+    .service_category_list > h2 {
         margin-bottom: 50px;
     }
     .service_category_list_box > li > a > ul {
@@ -779,6 +783,7 @@
     .service_category_list_box > li > a > ul > li h2 {
         font-size: 0.98rem;
         text-align: center;
+        margin-bottom: 20px;
     }
     .service_category_list_box > li > a > p {
         font-size: 0.95rem;
