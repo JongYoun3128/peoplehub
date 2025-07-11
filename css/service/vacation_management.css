@@ -372,3 +372,330 @@ h4 {
     font-weight: normal;
     line-height: 1.5;
 }
+
+@media screen and (max-width: 1024px) {
+    br {
+        display: none;
+    }
+    #wrap {
+        width: 100%;
+    }
+
+    .main_title {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .main_title_list {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .main_title_list h5 {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+    .main_title_list h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 30px;
+    }
+
+    .main_title_list .main_title_detail {
+        font-size: 17px;
+        font-weight: normal;
+        line-height: 1.75;
+    }
+
+    .main_title_list .main_title_btn:hover {
+        background-color: #0a2864;
+        transform: translateY(-5px);
+    }
+
+    /* 프로세스 영역 */
+    .vaction_process {
+        margin-top: 100px;
+        padding: 0 20px;
+        box-sizing: border-box;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .process_list {
+        width: 100%;
+        text-align: center;
+    }
+    .process_list h3 {
+        font-size: 1.7rem;
+    }
+    .process_list p {
+        font-size: 15px;
+        line-height: 1.5;
+        margin-bottom: 30px;
+    }
+    .process_list img {
+        width: 100%;
+    }
+
+    /* 커스터마이징 영역 */
+    .vaction_customizing {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0 20px;
+        margin-top: 100px;
+        box-sizing: border-box;
+    }
+    .customizing_list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .customizing_list li {
+        width: 100%;
+    }
+    .customizing_img_box {
+        position: relative;
+    }
+    .customizing_img_box::after {
+        content: '';
+        display: none;
+        width: 500px;
+        height: 350px;
+        position: absolute;
+        background-color: #f4f7fb;
+        z-index: -5;
+        top: -40px;
+        left: 20px;
+    }
+    .customizing_img_box img {
+        width: 100%;
+        margin-left: 0;
+    }
+    .customizing_text_box {
+        padding-left: 0;
+        box-sizing: border-box;
+        text-align: center;
+        margin-top: 30px;
+    }
+    .customizing_text_box ul {
+        width: 100%;
+    }
+    .customizing_text_box ul li {
+        width: 100%;
+        margin-bottom: 70px;
+    }
+    .customizing_text_box ul li h5 {
+        font-size: 20px;
+    }
+    .customizing_text_box ul li p {
+        line-height: 1.5;
+    }
+    .service_category_list > h2 {
+        margin-bottom: 50px;
+        font-size: 1.8rem;
+    }
+    .service_category_list_box > li {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    /* 휴가발생과 잔여 일수 관리 영역 */
+    .vaction_leave_accruals {
+        width: 90%;
+        margin: 0 auto;
+        padding: 100px 0;
+        background-color: #f4f7fb;
+        display: none;
+    }
+
+    /* 휴가영역 */
+    .vacation_leave h3 {
+        text-align: center;
+        font-size: 1.7rem;
+        display: none;
+    }
+    .vacation_leave {
+        width: 100%;
+    }
+    .leave_box {
+        padding: 50px 0;
+    }
+    .leave_list {
+        display: flex;
+        align-items: center;
+    }
+    .leave_list li {
+        width: 50%;
+    }
+
+    .leave_img_box {
+        position: relative;
+        height: 600px;
+    }
+    .leave_img_box img {
+        width: 100%;
+        top: 0;
+        position: absolute;
+        z-index: 2;
+    }
+    .leave_img_box::after {
+        position: absolute;
+        top: -30px;
+        right: -30px;
+        z-index: 1;
+        content: '';
+        display: block;
+        height: 550px;
+        width: 550px;
+
+        background-color: #f0f1f3;
+    }
+    .leave_text_box {
+        padding: 0 50px;
+        box-sizing: border-box;
+    }
+    .leave_text_frame_box {
+        float: right;
+        width: 100%;
+    }
+    .leave_text_frame_box > p {
+        font-size: 20px;
+        font-weight: 300;
+        margin-bottom: 50px;
+    }
+    .leave_sub_text_list li {
+        list-style: inside;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    /* 잔여일수 영역 */
+    .accruals_box {
+        width: 100%;
+        padding: 100px 0 0;
+        text-align: center;
+        display: none;
+    }
+    .accruals_box_list {
+        width: 100%;
+    }
+    .accruals_box_list p {
+        font-size: 20px;
+        line-height: 1.75;
+        margin-bottom: 30px;
+    }
+    .accruals_box_list img {
+        width: 100%;
+    }
+
+    /* 손쉬운 영역 */
+    .vacation_convenient {
+        width: 90%;
+        margin: 0 auto;
+        padding: 100px 20px;
+        box-sizing: border-box;
+        background-image: linear-gradient(white, #f4f7fb);
+    }
+    .convenient_list {
+        text-align: center;
+    }
+    .convenient_list h3 {
+        font-size: 1.7rem;
+    }
+    .convenient_list p {
+        font-size: 15px;
+        line-height: 1.75;
+        margin-bottom: 50px;
+    }
+    .convenient_list img {
+        width: 100%;
+        box-shadow: 0 5px 9px #e3e3e3;
+    }
+
+    /* 촉진제도 영역 */
+    .vacation_promotion {
+        width: 100%;
+        padding: 100px 0;
+        display: none;
+    }
+    .promotion_list {
+        display: flex;
+        align-items: center;
+    }
+    .promotion_img_box {
+        width: 60%;
+    }
+    .promotion_img_box img {
+        width: 100%;
+    }
+    .promotion_text_box {
+        width: 40%;
+        padding: 0 50px;
+        box-sizing: border-box;
+    }
+    .promotion_text_box p {
+        font-size: 15px;
+        line-height: 1.5;
+        margin-bottom: 50px;
+    }
+    .promotion_text_box a {
+        display: flex;
+        color: #004dc1;
+    }
+    .promotion_text_box a span {
+        margin-left: 10px;
+        transition: 0.5s;
+    }
+    .promotion_text_box a:hover span {
+        display: block;
+        transform: translateX(5px);
+    }
+
+    /* 협업 영역 */
+    .vacation_cooperation {
+        width: 90%;
+        margin: 50px auto;
+        padding: 50px 0;
+
+        background-color: #f0f1f3;
+    }
+    .cooperation_list {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .cooperation_list h4 {
+        font-size: 1.7rem;
+    }
+    .cooperation_list img {
+        width: 100%;
+    }
+
+    .service_category_list_box {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 24px !important;
+        width: 100% !important;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    .service_category_list_box > li > a > ul {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .service_category_list_box > li > a > ul > li img {
+        width: 22px;
+        margin: 0 auto 4px auto;
+        display: block;
+    }
+    .service_category_list_box > li > a > ul > li h2 {
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .service_category_list_box > li > a > p {
+        font-size: 0.95rem;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+}
